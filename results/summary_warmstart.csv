@@ -1,0 +1,3 @@
+init,rmse_init,rmse_after_1_iter,rmse_final,iterations,iters_to_within_1pct,time_s
+NDI-F,0.7651,0.7047,0.7037,4.3111,1.7556,6.847
+mean,0.9942,0.7165,0.7049,4.8,2.0444,7.7489
