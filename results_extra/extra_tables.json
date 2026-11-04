@@ -1,0 +1,5329 @@
+{
+ "timing_check": {
+  "this_machine_s": 0.407,
+  "paper_machine_s": 1.833,
+  "ratio": 0.22204037097654117,
+  "paper_code_this_machine_s": 0.8106478920001337,
+  "paper_code_ratio_vs_main": 0.44225198690678325,
+  "pandas_corr_ndif_100k500_s": 60.5553020750001,
+  "fast_corr_ndif_100k500_s": 5.162202870999863,
+  "fast_corr_ndif_100k50_s": 0.2741002110001318
+ },
+ "env": {
+  "python": "3.13.18",
+  "platform": "Linux-6.18.44-fc-v233-x86_64-with-glibc2.39",
+  "cpu_count": 2,
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "sklearn": "1.9.1",
+  "experiments": [
+   "LARGE"
+  ],
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "time": "2026-11-04 10:02:20"
+ },
+ "em": {
+  "n_blocks": 40,
+  "n_datasets": 8,
+  "datasets": [
+   "MagicTelescope",
+   "banknote",
+   "ecoli",
+   "ionosphere",
+   "spambase",
+   "wine",
+   "wine-quality-red",
+   "yeast"
+  ],
+  "caps": [
+   1,
+   2,
+   3,
+   5,
+   10,
+   20,
+   50
+  ],
+  "variants": {
+   "NDI-F": {
+    "rmse": 0.900557626332499,
+    "time_s": 0.003607575983308632,
+    "time_rel_ndif": 1.0,
+    "iters_median": 0.0,
+    "iters_q90": 0.0,
+    "iters_max": 0.0,
+    "gain_share_median": 0.1262810531743891,
+    "gain_share_mean": 0.2509651044554043,
+    "better_than_ndif": 0,
+    "better_than_conv": 7,
+    "worse_than_start": 1,
+    "by_setting": {
+     "MAR-30": 0.8774505553721633,
+     "MCAR-10": 0.811405069585777,
+     "MCAR-30": 0.8460532830838389,
+     "MCAR-50": 0.8858032813686105,
+     "MNAR-30": 1.0820759422521053
+    }
+   },
+   "NDI-F-noclip": {
+    "rmse": 0.9070744879501614,
+    "time_s": 0.0031869775750085665,
+    "time_rel_ndif": 0.8834124602652664,
+    "iters_median": 0.0,
+    "iters_q90": 0.0,
+    "iters_max": 0.0,
+    "gain_share_median": 0.0,
+    "gain_share_mean": 0.0,
+    "better_than_ndif": 1,
+    "better_than_conv": 5,
+    "worse_than_start": 0,
+    "by_setting": {
+     "MAR-30": 0.8851222774619805,
+     "MCAR-10": 0.8177196397286989,
+     "MCAR-30": 0.8528555330420635,
+     "MCAR-50": 0.8937097014851185,
+     "MNAR-30": 1.0859652880329456
+    }
+   },
+   "EM-FA@1": {
+    "rmse": 0.8868883311711258,
+    "time_s": 0.008854375024990632,
+    "time_rel_ndif": 2.454383515678575,
+    "iters_median": 1.0,
+    "iters_q90": 1.0,
+    "iters_max": 1.0,
+    "gain_share_median": 0.5627465977690841,
+    "gain_share_mean": 0.6338728705676713,
+    "better_than_ndif": 36,
+    "better_than_conv": 9,
+    "worse_than_start": 0,
+    "by_setting": {
+     "MAR-30": 0.8621060967182725,
+     "MCAR-10": 0.8015647750680924,
+     "MCAR-30": 0.8385333367478445,
+     "MCAR-50": 0.8819734296538817,
+     "MNAR-30": 1.0502640176675386
+    }
+   },
+   "EM-FA@2": {
+    "rmse": 0.8807038937826551,
+    "time_s": 0.013657929974897298,
+    "time_rel_ndif": 3.78590223410101,
+    "iters_median": 2.0,
+    "iters_q90": 2.0,
+    "iters_max": 2.0,
+    "gain_share_median": 0.7194144086517561,
+    "gain_share_mean": 0.812858998158302,
+    "better_than_ndif": 37,
+    "better_than_conv": 9,
+    "worse_than_start": 0,
+    "by_setting": {
+     "MAR-30": 0.8559284268275319,
+     "MCAR-10": 0.7963344241099111,
+     "MCAR-30": 0.8319338617345844,
+     "MCAR-50": 0.8766816735467555,
+     "MNAR-30": 1.042641082694493
+    }
+   },
+   "EM-FA@3": {
+    "rmse": 0.877754053232602,
+    "time_s": 0.015181004608317939,
+    "time_rel_ndif": 4.208090052311225,
+    "iters_median": 3.0,
+    "iters_q90": 3.0,
+    "iters_max": 3.0,
+    "gain_share_median": 0.7983133587000909,
+    "gain_share_mean": 0.8927084787379876,
+    "better_than_ndif": 39,
+    "better_than_conv": 11,
+    "worse_than_start": 0,
+    "by_setting": {
+     "MAR-30": 0.8527454379559081,
+     "MCAR-10": 0.7940441415019125,
+     "MCAR-30": 0.8285027511324241,
+     "MCAR-50": 0.8737605582939418,
+     "MNAR-30": 1.0397173772788235
+    }
+   },
+   "EM-FA@5": {
+    "rmse": 0.875146331648725,
+    "time_s": 0.021640694558421526,
+    "time_rel_ndif": 5.9986801826344625,
+    "iters_median": 5.0,
+    "iters_q90": 5.0,
+    "iters_max": 5.0,
+    "gain_share_median": 0.883187462674274,
+    "gain_share_mean": 0.9675964666775064,
+    "better_than_ndif": 39,
+    "better_than_conv": 13,
+    "worse_than_start": 0,
+    "by_setting": {
+     "MAR-30": 0.8495265753326722,
+     "MCAR-10": 0.7923450863873172,
+     "MCAR-30": 0.8256370834084299,
+     "MCAR-50": 0.87097128499385,
+     "MNAR-30": 1.0372516281213562
+    }
+   },
+   "EM-FA@10": {
+    "rmse": 0.8737485442411609,
+    "time_s": 0.03711947280820212,
+    "time_rel_ndif": 10.289311432370322,
+    "iters_median": 10.0,
+    "iters_q90": 10.0,
+    "iters_max": 10.0,
+    "gain_share_median": 0.9540966061980636,
+    "gain_share_mean": 1.023638194776476,
+    "better_than_ndif": 37,
+    "better_than_conv": 14,
+    "worse_than_start": 1,
+    "by_setting": {
+     "MAR-30": 0.8476932319148622,
+     "MCAR-10": 0.7914865460004818,
+     "MCAR-30": 0.8247299087835955,
+     "MCAR-50": 0.8695548776595391,
+     "MNAR-30": 1.0352781568473262
+    }
+   },
+   "EM-FA@20": {
+    "rmse": 0.873833217178834,
+    "time_s": 0.0686279668915934,
+    "time_rel_ndif": 19.023290766187085,
+    "iters_median": 20.0,
+    "iters_q90": 20.0,
+    "iters_max": 20.0,
+    "gain_share_median": 0.9880657255620792,
+    "gain_share_mean": 1.0518242449966966,
+    "better_than_ndif": 37,
+    "better_than_conv": 17,
+    "worse_than_start": 1,
+    "by_setting": {
+     "MAR-30": 0.8486109953082606,
+     "MCAR-10": 0.7901159153928342,
+     "MCAR-30": 0.8251881393334536,
+     "MCAR-50": 0.871095571594728,
+     "MNAR-30": 1.034155464264893
+    }
+   },
+   "EM-FA@50": {
+    "rmse": 0.8749958926559916,
+    "time_s": 0.16234787555000968,
+    "time_rel_ndif": 45.00192824798519,
+    "iters_median": 50.0,
+    "iters_q90": 50.0,
+    "iters_max": 50.0,
+    "gain_share_median": 1.000565386124947,
+    "gain_share_mean": 1.0224632251377554,
+    "better_than_ndif": 34,
+    "better_than_conv": 25,
+    "worse_than_start": 2,
+    "by_setting": {
+     "MAR-30": 0.8502339845347135,
+     "MCAR-10": 0.7891937515460725,
+     "MCAR-30": 0.8266934199870988,
+     "MCAR-50": 0.8755689899207206,
+     "MNAR-30": 1.0332893172913526
+    }
+   },
+   "EM-FA@conv:ndif": {
+    "rmse": 0.8759351650668841,
+    "time_s": 0.47514893146655285,
+    "time_rel_ndif": 131.70864138827574,
+    "iters_median": 110.5,
+    "iters_q90": 290.3,
+    "iters_max": 467.0,
+    "gain_share_median": 1.0,
+    "gain_share_mean": 1.0,
+    "better_than_ndif": 33,
+    "better_than_conv": 0,
+    "worse_than_start": 5,
+    "by_setting": {
+     "MAR-30": 0.8515745616488527,
+     "MCAR-10": 0.7887220736898255,
+     "MCAR-30": 0.8266461619710751,
+     "MCAR-50": 0.8794748895229492,
+     "MNAR-30": 1.0332581385017179
+    }
+   },
+   "EM-FA@conv:pca": {
+    "rmse": 0.875945820245502,
+    "time_s": 0.5205091419000079,
+    "time_rel_ndif": 144.28223946169834,
+    "iters_median": 116.0,
+    "iters_q90": 288.1,
+    "iters_max": 604.0,
+    "gain_share_median": 1.000086361615314,
+    "gain_share_mean": 1.0000014810431648,
+    "better_than_ndif": 33,
+    "better_than_conv": 25,
+    "worse_than_start": 5,
+    "by_setting": {
+     "MAR-30": 0.8529879207060735,
+     "MCAR-10": 0.7887335335211481,
+     "MCAR-30": 0.8261490699353772,
+     "MCAR-50": 0.8786615188449539,
+     "MNAR-30": 1.0331970582199572
+    }
+   },
+   "EM-FA@conv:random": {
+    "rmse": 0.8734540454507765,
+    "time_s": 0.6002708547583703,
+    "time_rel_ndif": 166.39174269251046,
+    "iters_median": 139.5,
+    "iters_q90": 271.1000000000001,
+    "iters_max": 522.0,
+    "gain_share_median": 1.00899985716467,
+    "gain_share_mean": 1.0466216129445407,
+    "better_than_ndif": 35,
+    "better_than_conv": 28,
+    "worse_than_start": 3,
+    "by_setting": {
+     "MAR-30": 0.8485894927445919,
+     "MCAR-10": 0.7879969858353139,
+     "MCAR-30": 0.8224683451899473,
+     "MCAR-50": 0.8764133831583689,
+     "MNAR-30": 1.0318020203256606
+    }
+   }
+  },
+  "gain_positive_blocks": 35,
+  "conv_worse_than_ndif_blocks": 7,
+  "best_cap": "EM-FA@10",
+  "conv_minus_best_cap": 0.0021866208257231845,
+  "iterations_to_reach": {
+   "0.5": {
+    "median": 1.0,
+    "q75": 2.0,
+    "q90": 2.0
+   },
+   "0.8": {
+    "median": 5.0,
+    "q75": 7.5,
+    "q90": 10.0
+   },
+   "0.9": {
+    "median": 10.0,
+    "q75": 10.0,
+    "q90": 38.00000000000004
+   }
+  },
+  "loglik_ndif_minus_pca": {
+   "mean": -0.1572992115630541,
+   "min": -16.746152329051256,
+   "max": 12.761015065661923,
+   "ndif_higher_blocks": 21
+  },
+  "loglik_ndif_minus_random": {
+   "mean": -2.010897193737429,
+   "min": -38.60446163038432,
+   "max": 51.09863745892653,
+   "ndif_higher_blocks": 14
+  },
+  "starts": {
+   "pca": {
+    "ll_per_cell_abs_max": 0.005515457843257057,
+    "ll_per_cell_mean": -3.740466903239652e-05,
+    "rmse_diff_mean": -1.0655178617920609e-05,
+    "rmse_diff_abs_max": 0.027667657592408745,
+    "ndif_lower_error_runs": 47,
+    "runs": 120,
+    "iters_median": 116.0
+   },
+   "random": {
+    "ll_per_cell_abs_max": 0.008463278649749743,
+    "ll_per_cell_mean": -0.0002543963007692028,
+    "rmse_diff_mean": 0.00248111961610757,
+    "rmse_diff_abs_max": 0.11006664920790032,
+    "ndif_lower_error_runs": 44,
+    "runs": 120,
+    "iters_median": 139.5
+   },
+   "ndif": {
+    "iters_median": 110.5
+   }
+  },
+  "conv_worse_than_ndif_datasets": [
+   "ecoli",
+   "ionosphere",
+   "spambase",
+   "wine"
+  ],
+  "cap10_worse_than_ndif_blocks": 3,
+  "per_dataset": {
+   "MagicTelescope": {
+    "NDI-F": 0.8796985768644985,
+    "NDI-F-noclip": 0.8847785676326503,
+    "EM-FA@1": 0.859617250817809,
+    "EM-FA@3": 0.8468445778372333,
+    "EM-FA@10": 0.8388491239854335,
+    "EM-FA@conv:ndif": 0.8332907614901366
+   },
+   "banknote": {
+    "NDI-F": 0.8465854510029811,
+    "NDI-F-noclip": 0.8492267576852497,
+    "EM-FA@1": 0.8268363340619824,
+    "EM-FA@3": 0.818253010909111,
+    "EM-FA@10": 0.8136916752400177,
+    "EM-FA@conv:ndif": 0.8119699028483186
+   },
+   "ecoli": {
+    "NDI-F": 0.8496619257067552,
+    "NDI-F-noclip": 0.8541193951872709,
+    "EM-FA@1": 0.8343785113672814,
+    "EM-FA@3": 0.8273186846651136,
+    "EM-FA@10": 0.8263793874091873,
+    "EM-FA@conv:ndif": 0.8352664591473886
+   },
+   "ionosphere": {
+    "NDI-F": 0.8761694879474256,
+    "NDI-F-noclip": 0.8887887437487481,
+    "EM-FA@1": 0.8738095581628098,
+    "EM-FA@3": 0.8677976580975659,
+    "EM-FA@10": 0.8678377795934212,
+    "EM-FA@conv:ndif": 0.8822913594543165
+   },
+   "spambase": {
+    "NDI-F": 1.003522828673297,
+    "NDI-F-noclip": 1.0122317976330835,
+    "EM-FA@1": 0.9999948459563136,
+    "EM-FA@3": 0.9926900478037688,
+    "EM-FA@10": 0.9887236692252541,
+    "EM-FA@conv:ndif": 0.996326657194556
+   },
+   "wine": {
+    "NDI-F": 0.839343467424329,
+    "NDI-F-noclip": 0.8396191891784287,
+    "EM-FA@1": 0.817920984669516,
+    "EM-FA@3": 0.8116094967172713,
+    "EM-FA@10": 0.8090574290645233,
+    "EM-FA@conv:ndif": 0.8084046234083295
+   },
+   "wine-quality-red": {
+    "NDI-F": 0.8917790204539584,
+    "NDI-F-noclip": 0.8948213867428138,
+    "EM-FA@1": 0.8788070971919332,
+    "EM-FA@3": 0.8710080892488673,
+    "EM-FA@10": 0.8660906543661687,
+    "EM-FA@conv:ndif": 0.8613813175545939
+   },
+   "yeast": {
+    "NDI-F": 1.0177002525867476,
+    "NDI-F-noclip": 1.033010065793046,
+    "EM-FA@1": 1.0037420671413624,
+    "EM-FA@3": 0.9865108605818846,
+    "EM-FA@10": 0.9793586350452814,
+    "EM-FA@conv:ndif": 0.9785502394374326
+   }
+  }
+ },
+ "k": {
+  "n_blocks": 40,
+  "n_datasets": 8,
+  "datasets": [
+   "MagicTelescope",
+   "banknote",
+   "ecoli",
+   "ionosphere",
+   "spambase",
+   "wine",
+   "wine-quality-red",
+   "yeast"
+  ],
+  "order": [
+   "k=1",
+   "k=2",
+   "k=3",
+   "k=5",
+   "k=Kaiser",
+   "k=10",
+   "k=20",
+   "k=Kaiser,max_k=p-1",
+   "floor=0.01",
+   "floor=0.1",
+   "floor=0.2",
+   "k=validated"
+  ],
+  "variants": {
+   "k=1": {
+    "rmse": 0.9336646332647408,
+    "rank": 9.95,
+    "k_used_mean": 1.0,
+    "time_s": 0.0025239726416808597,
+    "by_setting": {
+     "MAR-30": 0.8973274346868498,
+     "MCAR-10": 0.866847028329498,
+     "MCAR-30": 0.8823678487337565,
+     "MCAR-50": 0.9006496885498383,
+     "MNAR-30": 1.121131166023761
+    },
+    "better_than_kaiser": 7,
+    "worse_than_kaiser": 33
+   },
+   "k=2": {
+    "rmse": 0.9043090406428099,
+    "rank": 6.25,
+    "k_used_mean": 2.0,
+    "time_s": 0.002650858774889708,
+    "by_setting": {
+     "MAR-30": 0.8743392519133923,
+     "MCAR-10": 0.8259248924763337,
+     "MCAR-30": 0.8500737778638061,
+     "MCAR-50": 0.8789415903326842,
+     "MNAR-30": 1.0922656906278334
+    },
+    "better_than_kaiser": 21,
+    "worse_than_kaiser": 14
+   },
+   "k=3": {
+    "rmse": 0.9010676626265948,
+    "rank": 6.325,
+    "k_used_mean": 3.0,
+    "time_s": 0.0027435275999929377,
+    "by_setting": {
+     "MAR-30": 0.8746533081500276,
+     "MCAR-10": 0.8173990087215289,
+     "MCAR-30": 0.8452639678486398,
+     "MCAR-50": 0.8786881366857373,
+     "MNAR-30": 1.0893338917270403
+    },
+    "better_than_kaiser": 17,
+    "worse_than_kaiser": 13
+   },
+   "k=5": {
+    "rmse": 0.90336608171156,
+    "rank": 6.9375,
+    "k_used_mean": 4.75,
+    "time_s": 0.003081980358289561,
+    "by_setting": {
+     "MAR-30": 0.8843856571750539,
+     "MCAR-10": 0.8169164153735488,
+     "MCAR-30": 0.8429058175986985,
+     "MCAR-50": 0.8845205018513089,
+     "MNAR-30": 1.08810201655919
+    },
+    "better_than_kaiser": 18,
+    "worse_than_kaiser": 22
+   },
+   "k=Kaiser": {
+    "rmse": 0.900557626332499,
+    "rank": 6.825,
+    "k_used_mean": 4.75,
+    "time_s": 0.0033514264417438245,
+    "by_setting": {
+     "MAR-30": 0.8774505553721633,
+     "MCAR-10": 0.811405069585777,
+     "MCAR-30": 0.8460532830838389,
+     "MCAR-50": 0.8858032813686105,
+     "MNAR-30": 1.0820759422521053
+    },
+    "better_than_kaiser": 0,
+    "worse_than_kaiser": 0
+   },
+   "k=10": {
+    "rmse": 0.890527152547465,
+    "rank": 4.9375,
+    "k_used_mean": 8.125,
+    "time_s": 0.004219402574941901,
+    "by_setting": {
+     "MAR-30": 0.8743901069215428,
+     "MCAR-10": 0.7923503919781123,
+     "MCAR-30": 0.8287097062019184,
+     "MCAR-50": 0.8737757907091352,
+     "MNAR-30": 1.0834097669266158
+    },
+    "better_than_kaiser": 23,
+    "worse_than_kaiser": 12
+   },
+   "k=20": {
+    "rmse": 0.8949983369437472,
+    "rank": 5.6625,
+    "k_used_mean": 10.875,
+    "time_s": 0.005701892166568192,
+    "by_setting": {
+     "MAR-30": 0.8814727688787678,
+     "MCAR-10": 0.7949681412057279,
+     "MCAR-30": 0.8356611394421352,
+     "MCAR-50": 0.8770529550391097,
+     "MNAR-30": 1.0858366801529948
+    },
+    "better_than_kaiser": 23,
+    "worse_than_kaiser": 17
+   },
+   "k=Kaiser,max_k=p-1": {
+    "rmse": 0.9035135666991622,
+    "rank": 7.675,
+    "k_used_mean": 6.133333333333333,
+    "time_s": 0.004822811591581383,
+    "by_setting": {
+     "MAR-30": 0.8814182527056158,
+     "MCAR-10": 0.8131630317384839,
+     "MCAR-30": 0.8489008689841382,
+     "MCAR-50": 0.8893723756961107,
+     "MNAR-30": 1.0847133043714625
+    },
+    "better_than_kaiser": 0,
+    "worse_than_kaiser": 6
+   },
+   "floor=0.01": {
+    "rmse": 0.9009547045410592,
+    "rank": 7.4375,
+    "k_used_mean": 4.75,
+    "time_s": 0.0034168004415883963,
+    "by_setting": {
+     "MAR-30": 0.8786637588029275,
+     "MCAR-10": 0.8114298914148512,
+     "MCAR-30": 0.8460532808686168,
+     "MCAR-50": 0.8865803766254521,
+     "MNAR-30": 1.0820462149934484
+    },
+    "better_than_kaiser": 2,
+    "worse_than_kaiser": 14
+   },
+   "floor=0.1": {
+    "rmse": 0.8999544440199081,
+    "rank": 5.7625,
+    "k_used_mean": 4.75,
+    "time_s": 0.00335886702490214,
+    "by_setting": {
+     "MAR-30": 0.8756536293148849,
+     "MCAR-10": 0.8113317195130274,
+     "MCAR-30": 0.8459222623042921,
+     "MCAR-50": 0.8847298769344516,
+     "MNAR-30": 1.082134732032884
+    },
+    "better_than_kaiser": 26,
+    "worse_than_kaiser": 5
+   },
+   "floor=0.2": {
+    "rmse": 0.8980134484195469,
+    "rank": 5.625,
+    "k_used_mean": 4.75,
+    "time_s": 0.003427143274984648,
+    "by_setting": {
+     "MAR-30": 0.8715999091004589,
+     "MCAR-10": 0.8108917278810814,
+     "MCAR-30": 0.8443953487594648,
+     "MCAR-50": 0.88060717907878,
+     "MNAR-30": 1.0825730772779498
+    },
+    "better_than_kaiser": 25,
+    "worse_than_kaiser": 15
+   },
+   "k=validated": {
+    "rmse": 0.8868685676567521,
+    "rank": 4.6125,
+    "k_used_mean": 4.325,
+    "time_s": 0.03204559031655658,
+    "by_setting": {
+     "MAR-30": 0.8657933804930127,
+     "MCAR-10": 0.7901404185142553,
+     "MCAR-30": 0.8270852481721591,
+     "MCAR-50": 0.8721461323382881,
+     "MNAR-30": 1.0791776587660453
+    },
+    "better_than_kaiser": 27,
+    "worse_than_kaiser": 12
+   }
+  },
+  "oracle_fixed_k": {
+   "rmse": 0.8777372501216305,
+   "kaiser_minus_oracle": 0.02282037621086841,
+   "validated_minus_oracle": 0.009131317535121508
+  },
+  "best_fixed_k_by_dataset": {
+   "MagicTelescope": "k=10",
+   "banknote": "k=2",
+   "ecoli": "k=10",
+   "ionosphere": "k=5",
+   "spambase": "k=3",
+   "wine": "k=3",
+   "wine-quality-red": "k=10",
+   "yeast": "k=1"
+  },
+  "kaiser_k_by_dataset": {
+   "MagicTelescope": 2.9333333333333336,
+   "banknote": 2.0,
+   "ecoli": 2.8666666666666663,
+   "ionosphere": 9.0,
+   "spambase": 10.0,
+   "wine": 3.4666666666666663,
+   "wine-quality-red": 4.199999999999999,
+   "yeast": 3.5333333333333328
+  },
+  "validated_k_by_dataset": {
+   "MagicTelescope": 4.3999999999999995,
+   "banknote": 2.6,
+   "ecoli": 2.933333333333333,
+   "ionosphere": 5.133333333333334,
+   "spambase": 3.9333333333333336,
+   "wine": 3.333333333333333,
+   "wine-quality-red": 10.0,
+   "yeast": 2.2666666666666666
+  },
+  "validated_vs_kaiser": {
+   "better": 27,
+   "worse": 12,
+   "wilcoxon_p": 0.0024598708359235217,
+   "time_ratio": 9.561776417769897
+  }
+ },
+ "rate": {
+  "datasets": [
+   "MagicTelescope",
+   "banknote",
+   "ecoli",
+   "ionosphere",
+   "spambase",
+   "wine",
+   "wine-quality-red",
+   "yeast"
+  ],
+  "n_datasets": 8,
+  "by_rate": {
+   "0.7": {
+    "n_datasets": 8,
+    "methods": {
+     "Mean": {
+      "rmse": 0.9939168232890867,
+      "rank": 9.125,
+      "better_than_ndif": 1,
+      "time_s": 0.0003739671252181286
+     },
+     "NDI-0": {
+      "rmse": 1.1444185472643038,
+      "rank": 11.125,
+      "better_than_ndif": 0,
+      "time_s": 0.0013197966252391292
+     },
+     "NDI-S": {
+      "rmse": 0.9168747669988409,
+      "rank": 2.75,
+      "better_than_ndif": 7,
+      "time_s": 0.0020418024581279415
+     },
+     "NDI-F": {
+      "rmse": 0.9409680888429302,
+      "rank": 5.875,
+      "better_than_ndif": 0,
+      "time_s": 0.003534026499816363
+     },
+     "NDI-F-V": {
+      "rmse": 0.916500520067977,
+      "rank": 2.375,
+      "better_than_ndif": 8,
+      "time_s": 0.030470609416776467
+     },
+     "GaussCM": {
+      "rmse": 0.9267168878858895,
+      "rank": 3.25,
+      "better_than_ndif": 7,
+      "time_s": 0.02759786699978875
+     },
+     "EM-FA": {
+      "rmse": 0.9659307777386199,
+      "rank": 6.25,
+      "better_than_ndif": 4,
+      "time_s": 1.7703035436669174
+     },
+     "EM-PPCA": {
+      "rmse": 0.9741353074400296,
+      "rank": 7.125,
+      "better_than_ndif": 3,
+      "time_s": 0.74562612404164
+     },
+     "KNN": {
+      "rmse": 0.9941775510166333,
+      "rank": 9.25,
+      "better_than_ndif": 1,
+      "time_s": 0.32471538608350176
+     },
+     "MICE": {
+      "rmse": 0.9945869448175764,
+      "rank": 8.625,
+      "better_than_ndif": 0,
+      "time_s": 0.20896927658327508
+     },
+     "MissForest": {
+      "rmse": 0.9648379330968936,
+      "rank": 6.625,
+      "better_than_ndif": 3,
+      "time_s": 2.5115394413749073
+     },
+     "SoftImpute": {
+      "rmse": 0.9432373790081656,
+      "rank": 5.625,
+      "better_than_ndif": 5,
+      "time_s": 0.1349144901249322
+     }
+    },
+    "order": [
+     "NDI-F-V",
+     "NDI-S",
+     "GaussCM",
+     "SoftImpute",
+     "NDI-F",
+     "EM-FA",
+     "MissForest",
+     "EM-PPCA",
+     "MICE",
+     "Mean",
+     "KNN",
+     "NDI-0"
+    ],
+    "CD": 5.89147785904011,
+    "friedman_p": 3.4122275283988527e-07
+   },
+   "0.8": {
+    "n_datasets": 8,
+    "methods": {
+     "Mean": {
+      "rmse": 0.9942967765334365,
+      "rank": 7.5,
+      "better_than_ndif": 4,
+      "time_s": 0.0003750193751177914
+     },
+     "NDI-0": {
+      "rmse": 1.3983793680651626,
+      "rank": 11.25,
+      "better_than_ndif": 0,
+      "time_s": 0.0011029304165124584
+     },
+     "NDI-S": {
+      "rmse": 0.9502095014476251,
+      "rank": 2.5,
+      "better_than_ndif": 7,
+      "time_s": 0.0019808981667210376
+     },
+     "NDI-F": {
+      "rmse": 0.9711281530050084,
+      "rank": 6.125,
+      "better_than_ndif": 0,
+      "time_s": 0.0033940981247723833
+     },
+     "NDI-F-V": {
+      "rmse": 0.9493691842365306,
+      "rank": 3.0,
+      "better_than_ndif": 7,
+      "time_s": 0.0316413927497099
+     },
+     "GaussCM": {
+      "rmse": 0.9565293973884232,
+      "rank": 3.25,
+      "better_than_ndif": 7,
+      "time_s": 0.021002807291551975
+     },
+     "EM-FA": {
+      "rmse": 0.994717975036733,
+      "rank": 5.25,
+      "better_than_ndif": 5,
+      "time_s": 1.948391841416651
+     },
+     "EM-PPCA": {
+      "rmse": 1.0094853637611274,
+      "rank": 7.875,
+      "better_than_ndif": 2,
+      "time_s": 1.2634601168330544
+     },
+     "KNN": {
+      "rmse": 1.0114551515687284,
+      "rank": 8.125,
+      "better_than_ndif": 2,
+      "time_s": 0.2909146035832085
+     },
+     "MICE": {
+      "rmse": 1.022035766325334,
+      "rank": 9.25,
+      "better_than_ndif": 1,
+      "time_s": 0.2066735646668197
+     },
+     "MissForest": {
+      "rmse": 1.0188937508519418,
+      "rank": 8.375,
+      "better_than_ndif": 1,
+      "time_s": 2.35525895199991
+     },
+     "SoftImpute": {
+      "rmse": 0.9687286372043871,
+      "rank": 5.5,
+      "better_than_ndif": 5,
+      "time_s": 0.1294195846667965
+     }
+    },
+    "order": [
+     "NDI-S",
+     "NDI-F-V",
+     "GaussCM",
+     "EM-FA",
+     "SoftImpute",
+     "NDI-F",
+     "Mean",
+     "EM-PPCA",
+     "KNN",
+     "MissForest",
+     "MICE",
+     "NDI-0"
+    ],
+    "CD": 5.89147785904011,
+    "friedman_p": 7.223047443859257e-07
+   }
+  }
+ },
+ "smalln": {
+  "datasets": [
+   "ionosphere",
+   "mfeat-factors",
+   "musk2",
+   "optdigits",
+   "satimage",
+   "spambase",
+   "texture"
+  ],
+  "n_datasets": 7,
+  "p_by_dataset": {
+   "ionosphere": 33,
+   "mfeat-factors": 216,
+   "musk2": 168,
+   "optdigits": 59,
+   "satimage": 36,
+   "spambase": 57,
+   "texture": 40
+  },
+  "by_n": {
+   "50": {
+    "n_datasets": 7,
+    "methods": {
+     "Mean": {
+      "rmse": 1.0238331545451567,
+      "rank": 9.0,
+      "better_than_ndif": 1,
+      "worse_than_mean": 0,
+      "time_s": 0.00010578709519730011
+     },
+     "NDI-S": {
+      "rmse": 0.7801294672243902,
+      "rank": 6.571428571428571,
+      "better_than_ndif": 2,
+      "worse_than_mean": 0,
+      "time_s": 0.0014732797619563334
+     },
+     "NDI-F": {
+      "rmse": 0.7282827408853686,
+      "rank": 5.357142857142857,
+      "better_than_ndif": 0,
+      "worse_than_mean": 1,
+      "time_s": 0.004295203952443343
+     },
+     "NDI-F-V": {
+      "rmse": 0.7205306650431241,
+      "rank": 4.357142857142857,
+      "better_than_ndif": 3,
+      "worse_than_mean": 0,
+      "time_s": 0.00739557080946502
+     },
+     "GaussCM": {
+      "rmse": 0.8043392019193664,
+      "rank": 7.714285714285714,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.014946439809439906
+     },
+     "EM-FA": {
+      "rmse": 1.234760692232609,
+      "rank": 6.571428571428571,
+      "better_than_ndif": 3,
+      "worse_than_mean": 3,
+      "time_s": 0.2019675948571646
+     },
+     "EM-PPCA": {
+      "rmse": 1.131356712056651,
+      "rank": 6.428571428571429,
+      "better_than_ndif": 3,
+      "worse_than_mean": 3,
+      "time_s": 0.06857659514281247
+     },
+     "KNN": {
+      "rmse": 0.7667267294818582,
+      "rank": 6.428571428571429,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.01916135090472635
+     },
+     "MICE": {
+      "rmse": 0.8675328225890909,
+      "rank": 7.285714285714286,
+      "better_than_ndif": 2,
+      "worse_than_mean": 3,
+      "time_s": 3.2842192591904116
+     },
+     "MissForest": {
+      "rmse": 0.7245013062245962,
+      "rank": 4.285714285714286,
+      "better_than_ndif": 5,
+      "worse_than_mean": 1,
+      "time_s": 11.505125410952326
+     },
+     "SoftImpute": {
+      "rmse": 0.6622810487364867,
+      "rank": 2.0,
+      "better_than_ndif": 7,
+      "worse_than_mean": 1,
+      "time_s": 0.06393237604764913
+     }
+    },
+    "order": [
+     "SoftImpute",
+     "MissForest",
+     "NDI-F-V",
+     "NDI-F",
+     "EM-PPCA",
+     "KNN",
+     "NDI-S",
+     "EM-FA",
+     "MICE",
+     "GaussCM",
+     "Mean"
+    ]
+   },
+   "100": {
+    "n_datasets": 7,
+    "methods": {
+     "Mean": {
+      "rmse": 1.0182699192224212,
+      "rank": 9.857142857142858,
+      "better_than_ndif": 1,
+      "worse_than_mean": 0,
+      "time_s": 0.00017759295245746982
+     },
+     "NDI-S": {
+      "rmse": 0.7483050256171548,
+      "rank": 7.428571428571429,
+      "better_than_ndif": 2,
+      "worse_than_mean": 0,
+      "time_s": 0.0016200276191045855
+     },
+     "NDI-F": {
+      "rmse": 0.669961975725114,
+      "rank": 6.0,
+      "better_than_ndif": 0,
+      "worse_than_mean": 1,
+      "time_s": 0.0037450485238184764
+     },
+     "NDI-F-V": {
+      "rmse": 0.6485167725881585,
+      "rank": 4.0,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 0.016110152857176433
+     },
+     "GaussCM": {
+      "rmse": 0.7264004336588871,
+      "rank": 8.0,
+      "better_than_ndif": 1,
+      "worse_than_mean": 1,
+      "time_s": 0.02514549933331567
+     },
+     "EM-FA": {
+      "rmse": 0.8482571747451321,
+      "rank": 7.142857142857143,
+      "better_than_ndif": 3,
+      "worse_than_mean": 2,
+      "time_s": 0.19281161519055393
+     },
+     "EM-PPCA": {
+      "rmse": 0.7464104870572471,
+      "rank": 6.285714285714286,
+      "better_than_ndif": 4,
+      "worse_than_mean": 2,
+      "time_s": 0.07993682890478984
+     },
+     "KNN": {
+      "rmse": 0.6969477199688275,
+      "rank": 6.714285714285714,
+      "better_than_ndif": 1,
+      "worse_than_mean": 1,
+      "time_s": 0.02255163233338036
+     },
+     "MICE": {
+      "rmse": 0.6764101852182981,
+      "rank": 4.714285714285714,
+      "better_than_ndif": 4,
+      "worse_than_mean": 1,
+      "time_s": 4.286025862714291
+     },
+     "MissForest": {
+      "rmse": 0.643419163342571,
+      "rank": 3.857142857142857,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 11.45217855890481
+     },
+     "SoftImpute": {
+      "rmse": 0.5851717450644064,
+      "rank": 2.0,
+      "better_than_ndif": 7,
+      "worse_than_mean": 0,
+      "time_s": 0.12836765385721566
+     }
+    },
+    "order": [
+     "SoftImpute",
+     "MissForest",
+     "NDI-F-V",
+     "MICE",
+     "NDI-F",
+     "EM-PPCA",
+     "KNN",
+     "EM-FA",
+     "NDI-S",
+     "GaussCM",
+     "Mean"
+    ]
+   },
+   "200": {
+    "n_datasets": 7,
+    "methods": {
+     "Mean": {
+      "rmse": 1.010805119046629,
+      "rank": 10.285714285714286,
+      "better_than_ndif": 0,
+      "worse_than_mean": 0,
+      "time_s": 0.0002664747142997857
+     },
+     "NDI-S": {
+      "rmse": 0.7227660664860285,
+      "rank": 8.0,
+      "better_than_ndif": 1,
+      "worse_than_mean": 0,
+      "time_s": 0.0021076655714403853
+     },
+     "NDI-F": {
+      "rmse": 0.6199937700309806,
+      "rank": 5.857142857142857,
+      "better_than_ndif": 0,
+      "worse_than_mean": 0,
+      "time_s": 0.004027461047588105
+     },
+     "NDI-F-V": {
+      "rmse": 0.579742852125999,
+      "rank": 3.5714285714285716,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 0.03153931509535005
+     },
+     "GaussCM": {
+      "rmse": 0.6405419000384092,
+      "rank": 6.428571428571429,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.044463828380923456
+     },
+     "EM-FA": {
+      "rmse": 0.6780797377587422,
+      "rank": 8.142857142857142,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.239574723238071
+     },
+     "EM-PPCA": {
+      "rmse": 0.6514942984870654,
+      "rank": 7.142857142857143,
+      "better_than_ndif": 3,
+      "worse_than_mean": 1,
+      "time_s": 0.0855365827619174
+     },
+     "KNN": {
+      "rmse": 0.6393390662912629,
+      "rank": 6.857142857142857,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.03647179295235431
+     },
+     "MICE": {
+      "rmse": 0.5935684326290653,
+      "rank": 4.428571428571429,
+      "better_than_ndif": 4,
+      "worse_than_mean": 1,
+      "time_s": 5.954657296809598
+     },
+     "MissForest": {
+      "rmse": 0.5756224174614276,
+      "rank": 3.2857142857142856,
+      "better_than_ndif": 7,
+      "worse_than_mean": 0,
+      "time_s": 11.735112249428612
+     },
+     "SoftImpute": {
+      "rmse": 0.5322744076764794,
+      "rank": 2.0,
+      "better_than_ndif": 7,
+      "worse_than_mean": 0,
+      "time_s": 0.21667512361907587
+     }
+    },
+    "order": [
+     "SoftImpute",
+     "MissForest",
+     "NDI-F-V",
+     "MICE",
+     "NDI-F",
+     "GaussCM",
+     "KNN",
+     "EM-PPCA",
+     "NDI-S",
+     "EM-FA",
+     "Mean"
+    ]
+   },
+   "500": {
+    "n_datasets": 6,
+    "methods": {
+     "Mean": {
+      "rmse": 1.003306329316673,
+      "rank": 10.333333333333334,
+      "better_than_ndif": 0,
+      "worse_than_mean": 0,
+      "time_s": 0.0006377487777373722
+     },
+     "NDI-S": {
+      "rmse": 0.6885451330487946,
+      "rank": 8.666666666666666,
+      "better_than_ndif": 1,
+      "worse_than_mean": 0,
+      "time_s": 0.006520161166614905
+     },
+     "NDI-F": {
+      "rmse": 0.5696498747525979,
+      "rank": 7.333333333333333,
+      "better_than_ndif": 0,
+      "worse_than_mean": 0,
+      "time_s": 0.007523663333384077
+     },
+     "NDI-F-V": {
+      "rmse": 0.49142599731891057,
+      "rank": 3.1666666666666665,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 0.12250627672225765
+     },
+     "GaussCM": {
+      "rmse": 0.517226062226217,
+      "rank": 5.166666666666667,
+      "better_than_ndif": 5,
+      "worse_than_mean": 1,
+      "time_s": 0.1257695535000493
+     },
+     "EM-FA": {
+      "rmse": 0.5981212308509261,
+      "rank": 8.333333333333334,
+      "better_than_ndif": 2,
+      "worse_than_mean": 1,
+      "time_s": 0.3053336429444597
+     },
+     "EM-PPCA": {
+      "rmse": 0.5832896294327606,
+      "rank": 7.666666666666667,
+      "better_than_ndif": 3,
+      "worse_than_mean": 0,
+      "time_s": 0.15185722011119646
+     },
+     "KNN": {
+      "rmse": 0.5621525171964475,
+      "rank": 6.5,
+      "better_than_ndif": 4,
+      "worse_than_mean": 1,
+      "time_s": 0.10931250488884968
+     },
+     "MICE": {
+      "rmse": 0.48282207512766595,
+      "rank": 3.6666666666666665,
+      "better_than_ndif": 5,
+      "worse_than_mean": 1,
+      "time_s": 9.770957037444433
+     },
+     "MissForest": {
+      "rmse": 0.4791687201996934,
+      "rank": 3.5,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 14.89444294544443
+     },
+     "SoftImpute": {
+      "rmse": 0.4526290585408539,
+      "rank": 1.6666666666666667,
+      "better_than_ndif": 6,
+      "worse_than_mean": 0,
+      "time_s": 0.4240839382778681
+     }
+    },
+    "order": [
+     "SoftImpute",
+     "NDI-F-V",
+     "MissForest",
+     "MICE",
+     "GaussCM",
+     "KNN",
+     "NDI-F",
+     "EM-PPCA",
+     "EM-FA",
+     "NDI-S",
+     "Mean"
+    ]
+   }
+  }
+ },
+ "scalep": [
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "Mean",
+   "time_s": 0.0063116789999639,
+   "rmse": 1.0021834779261658,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "SoftImpute",
+   "time_s": 2.171279097000024,
+   "rmse": 0.379735634629165,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "Mean",
+   "time_s": 0.0125220180000269,
+   "rmse": 1.0018326329956289,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "SoftImpute",
+   "time_s": 5.836012596000046,
+   "rmse": 0.3862412323610854,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "Mean",
+   "time_s": 0.0252038349999565,
+   "rmse": 1.0002502777922224,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "SoftImpute",
+   "time_s": 9.67944430600005,
+   "rmse": 0.3889001797750135,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "Mean",
+   "time_s": 0.0588440839999293,
+   "rmse": 0.9999869504812372,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "SoftImpute",
+   "time_s": 25.55067440199992,
+   "rmse": 0.3851039521282543,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "Mean",
+   "time_s": 0.0640224750000015,
+   "rmse": 0.999227615615716,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "SoftImpute",
+   "time_s": 43.49996316900001,
+   "rmse": 0.3902335877780149,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "Mean",
+   "time_s": 0.1589519649999147,
+   "rmse": 0.9997915844361444,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "SoftImpute",
+   "time_s": 119.33354696599986,
+   "rmse": 0.3711443221943869,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "Mean",
+   "time_s": 0.3117412669998884,
+   "rmse": 0.9997612736842691,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "SoftImpute",
+   "time_s": 152.06662306299995,
+   "rmse": 0.3698886395777597,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "Mean",
+   "time_s": 0.7430189880001308,
+   "rmse": 1.000138673825556,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-S",
+   "time_s": 0.037800006999987,
+   "rmse": 0.513072741222368,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F",
+   "time_s": 0.0377901669999118,
+   "rmse": 0.3661131239127701,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "GaussCM",
+   "time_s": 0.748832174999734,
+   "rmse": 0.3740162642951008,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-FA",
+   "time_s": 0.2018572229999335,
+   "rmse": 0.3650584183165252,
+   "status": "ok",
+   "em_iterations": 8.0
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-PPCA",
+   "time_s": 0.1394855530002132,
+   "rmse": 0.3711216313313845,
+   "status": "ok",
+   "em_iterations": 4.0
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-S",
+   "time_s": 0.1009591439997166,
+   "rmse": 0.5066470652493961,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F",
+   "time_s": 0.0870303409997177,
+   "rmse": 0.379195329562868,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "GaussCM",
+   "time_s": 1.5816156169998976,
+   "rmse": 0.3929982868723811,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-FA",
+   "time_s": 0.3638573809998888,
+   "rmse": 0.3785798986397084,
+   "status": "ok",
+   "em_iterations": 7.0
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-PPCA",
+   "time_s": 0.2182878500002516,
+   "rmse": 0.3818170166265798,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-S",
+   "time_s": 0.2330503750004027,
+   "rmse": 0.5036210429979282,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F",
+   "time_s": 0.1733676080002624,
+   "rmse": 0.3847156924706184,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "GaussCM",
+   "time_s": 5.95713337899997,
+   "rmse": 0.408476737755411,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-FA",
+   "time_s": 0.6010987130002832,
+   "rmse": 0.3843384213983128,
+   "status": "ok",
+   "em_iterations": 5.0
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-PPCA",
+   "time_s": 0.4964429800002108,
+   "rmse": 0.3857878941003631,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-S",
+   "time_s": 0.8454288620000625,
+   "rmse": 0.4957789485772913,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F",
+   "time_s": 0.6199042839998583,
+   "rmse": 0.3811616899795695,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "GaussCM",
+   "time_s": 63.887642424000205,
+   "rmse": 0.4233846081138959,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-FA",
+   "time_s": 1.463796388999981,
+   "rmse": 0.3809227013520044,
+   "status": "ok",
+   "em_iterations": 4.0
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "EM-PPCA",
+   "time_s": 1.3724229280001057,
+   "rmse": 0.3814874754744103,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-S",
+   "time_s": 0.4071775360002903,
+   "rmse": 0.5227048835625875,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F",
+   "time_s": 0.3951453270001366,
+   "rmse": 0.3784057764471103,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "GaussCM",
+   "time_s": 7.210504414999832,
+   "rmse": 0.3790908682876628,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-FA",
+   "time_s": 2.1139147929998217,
+   "rmse": 0.3775915079060399,
+   "status": "ok",
+   "em_iterations": 7.0
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-PPCA",
+   "time_s": 1.5876344679995782,
+   "rmse": 0.3841606307844669,
+   "status": "ok",
+   "em_iterations": 4.0
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-S",
+   "time_s": 0.9995014759997504,
+   "rmse": 0.4952718129083781,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F",
+   "time_s": 0.9220320580002408,
+   "rmse": 0.3647042800216918,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "GaussCM",
+   "time_s": 15.074054037999758,
+   "rmse": 0.3664792092678293,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-FA",
+   "time_s": 3.6086836739996215,
+   "rmse": 0.3643717300561232,
+   "status": "ok",
+   "em_iterations": 6.0
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-PPCA",
+   "time_s": 2.5584048660002736,
+   "rmse": 0.3671494210135519,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-S",
+   "time_s": 2.520033278000028,
+   "rmse": 0.4896532886861761,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F",
+   "time_s": 2.0413307789999635,
+   "rmse": 0.3665565838372178,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "GaussCM",
+   "time_s": 59.38210695700036,
+   "rmse": 0.3700893336924844,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-FA",
+   "time_s": 6.500372828999844,
+   "rmse": 0.3664181517923927,
+   "status": "ok",
+   "em_iterations": 5.0
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-PPCA",
+   "time_s": 5.094342464999954,
+   "rmse": 0.3677475676063549,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-S",
+   "time_s": 8.115603893999833,
+   "rmse": 0.4995509353437907,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F",
+   "time_s": 6.467977163999876,
+   "rmse": 0.3855392785534598,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "GaussCM",
+   "time_s": 641.8612100600003,
+   "rmse": 0.3932424917697578,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-FA",
+   "time_s": 15.684452859999965,
+   "rmse": 0.3854823765406428,
+   "status": "ok",
+   "em_iterations": 4.0
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "EM-PPCA",
+   "time_s": 14.753776366999771,
+   "rmse": 0.3860700765601482,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "SoftImpute",
+   "time_s": null,
+   "rmse": null,
+   "status": "skipped (too costly)",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "Mean",
+   "time_s": 0.1971819010000217,
+   "rmse": 1.0000301101086926,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "NDI-S",
+   "time_s": 2.212632921000022,
+   "rmse": 0.4904293821411901,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "NDI-F",
+   "time_s": 1.869338916000288,
+   "rmse": 0.3680462776952752,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "GaussCM",
+   "time_s": 1.6853638339998724,
+   "rmse": 0.3718766666227059,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "EM-FA",
+   "time_s": 6.111554183999942,
+   "rmse": 0.3679073597940033,
+   "status": "ok",
+   "em_iterations": 5.0
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "EM-PPCA",
+   "time_s": 5.733952133999992,
+   "rmse": 0.3692188119497933,
+   "status": "ok",
+   "em_iterations": 3.0
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "SoftImpute",
+   "time_s": 196.84333889200025,
+   "rmse": 0.3716265890109908,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F-V",
+   "time_s": 0.2671708069992746,
+   "rmse": 0.3661131239127701,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F-V",
+   "time_s": 1.2752906940004325,
+   "rmse": 0.379195329562868,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F-V",
+   "time_s": 2.6485040830011712,
+   "rmse": 0.3847156924706184,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 10000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 10000,
+   "method": "NDI-F-V",
+   "time_s": 4.58004991999951,
+   "rmse": 0.3811616899795695,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 50,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F-V",
+   "time_s": 0.7393285410016688,
+   "rmse": 0.3784057764471103,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 100,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F-V",
+   "time_s": 2.2444798510005057,
+   "rmse": 0.3647042800216918,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F-V",
+   "time_s": 5.296198202999221,
+   "rmse": 0.3665565838372178,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 500,
+   "patterns": "mcar",
+   "n_patterns": 100000,
+   "method": "NDI-F-V",
+   "time_s": 13.936428472999978,
+   "rmse": 0.3855392785534598,
+   "status": "ok",
+   "em_iterations": null
+  },
+  {
+   "n": 100000,
+   "p": 200,
+   "patterns": "20patterns",
+   "n_patterns": 20,
+   "method": "NDI-F-V",
+   "time_s": 5.495264621999013,
+   "rmse": 0.3680462776952752,
+   "status": "ok",
+   "em_iterations": null
+  }
+ ],
+ "scalep_lookup_note": "key: n, p, patterns, method",
+ "large": {
+  "datasets": {
+   "letter": {
+    "n": 20000,
+    "p": 16,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.8215018592073295,
+       "time_s": 5.60666702799972,
+       "error": null,
+       "em_iterations": 132.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.8215018592073295,
+       "time_s": 5.533733627999027,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.8659100997788228,
+       "time_s": 0.8438562700002876,
+       "error": null,
+       "em_iterations": 19.0
+      },
+      "GaussCM": {
+       "rmse": 0.8118533692222667,
+       "time_s": 0.1102313159999539,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.8607057039890978,
+       "time_s": 1.5248496060003165,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0109642502982925,
+       "time_s": 0.0042199580002488,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0353491747211006,
+       "time_s": 0.0141375459998016,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.8683744926917711,
+       "time_s": 0.0319838010000239,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.8112329241460192,
+       "time_s": 0.1602939700005663,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.8683744926917711,
+       "time_s": 0.0345755340003961,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.8683744926917711,
+       "time_s": 0.0345623709999927,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8624460052506574,
+       "time_s": 0.0232809429999178,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.8453936533315891,
+       "time_s": 1.3737042390002898,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.7831630116199458,
+       "time_s": 7.582233473999622,
+       "error": null,
+       "em_iterations": 176.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.7831630116199458,
+       "time_s": 7.466059823998876,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.80602973023263,
+       "time_s": 3.0083940479999,
+       "error": null,
+       "em_iterations": 70.0
+      },
+      "GaussCM": {
+       "rmse": 0.7478633393949549,
+       "time_s": 0.439203589000499,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.8545755967025853,
+       "time_s": 1.541912196999874,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0033748065667316,
+       "time_s": 0.0115545910002765,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0037470184792388,
+       "time_s": 0.0143045260001599,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.8063039932998234,
+       "time_s": 0.0380219439994107,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.7502228599035826,
+       "time_s": 0.1715465260003839,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.8063039932998234,
+       "time_s": 0.0376711429998977,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.8063039932998234,
+       "time_s": 0.0368873790012003,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8217649182862637,
+       "time_s": 0.0219954000003781,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.7986279506448676,
+       "time_s": 1.3043256109995127,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.961255692028,
+       "time_s": 5.263246982000055,
+       "error": null,
+       "em_iterations": 126.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.961255692028,
+       "time_s": 5.479154123999251,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.9941930899844812,
+       "time_s": 0.7637129159993492,
+       "error": null,
+       "em_iterations": 17.0
+      },
+      "GaussCM": {
+       "rmse": 1.042448139425378,
+       "time_s": 0.4602762519998578,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.9676579590156924,
+       "time_s": 1.5192337779999434,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.2536282459211685,
+       "time_s": 0.0045171870006015,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.228342092857685,
+       "time_s": 0.0147571250008695,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 1.0434367871848518,
+       "time_s": 0.0331034509999881,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 1.0434367871848518,
+       "time_s": 0.0974931589989864,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 1.0434367871848518,
+       "time_s": 0.0357392879996041,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 1.0434367871848518,
+       "time_s": 0.0365152150006906,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 1.0827816058323865,
+       "time_s": 0.0238320349999412,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 1.077003017588703,
+       "time_s": 1.3091378170001915,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "magic-full": {
+    "n": 19020,
+    "p": 10,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.6325265638338877,
+       "time_s": 3.755131350000738,
+       "error": null,
+       "em_iterations": 146.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.6325265638338877,
+       "time_s": 3.5936924520010507,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.7008232644895884,
+       "time_s": 1.3541738079993593,
+       "error": null,
+       "em_iterations": 53.0
+      },
+      "GaussCM": {
+       "rmse": 0.7082224330591786,
+       "time_s": 0.0278718990002744,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.8016179333708089,
+       "time_s": 0.6698414459997366,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 0.890104317482124,
+       "time_s": 0.0033202800004801,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.9968048849848162,
+       "time_s": 0.0098642779994406,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.706360185536008,
+       "time_s": 0.0266948730004514,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.695617534000229,
+       "time_s": 0.0381992169986915,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.706360185536008,
+       "time_s": 0.0239717439999367,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.706360185536008,
+       "time_s": 0.0228596500001003,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.6902245685354617,
+       "time_s": 0.0147425229997679,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.6835709616696465,
+       "time_s": 0.5564398540000184,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.7630296652984503,
+       "time_s": 2.7189897870002824,
+       "error": null,
+       "em_iterations": 125.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.7630296652984503,
+       "time_s": 2.6928969439995853,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.8048565530091581,
+       "time_s": 0.4602019280000604,
+       "error": null,
+       "em_iterations": 17.0
+      },
+      "GaussCM": {
+       "rmse": 0.743878664243221,
+       "time_s": 0.0637518539997472,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.8031451565241737,
+       "time_s": 0.6715678919999846,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0040956477713665,
+       "time_s": 0.0029523900002459,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.094874493382083,
+       "time_s": 0.0108652349999829,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.7914161443616335,
+       "time_s": 0.0215612729998611,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.7480407637182227,
+       "time_s": 0.0518701929995586,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.7914161443616335,
+       "time_s": 0.0227943400004733,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.7914161443616335,
+       "time_s": 0.0270711129996925,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8006544240059347,
+       "time_s": 0.0150167100000544,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.7788057846873743,
+       "time_s": 0.6078978430005009,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 1.0073636918589304,
+       "time_s": 4.748752135999894,
+       "error": null,
+       "em_iterations": 226.0
+      },
+      "EM-FA-k20": {
+       "rmse": 1.0073636918589304,
+       "time_s": 4.68386131799889,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 1.0173773215167683,
+       "time_s": 0.5314738259994556,
+       "error": null,
+       "em_iterations": 24.0
+      },
+      "GaussCM": {
+       "rmse": 1.030446844758959,
+       "time_s": 0.0585648109999965,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 1.1246782332047411,
+       "time_s": 0.6441995370005316,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.1595874349824995,
+       "time_s": 0.0030042090002098,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.2410749520377116,
+       "time_s": 0.0099364810002953,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 1.0309310151176505,
+       "time_s": 0.0210096989994781,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 1.0616907743383637,
+       "time_s": 0.0804671269997925,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 1.0309310151176505,
+       "time_s": 0.0197840239998186,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 1.0309310151176505,
+       "time_s": 0.0207251100000576,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 1.0787223169233175,
+       "time_s": 0.0152221019998251,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 1.0257881900379018,
+       "time_s": 0.51547963899975,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "mfeat-factors": {
+    "n": 2000,
+    "p": 216,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.5098100136898559,
+       "time_s": 1.2057337209998877,
+       "error": null,
+       "em_iterations": 46.333333333333336
+      },
+      "EM-FA-k20": {
+       "rmse": 0.3797342485327479,
+       "time_s": 7.722582044332739,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.48952073884171937,
+       "time_s": 0.7058663916665561,
+       "error": null,
+       "em_iterations": 26.666666666666668
+      },
+      "GaussCM": {
+       "rmse": 0.429347583024038,
+       "time_s": 1.503454191999784,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": 0.4605019314658056,
+       "time_s": 2.8123733653331633,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.22135956022560319,
+       "time_s": 46.60638792400035,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.027296377607377,
+       "time_s": 0.005432483333303599,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": 0.29343528592630724,
+       "time_s": 65.25938350200006,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0053805765794923,
+       "time_s": 0.016301378333385668,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.5337218408239056,
+       "time_s": 0.05682112499956316,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.41492717159808973,
+       "time_s": 1.1435768780005067,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.44059898250683044,
+       "time_s": 0.06256936899929613,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.42082652010013216,
+       "time_s": 0.07382976899983378,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7230185676475975,
+       "time_s": 0.05195439166709543,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.2732286586656407,
+       "time_s": 3.0839350419998177,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.4946597606450695,
+       "time_s": 0.7380031113334553,
+       "error": null,
+       "em_iterations": 27.666666666666668
+      },
+      "EM-FA-k20": {
+       "rmse": 0.36454159108160694,
+       "time_s": 2.4501350413338514,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.47642247666549015,
+       "time_s": 0.308721261999987,
+       "error": null,
+       "em_iterations": 9.666666666666666
+      },
+      "GaussCM": {
+       "rmse": 0.28487561607013673,
+       "time_s": 1.4865704110000781,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": 0.43833758694421676,
+       "time_s": 3.2992090526668107,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.22821512415490539,
+       "time_s": 66.38317081199966,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0014214416253084,
+       "time_s": 0.005180195333499133,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": 0.2728750123137283,
+       "time_s": 70.38073286233309,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.9838103382246616,
+       "time_s": 0.018484848333476533,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.47826745485181354,
+       "time_s": 0.05659937066714817,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.2843510173448575,
+       "time_s": 1.1967153203325627,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.3520500319216679,
+       "time_s": 0.06955329300035366,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.32997755745113905,
+       "time_s": 0.0718053883338143,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.6893009483149674,
+       "time_s": 0.05085965400000223,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.2470612844963244,
+       "time_s": 2.6167003030001674,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.5730172781783384,
+       "time_s": 1.912209205000181,
+       "error": null,
+       "em_iterations": 72.66666666666667
+      },
+      "EM-FA-k20": {
+       "rmse": 0.4154123477265173,
+       "time_s": 10.954999007666023,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.5385520678366637,
+       "time_s": 0.9503384050000628,
+       "error": null,
+       "em_iterations": 35.0
+      },
+      "GaussCM": {
+       "rmse": 0.7139729280504464,
+       "time_s": 1.4607446313336065,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": 0.5158315680442034,
+       "time_s": 3.3231934006668475,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.24817397460693172,
+       "time_s": 59.28838997966674,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.2353659777148869,
+       "time_s": 0.005193935666587333,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": 0.3493363330575925,
+       "time_s": 69.28570255466668,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.2130399117059616,
+       "time_s": 0.017776061666457534,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.7085341784447481,
+       "time_s": 0.0508283760000267,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.6062477041206384,
+       "time_s": 1.1396573419994336,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.6252714250823949,
+       "time_s": 0.0651323360004122,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.6086915338445577,
+       "time_s": 0.07862029733284233,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.9402087617475554,
+       "time_s": 0.047112106333467296,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.3299652193428362,
+       "time_s": 4.181354087666477,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "mnist": {
+    "n": 70000,
+    "p": 719,
+    "settings": {
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.8770276468151164,
+       "time_s": 43.16778489100034,
+       "error": null,
+       "em_iterations": 16.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.8259242856907121,
+       "time_s": 148.77771927699996,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.8762322962430914,
+       "time_s": 23.391856763999385,
+       "error": null,
+       "em_iterations": 6.0
+      },
+      "GaussCM": {
+       "rmse": 0.5901733871033169,
+       "time_s": 995.8504943549996,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.011719280238224,
+       "time_s": 0.7551212839998698,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0087060108554669,
+       "time_s": 2.410167495000678,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.8686597021283059,
+       "time_s": 8.122241007999946,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.6668027063080546,
+       "time_s": 35.96126670400008,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.8120125920129775,
+       "time_s": 8.839567412000179,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.635853822354602,
+       "time_s": 814.716995729,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8742403355009685,
+       "time_s": 9.996304008999688,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "musk2": {
+    "n": 6598,
+    "p": 168,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.5968572757563098,
+       "time_s": 3.9488161669999804,
+       "error": null,
+       "em_iterations": 54.333333333333336
+      },
+      "EM-FA-k20": {
+       "rmse": 0.47775213614300976,
+       "time_s": 15.147423953000422,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.5746864397282133,
+       "time_s": 1.5849006820002007,
+       "error": null,
+       "em_iterations": 21.0
+      },
+      "GaussCM": {
+       "rmse": 0.4566949570485868,
+       "time_s": 2.7202663669998706,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.30172630051560195,
+       "time_s": 100.78123707866689,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0291742999423084,
+       "time_s": 0.013570682333617365,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0180076088399315,
+       "time_s": 0.0461298626666272,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.6009992127408738,
+       "time_s": 0.11803968733299064,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.4572005964980783,
+       "time_s": 3.1479775013334197,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.5028364255094857,
+       "time_s": 0.16029729200029877,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.47509664914410793,
+       "time_s": 0.18554071200014732,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7435115579520497,
+       "time_s": 0.118363401666708,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.36416252604280513,
+       "time_s": 7.773549820333453,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.5815096557759257,
+       "time_s": 5.174316092666838,
+       "error": null,
+       "em_iterations": 77.33333333333333
+      },
+      "EM-FA-k20": {
+       "rmse": 0.46663851596358047,
+       "time_s": 8.92888875899977,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.5615799958291307,
+       "time_s": 0.9339289086668335,
+       "error": null,
+       "em_iterations": 11.666666666666666
+      },
+      "GaussCM": {
+       "rmse": 0.31901421998799134,
+       "time_s": 2.684951377333467,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.3070736313598998,
+       "time_s": 86.8954364746669,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0012945992685973,
+       "time_s": 0.0137540276667399,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.9921594011555007,
+       "time_s": 0.046191385333865236,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.5552693617302139,
+       "time_s": 0.11222311033361614,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.3160388938356192,
+       "time_s": 3.2703232173341044,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.4382381817078625,
+       "time_s": 0.1503838373337202,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.40887501666389836,
+       "time_s": 0.17935185366695802,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7133752076398309,
+       "time_s": 0.11505421233353742,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.33679690647538124,
+       "time_s": 6.269653715999993,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.7219750494830747,
+       "time_s": 5.1528222340002685,
+       "error": null,
+       "em_iterations": 72.66666666666667
+      },
+      "EM-FA-k20": {
+       "rmse": 0.6090870102065603,
+       "time_s": 18.79948508599955,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.7047722394720095,
+       "time_s": 2.1241505419996733,
+       "error": null,
+       "em_iterations": 28.666666666666668
+      },
+      "GaussCM": {
+       "rmse": 0.7657512418143814,
+       "time_s": 2.895950421000028,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.45582886040412474,
+       "time_s": 104.2874141099998,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.237759596828792,
+       "time_s": 0.016597343333463233,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.2247337827250144,
+       "time_s": 0.0492378236667718,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.8185134825991452,
+       "time_s": 0.1363283146668739,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.7160929549990089,
+       "time_s": 2.3567472046664384,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.7386787377659014,
+       "time_s": 0.1643296469992492,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.7206732135553344,
+       "time_s": 0.1967618480005815,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.9661204641130491,
+       "time_s": 0.12923492766670577,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.5463319377663011,
+       "time_s": 10.899785123333459,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "optdigits": {
+    "n": 5620,
+    "p": 62,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.9554394250560884,
+       "time_s": 2.8440278536666788,
+       "error": null,
+       "em_iterations": 71.33333333333333
+      },
+      "EM-FA-k20": {
+       "rmse": 0.9547481889714037,
+       "time_s": 25.966356139667067,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.8723432339729533,
+       "time_s": 1.9172034209999158,
+       "error": null,
+       "em_iterations": 48.0
+      },
+      "GaussCM": {
+       "rmse": 0.7288012000043526,
+       "time_s": 0.5218620913328778,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.8857400805203374,
+       "time_s": 11.589619508333271,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0062390835898067,
+       "time_s": 0.004672024666736666,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0174112592132203,
+       "time_s": 0.014220495666146768,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.785492803932978,
+       "time_s": 0.039620084666845835,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.7237118776561099,
+       "time_s": 0.704154160000447,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.742619063190472,
+       "time_s": 0.08032961799896526,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.742619063190472,
+       "time_s": 0.07387391633346846,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8489424308194399,
+       "time_s": 0.029329086333139732,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.7475640404118994,
+       "time_s": 2.7775725036669123,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.7757521383836581,
+       "time_s": 2.3850100716666325,
+       "error": null,
+       "em_iterations": 59.333333333333336
+      },
+      "EM-FA-k20": {
+       "rmse": 0.7267822315181786,
+       "time_s": 9.86961733499993,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.7876661042134554,
+       "time_s": 2.0981798326668772,
+       "error": null,
+       "em_iterations": 53.666666666666664
+      },
+      "GaussCM": {
+       "rmse": 0.6777161843177485,
+       "time_s": 0.4949565576665312,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.7230738637493984,
+       "time_s": 5.080774348666637,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 0.9892303241780301,
+       "time_s": 0.004547922999942434,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.9995167145003788,
+       "time_s": 0.0140297620003669,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.7599825019773232,
+       "time_s": 0.0393506873336567,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.680090373163603,
+       "time_s": 0.6729540146661748,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.7171318665607188,
+       "time_s": 0.05980582266723403,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.7171318665607188,
+       "time_s": 0.061117560334120434,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.8294809951905376,
+       "time_s": 0.029852069999833433,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.708854833411032,
+       "time_s": 2.6863782163333476,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.9976612606232704,
+       "time_s": 3.547241805999571,
+       "error": null,
+       "em_iterations": 88.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.9610209444342095,
+       "time_s": 17.385046370333537,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 1.021916539167704,
+       "time_s": 2.1884697503334487,
+       "error": null,
+       "em_iterations": 51.666666666666664
+      },
+      "GaussCM": {
+       "rmse": 1.0283275215250822,
+       "time_s": 0.4942861703336045,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.9192237719145723,
+       "time_s": 5.309843525666413,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.2449155245984336,
+       "time_s": 0.005419813333598166,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.7059604115891134,
+       "time_s": 0.015719945666811865,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 1.0515883925452219,
+       "time_s": 0.04004978533309134,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 1.0216200631316952,
+       "time_s": 0.47657352066683717,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 1.0205939530002832,
+       "time_s": 0.0632354113337593,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 1.0205939530002832,
+       "time_s": 0.065358207666577,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 1.1254042296654292,
+       "time_s": 0.0311063123329707,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 1.0481725847226027,
+       "time_s": 2.7790039206665824,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "pendigits": {
+    "n": 10992,
+    "p": 16,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.7328494677123017,
+       "time_s": 3.841188742999293,
+       "error": null,
+       "em_iterations": 167.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.7328494677123017,
+       "time_s": 3.804620753999188,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.7357974812624756,
+       "time_s": 0.8650118000005023,
+       "error": null,
+       "em_iterations": 37.0
+      },
+      "GaussCM": {
+       "rmse": 0.6809728466367948,
+       "time_s": 0.0984784679994845,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.6813173272863638,
+       "time_s": 0.910754163999627,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0093973963823752,
+       "time_s": 0.0025189349998981,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.0769790091311078,
+       "time_s": 0.0076155679998919,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.7366524906593731,
+       "time_s": 0.0176237839996247,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.6758518242165552,
+       "time_s": 0.108267366000291,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.7366524906593731,
+       "time_s": 0.0190528690000064,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.7366524906593731,
+       "time_s": 0.0199830900000961,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7954937917077435,
+       "time_s": 0.012829326999963,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.7343265124742038,
+       "time_s": 0.6219983150003827,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.6619482180980915,
+       "time_s": 5.312942548000137,
+       "error": null,
+       "em_iterations": 237.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.6619482180980915,
+       "time_s": 5.416010101000211,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.6818103868676187,
+       "time_s": 0.3715025399997103,
+       "error": null,
+       "em_iterations": 16.0
+      },
+      "GaussCM": {
+       "rmse": 0.5713453764319897,
+       "time_s": 0.2924909200000911,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.621070650742029,
+       "time_s": 0.9151113419993636,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0012773956910783,
+       "time_s": 0.0026695649994508,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.058213925074373,
+       "time_s": 0.0100213269997766,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.6687885338380772,
+       "time_s": 0.0226020179998158,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.5734746503667933,
+       "time_s": 0.1109569130003365,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.6687885338380772,
+       "time_s": 0.0203161070003261,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.6687885338380772,
+       "time_s": 0.0203825259995937,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7580131059467762,
+       "time_s": 0.0130579870001383,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.6533432243997492,
+       "time_s": 0.6309087100007673,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.7886713611925535,
+       "time_s": 2.8837942199998,
+       "error": null,
+       "em_iterations": 123.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.7886713611925535,
+       "time_s": 2.856371735000721,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.8105318262921826,
+       "time_s": 0.5167625310004951,
+       "error": null,
+       "em_iterations": 21.0
+      },
+      "GaussCM": {
+       "rmse": 0.9460882347744712,
+       "time_s": 0.2578747769994152,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.7132234573887333,
+       "time_s": 1.112425820000681,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.250091659577518,
+       "time_s": 0.002477588000147,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 1.3004011669566813,
+       "time_s": 0.0077069489998393,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.9156736169445042,
+       "time_s": 0.0188970119997975,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.9526848713134322,
+       "time_s": 0.1156970079991879,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.9156736169445042,
+       "time_s": 0.0183078059999388,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.9156736169445042,
+       "time_s": 0.0217803879986604,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 1.01907833612339,
+       "time_s": 0.012324372999501,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.9774524942580473,
+       "time_s": 0.7168292599999404,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "satimage": {
+    "n": 6435,
+    "p": 36,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.3260823840072197,
+       "time_s": 1.157214537333554,
+       "error": null,
+       "em_iterations": 97.33333333333333
+      },
+      "EM-FA-k20": {
+       "rmse": 0.3260823840072197,
+       "time_s": 1.1827164973328763,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.329181355648767,
+       "time_s": 0.8543364936664753,
+       "error": null,
+       "em_iterations": 69.33333333333333
+      },
+      "GaussCM": {
+       "rmse": 0.5148969527072492,
+       "time_s": 0.36154458066691103,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.21262233798514596,
+       "time_s": 1.7110091533331797,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.0929779546338112,
+       "time_s": 0.003208806333229033,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.8524460496902709,
+       "time_s": 0.0101696236667218,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.5252833313846503,
+       "time_s": 0.019641481333261834,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.5000123857707902,
+       "time_s": 0.20118993433303933,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.5252833313846503,
+       "time_s": 0.01991746633332993,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.5252833313846503,
+       "time_s": 0.019526867667082067,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.6100987820247794,
+       "time_s": 0.017799771999913533,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.3442445538198145,
+       "time_s": 1.1830400156668475,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.3529916728688143,
+       "time_s": 0.1732989546665825,
+       "error": null,
+       "em_iterations": 13.333333333333334
+      },
+      "EM-FA-k20": {
+       "rmse": 0.3529916728688143,
+       "time_s": 0.17137120033294195,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.3562200357975851,
+       "time_s": 0.14286539966633424,
+       "error": null,
+       "em_iterations": 10.666666666666666
+      },
+      "GaussCM": {
+       "rmse": 0.2188100470260753,
+       "time_s": 0.3649944466666663,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.22213572785268254,
+       "time_s": 2.0582201673332747,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.000624174922408,
+       "time_s": 0.003266304999973067,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.7739998125698868,
+       "time_s": 0.010110772000189101,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.35383857981374334,
+       "time_s": 0.0187818856666126,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.21983328925475365,
+       "time_s": 0.21315869899990503,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.35383857981374334,
+       "time_s": 0.0195611359995382,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.35383857981374334,
+       "time_s": 0.019620527999601668,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.4412482857614073,
+       "time_s": 0.0170746189999893,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.23276219919478572,
+       "time_s": 0.7779657529999895,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.34931680069897125,
+       "time_s": 1.0978653863330692,
+       "error": null,
+       "em_iterations": 85.0
+      },
+      "EM-FA-k20": {
+       "rmse": 0.34931680069897125,
+       "time_s": 1.0429479139990387,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.35449049486524115,
+       "time_s": 0.9378671756670277,
+       "error": null,
+       "em_iterations": 74.33333333333333
+      },
+      "GaussCM": {
+       "rmse": 0.6584494378911622,
+       "time_s": 0.39301171466649976,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.2400072203738907,
+       "time_s": 2.2245593243333137,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.2462424836137045,
+       "time_s": 0.0033700020000347664,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.984051566752675,
+       "time_s": 0.0099105773333576,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.6557557249940301,
+       "time_s": 0.020502255333364333,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.6281921246621731,
+       "time_s": 0.19842764733281604,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.6557557249940301,
+       "time_s": 0.019364981333031467,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.6557557249940301,
+       "time_s": 0.020191928667069634,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.7564925934163341,
+       "time_s": 0.018699681667082232,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.4169888696561553,
+       "time_s": 1.2172032189998088,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   },
+   "texture": {
+    "n": 5500,
+    "p": 40,
+    "settings": {
+     "MAR-30": {
+      "EM-FA": {
+       "rmse": 0.27645139497426013,
+       "time_s": 1.2778929283331308,
+       "error": null,
+       "em_iterations": 112.33333333333333
+      },
+      "EM-FA-k20": {
+       "rmse": 0.27645139497426013,
+       "time_s": 1.214048298000004,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.2749870615620551,
+       "time_s": 0.7808507203332434,
+       "error": null,
+       "em_iterations": 64.33333333333333
+      },
+      "GaussCM": {
+       "rmse": 0.3765911747618913,
+       "time_s": 0.35129908966700896,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.11670126333455949,
+       "time_s": 1.7094292966667126,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.1279834845206593,
+       "time_s": 0.0037235833336429,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.6086834780788858,
+       "time_s": 0.009964723333420434,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.4135304426476493,
+       "time_s": 0.020576021332999465,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.38254018987798694,
+       "time_s": 0.22282454133407248,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.4135304426476493,
+       "time_s": 0.019192146666682633,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.4135304426476493,
+       "time_s": 0.018252935332687466,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.5758997844603136,
+       "time_s": 0.019036101999821132,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.24648954914017532,
+       "time_s": 1.2041490086667181,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MCAR-30": {
+      "EM-FA": {
+       "rmse": 0.2580723671230323,
+       "time_s": 0.25819821066670556,
+       "error": null,
+       "em_iterations": 20.333333333333332
+      },
+      "EM-FA-k20": {
+       "rmse": 0.2580723671230323,
+       "time_s": 0.2633379933328493,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.25807963316871296,
+       "time_s": 0.1480553196667339,
+       "error": null,
+       "em_iterations": 10.0
+      },
+      "GaussCM": {
+       "rmse": 0.1545873031098724,
+       "time_s": 0.3354561993334452,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.1339385931216943,
+       "time_s": 2.2083598580002217,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.00155365533048,
+       "time_s": 0.0030527213333091333,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.515840737003011,
+       "time_s": 0.009918686666727133,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.25464328781646134,
+       "time_s": 0.019333490999997566,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.14592396240512853,
+       "time_s": 0.2231597613335907,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.25464328781646134,
+       "time_s": 0.023292195332639137,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.25464328781646134,
+       "time_s": 0.02187267200012377,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.478447285922573,
+       "time_s": 0.0178075339996818,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.15324138440893478,
+       "time_s": 0.5772671580001164,
+       "error": null,
+       "em_iterations": null
+      }
+     },
+     "MNAR-30": {
+      "EM-FA": {
+       "rmse": 0.28597822718521343,
+       "time_s": 3.1164934329996563,
+       "error": null,
+       "em_iterations": 279.3333333333333
+      },
+      "EM-FA-k20": {
+       "rmse": 0.28597822718521343,
+       "time_s": 2.864581867999732,
+       "error": null,
+       "em_iterations": null
+      },
+      "EM-PPCA": {
+       "rmse": 0.2852888193054665,
+       "time_s": 0.9903688340000372,
+       "error": null,
+       "em_iterations": 81.66666666666667
+      },
+      "GaussCM": {
+       "rmse": 0.46783103220727645,
+       "time_s": 0.332141351333424,
+       "error": null,
+       "em_iterations": null
+      },
+      "KNN": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "MICE": {
+       "rmse": 0.21383786166739116,
+       "time_s": 2.090760113000215,
+       "error": null,
+       "em_iterations": null
+      },
+      "Mean": {
+       "rmse": 1.2372217890887869,
+       "time_s": 0.0031713443334713334,
+       "error": null,
+       "em_iterations": null
+      },
+      "MissForest": {
+       "rmse": null,
+       "time_s": null,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-0": {
+       "rmse": 0.7085462080457628,
+       "time_s": 0.0096844933332249,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F": {
+       "rmse": 0.4903022610274299,
+       "time_s": 0.018772345666548035,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-V": {
+       "rmse": 0.46781315371743176,
+       "time_s": 0.2141325133331217,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-k20": {
+       "rmse": 0.4903022610274299,
+       "time_s": 0.01904705366663007,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-F-kall": {
+       "rmse": 0.4903022610274299,
+       "time_s": 0.019434851000672368,
+       "error": null,
+       "em_iterations": null
+      },
+      "NDI-S": {
+       "rmse": 0.681152519749601,
+       "time_s": 0.018225660999936066,
+       "error": null,
+       "em_iterations": null
+      },
+      "SoftImpute": {
+       "rmse": 0.32946703932282323,
+       "time_s": 1.2306930660000337,
+       "error": null,
+       "em_iterations": null
+      }
+     }
+    }
+   }
+  },
+  "n_datasets": 9,
+  "always": {
+   "methods": [
+    "Mean",
+    "NDI-0",
+    "NDI-S",
+    "NDI-F",
+    "NDI-F-k20",
+    "NDI-F-kall",
+    "NDI-F-V",
+    "GaussCM",
+    "EM-FA",
+    "EM-FA-k20",
+    "EM-PPCA"
+   ],
+   "n_blocks": 25,
+   "ranks": {
+    "Mean": 10.56,
+    "NDI-0": 10.44,
+    "NDI-S": 8.36,
+    "NDI-F": 6.58,
+    "NDI-F-k20": 5.6,
+    "NDI-F-kall": 5.16,
+    "NDI-F-V": 3.14,
+    "GaussCM": 3.64,
+    "EM-FA": 4.26,
+    "EM-FA-k20": 3.1,
+    "EM-PPCA": 5.16
+   },
+   "rmse": {
+    "Mean": 1.0829416480949905,
+    "NDI-0": 1.0259232234061613,
+    "NDI-S": 0.7962448729015347,
+    "NDI-F": 0.6968927927636875,
+    "NDI-F-k20": 0.6660528858630501,
+    "NDI-F-kall": 0.6536652033273161,
+    "NDI-F-V": 0.6217460581412827,
+    "GaussCM": 0.6267584013838728,
+    "EM-FA": 0.6433964752845484,
+    "EM-FA-k20": 0.6073137551190211,
+    "EM-PPCA": 0.6471707714300794
+   },
+   "better_than_ndif": {
+    "Mean": 0,
+    "NDI-0": 0,
+    "NDI-S": 2,
+    "NDI-F": 0,
+    "NDI-F-k20": 10,
+    "NDI-F-kall": 10,
+    "NDI-F-V": 22,
+    "GaussCM": 21,
+    "EM-FA": 19,
+    "EM-FA-k20": 23,
+    "EM-PPCA": 17
+   },
+   "better_than_gauss": {
+    "Mean": 0,
+    "NDI-0": 0,
+    "NDI-S": 1,
+    "NDI-F": 4,
+    "NDI-F-k20": 6,
+    "NDI-F-kall": 7,
+    "NDI-F-V": 14,
+    "GaussCM": 0,
+    "EM-FA": 11,
+    "EM-FA-k20": 12,
+    "EM-PPCA": 11
+   },
+   "order": [
+    "EM-FA-k20",
+    "NDI-F-V",
+    "GaussCM",
+    "EM-FA",
+    "NDI-F-kall",
+    "EM-PPCA",
+    "NDI-F-k20",
+    "NDI-F",
+    "NDI-S",
+    "NDI-0",
+    "Mean"
+   ]
+  },
+  "pairs": {
+   "NDI-F-V vs NDI-F": {
+    "blocks": 25,
+    "wins": 22,
+    "losses": 2,
+    "mean_diff": -0.0751467346224047,
+    "wilcoxon_p": 0.00010202944863870715,
+    "datasets_better": [
+     "letter",
+     "magic-full",
+     "mfeat-factors",
+     "mnist",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   },
+   "NDI-F-V vs GaussCM": {
+    "blocks": 25,
+    "wins": 14,
+    "losses": 11,
+    "mean_diff": -0.005012343242590118,
+    "wilcoxon_p": 0.2996123433113098,
+    "datasets_better": [
+     "letter",
+     "magic-full",
+     "mfeat-factors",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   },
+   "NDI-F-k20 vs NDI-F": {
+    "blocks": 25,
+    "wins": 10,
+    "losses": 0,
+    "mean_diff": -0.030839906900637395,
+    "wilcoxon_p": 0.005062032126267864,
+    "datasets_better": [
+     "mfeat-factors",
+     "mnist",
+     "musk2",
+     "optdigits"
+    ]
+   },
+   "NDI-F-kall vs NDI-F": {
+    "blocks": 25,
+    "wins": 10,
+    "losses": 0,
+    "mean_diff": -0.04322758943637134,
+    "wilcoxon_p": 0.005062032126267864,
+    "datasets_better": [
+     "mfeat-factors",
+     "mnist",
+     "musk2",
+     "optdigits"
+    ]
+   },
+   "EM-FA vs NDI-F": {
+    "blocks": 25,
+    "wins": 19,
+    "losses": 6,
+    "mean_diff": -0.053496317479139105,
+    "wilcoxon_p": 0.003419220447540283,
+    "datasets_better": [
+     "letter",
+     "magic-full",
+     "mfeat-factors",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   },
+   "GaussCM vs NDI-F": {
+    "blocks": 25,
+    "wins": 21,
+    "losses": 4,
+    "mean_diff": -0.07013439137981459,
+    "wilcoxon_p": 2.664327621459961e-05,
+    "datasets_better": [
+     "letter",
+     "magic-full",
+     "mfeat-factors",
+     "mnist",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   },
+   "EM-FA-k20 vs EM-FA": {
+    "blocks": 25,
+    "wins": 10,
+    "losses": 0,
+    "mean_diff": -0.03608272016552723,
+    "wilcoxon_p": 0.005062032126267864,
+    "datasets_better": [
+     "mfeat-factors",
+     "mnist",
+     "musk2",
+     "optdigits"
+    ]
+   },
+   "SoftImpute vs NDI-F-V": {
+    "blocks": 24,
+    "wins": 11,
+    "losses": 13,
+    "mean_diff": -0.04071689046893417,
+    "wilcoxon_p": 0.2522493600845337,
+    "datasets_better": [
+     "magic-full",
+     "mfeat-factors",
+     "musk2",
+     "satimage",
+     "texture"
+    ]
+   },
+   "MICE vs NDI-F-V": {
+    "blocks": 24,
+    "wins": 14,
+    "losses": 10,
+    "mean_diff": -0.08413327321721041,
+    "wilcoxon_p": 0.05264079570770264,
+    "datasets_better": [
+     "letter",
+     "mfeat-factors",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   },
+   "EM-FA vs GaussCM": {
+    "blocks": 25,
+    "wins": 11,
+    "losses": 14,
+    "mean_diff": 0.01663807390067549,
+    "wilcoxon_p": 0.615043044090271,
+    "datasets_better": [
+     "letter",
+     "magic-full",
+     "mfeat-factors",
+     "musk2",
+     "optdigits",
+     "pendigits",
+     "satimage",
+     "texture"
+    ]
+   }
+  },
+  "marmnar": {
+   "blocks": 16,
+   "methods": [
+    "Mean",
+    "NDI-S",
+    "NDI-F",
+    "NDI-F-V",
+    "GaussCM",
+    "EM-FA",
+    "EM-FA-k20",
+    "EM-PPCA",
+    "SoftImpute",
+    "MICE"
+   ],
+   "best_counts": {
+    "Mean": 0,
+    "NDI-S": 0,
+    "NDI-F": 0,
+    "NDI-F-V": 3,
+    "GaussCM": 0,
+    "EM-FA": 3,
+    "EM-FA-k20": 0,
+    "EM-PPCA": 0,
+    "SoftImpute": 0,
+    "MICE": 10
+   },
+   "pairs": {
+    "EM-FA vs NDI-F-V": {
+     "blocks": 16,
+     "wins": 10,
+     "losses": 6,
+     "mean_diff": -0.03888219948411553,
+     "wilcoxon_p": 0.231201171875
+    },
+    "MICE vs NDI-F-V": {
+     "blocks": 16,
+     "wins": 11,
+     "losses": 5,
+     "mean_diff": -0.13715319321424108,
+     "wilcoxon_p": 0.010986328125
+    },
+    "SoftImpute vs NDI-F-V": {
+     "blocks": 16,
+     "wins": 10,
+     "losses": 6,
+     "mean_diff": -0.07304519556126929,
+     "wilcoxon_p": 0.03863525390625
+    },
+    "GaussCM vs NDI-F-V": {
+     "blocks": 16,
+     "wins": 5,
+     "losses": 11,
+     "mean_diff": 0.012613934980003835,
+     "wilcoxon_p": 0.09344482421875
+    },
+    "EM-FA vs NDI-F": {
+     "blocks": 16,
+     "wins": 15,
+     "losses": 1,
+     "mean_diff": -0.08427453211182413,
+     "wilcoxon_p": 0.002685546875
+    },
+    "MICE vs EM-FA": {
+     "blocks": 16,
+     "wins": 12,
+     "losses": 4,
+     "mean_diff": -0.09827099373012556,
+     "wilcoxon_p": 0.02496337890625
+    },
+    "NDI-F-V vs NDI-F": {
+     "blocks": 16,
+     "wins": 13,
+     "losses": 2,
+     "mean_diff": -0.045392332627708594,
+     "wilcoxon_p": 0.008984997655215593
+    }
+   },
+   "by_block": {
+    "letter|MAR-30": {
+     "Mean": 1.0109642502982925,
+     "NDI-S": 0.8624460052506574,
+     "NDI-F": 0.8683744926917711,
+     "NDI-F-V": 0.8112329241460192,
+     "GaussCM": 0.8118533692222667,
+     "EM-FA": 0.8215018592073295,
+     "EM-FA-k20": 0.8215018592073295,
+     "EM-PPCA": 0.8659100997788228,
+     "SoftImpute": 0.8453936533315891,
+     "MICE": 0.8607057039890978
+    },
+    "letter|MNAR-30": {
+     "Mean": 1.2536282459211685,
+     "NDI-S": 1.0827816058323865,
+     "NDI-F": 1.0434367871848518,
+     "NDI-F-V": 1.0434367871848518,
+     "GaussCM": 1.042448139425378,
+     "EM-FA": 0.961255692028,
+     "EM-FA-k20": 0.961255692028,
+     "EM-PPCA": 0.9941930899844812,
+     "SoftImpute": 1.077003017588703,
+     "MICE": 0.9676579590156924
+    },
+    "magic-full|MAR-30": {
+     "Mean": 0.890104317482124,
+     "NDI-S": 0.6902245685354617,
+     "NDI-F": 0.706360185536008,
+     "NDI-F-V": 0.695617534000229,
+     "GaussCM": 0.7082224330591786,
+     "EM-FA": 0.6325265638338877,
+     "EM-FA-k20": 0.6325265638338877,
+     "EM-PPCA": 0.7008232644895884,
+     "SoftImpute": 0.6835709616696465,
+     "MICE": 0.8016179333708089
+    },
+    "magic-full|MNAR-30": {
+     "Mean": 1.1595874349824995,
+     "NDI-S": 1.0787223169233175,
+     "NDI-F": 1.0309310151176505,
+     "NDI-F-V": 1.0616907743383637,
+     "GaussCM": 1.030446844758959,
+     "EM-FA": 1.0073636918589304,
+     "EM-FA-k20": 1.0073636918589304,
+     "EM-PPCA": 1.0173773215167683,
+     "SoftImpute": 1.0257881900379018,
+     "MICE": 1.1246782332047411
+    },
+    "mfeat-factors|MAR-30": {
+     "Mean": 1.027296377607377,
+     "NDI-S": 0.7230185676475975,
+     "NDI-F": 0.5337218408239056,
+     "NDI-F-V": 0.41492717159808973,
+     "GaussCM": 0.429347583024038,
+     "EM-FA": 0.5098100136898559,
+     "EM-FA-k20": 0.3797342485327479,
+     "EM-PPCA": 0.48952073884171937,
+     "SoftImpute": 0.2732286586656407,
+     "MICE": 0.22135956022560319
+    },
+    "mfeat-factors|MNAR-30": {
+     "Mean": 1.2353659777148869,
+     "NDI-S": 0.9402087617475554,
+     "NDI-F": 0.7085341784447481,
+     "NDI-F-V": 0.6062477041206384,
+     "GaussCM": 0.7139729280504464,
+     "EM-FA": 0.5730172781783384,
+     "EM-FA-k20": 0.4154123477265173,
+     "EM-PPCA": 0.5385520678366637,
+     "SoftImpute": 0.3299652193428362,
+     "MICE": 0.24817397460693172
+    },
+    "musk2|MAR-30": {
+     "Mean": 1.0291742999423084,
+     "NDI-S": 0.7435115579520497,
+     "NDI-F": 0.6009992127408738,
+     "NDI-F-V": 0.4572005964980783,
+     "GaussCM": 0.4566949570485868,
+     "EM-FA": 0.5968572757563098,
+     "EM-FA-k20": 0.47775213614300976,
+     "EM-PPCA": 0.5746864397282133,
+     "SoftImpute": 0.36416252604280513,
+     "MICE": 0.30172630051560195
+    },
+    "musk2|MNAR-30": {
+     "Mean": 1.237759596828792,
+     "NDI-S": 0.9661204641130491,
+     "NDI-F": 0.8185134825991452,
+     "NDI-F-V": 0.7160929549990089,
+     "GaussCM": 0.7657512418143814,
+     "EM-FA": 0.7219750494830747,
+     "EM-FA-k20": 0.6090870102065603,
+     "EM-PPCA": 0.7047722394720095,
+     "SoftImpute": 0.5463319377663011,
+     "MICE": 0.45582886040412474
+    },
+    "optdigits|MAR-30": {
+     "Mean": 1.0062390835898067,
+     "NDI-S": 0.8489424308194399,
+     "NDI-F": 0.785492803932978,
+     "NDI-F-V": 0.7237118776561099,
+     "GaussCM": 0.7288012000043526,
+     "EM-FA": 0.9554394250560884,
+     "EM-FA-k20": 0.9547481889714037,
+     "EM-PPCA": 0.8723432339729533,
+     "SoftImpute": 0.7475640404118994,
+     "MICE": 0.8857400805203374
+    },
+    "optdigits|MNAR-30": {
+     "Mean": 1.2449155245984336,
+     "NDI-S": 1.1254042296654292,
+     "NDI-F": 1.0515883925452219,
+     "NDI-F-V": 1.0216200631316952,
+     "GaussCM": 1.0283275215250822,
+     "EM-FA": 0.9976612606232704,
+     "EM-FA-k20": 0.9610209444342095,
+     "EM-PPCA": 1.021916539167704,
+     "SoftImpute": 1.0481725847226027,
+     "MICE": 0.9192237719145723
+    },
+    "pendigits|MAR-30": {
+     "Mean": 1.0093973963823752,
+     "NDI-S": 0.7954937917077435,
+     "NDI-F": 0.7366524906593731,
+     "NDI-F-V": 0.6758518242165552,
+     "GaussCM": 0.6809728466367948,
+     "EM-FA": 0.7328494677123017,
+     "EM-FA-k20": 0.7328494677123017,
+     "EM-PPCA": 0.7357974812624756,
+     "SoftImpute": 0.7343265124742038,
+     "MICE": 0.6813173272863638
+    },
+    "pendigits|MNAR-30": {
+     "Mean": 1.250091659577518,
+     "NDI-S": 1.01907833612339,
+     "NDI-F": 0.9156736169445042,
+     "NDI-F-V": 0.9526848713134322,
+     "GaussCM": 0.9460882347744712,
+     "EM-FA": 0.7886713611925535,
+     "EM-FA-k20": 0.7886713611925535,
+     "EM-PPCA": 0.8105318262921826,
+     "SoftImpute": 0.9774524942580473,
+     "MICE": 0.7132234573887333
+    },
+    "satimage|MAR-30": {
+     "Mean": 1.0929779546338112,
+     "NDI-S": 0.6100987820247794,
+     "NDI-F": 0.5252833313846503,
+     "NDI-F-V": 0.5000123857707902,
+     "GaussCM": 0.5148969527072492,
+     "EM-FA": 0.3260823840072197,
+     "EM-FA-k20": 0.3260823840072197,
+     "EM-PPCA": 0.329181355648767,
+     "SoftImpute": 0.3442445538198145,
+     "MICE": 0.21262233798514596
+    },
+    "satimage|MNAR-30": {
+     "Mean": 1.2462424836137045,
+     "NDI-S": 0.7564925934163341,
+     "NDI-F": 0.6557557249940301,
+     "NDI-F-V": 0.6281921246621731,
+     "GaussCM": 0.6584494378911622,
+     "EM-FA": 0.34931680069897125,
+     "EM-FA-k20": 0.34931680069897125,
+     "EM-PPCA": 0.35449049486524115,
+     "SoftImpute": 0.4169888696561553,
+     "MICE": 0.2400072203738907
+    },
+    "texture|MAR-30": {
+     "Mean": 1.1279834845206593,
+     "NDI-S": 0.5758997844603136,
+     "NDI-F": 0.4135304426476493,
+     "NDI-F-V": 0.38254018987798694,
+     "GaussCM": 0.3765911747618913,
+     "EM-FA": 0.27645139497426013,
+     "EM-FA-k20": 0.27645139497426013,
+     "EM-PPCA": 0.2749870615620551,
+     "SoftImpute": 0.24648954914017532,
+     "MICE": 0.11670126333455949
+    },
+    "texture|MNAR-30": {
+     "Mean": 1.2372217890887869,
+     "NDI-S": 0.681152519749601,
+     "NDI-F": 0.4903022610274299,
+     "NDI-F-V": 0.46781315371743176,
+     "GaussCM": 0.46783103220727645,
+     "EM-FA": 0.28597822718521343,
+     "EM-FA-k20": 0.28597822718521343,
+     "EM-PPCA": 0.2852888193054665,
+     "SoftImpute": 0.32946703932282323,
+     "MICE": 0.21383786166739116
+    }
+   }
+  },
+  "n_settings_by_dataset": {
+   "letter": 3,
+   "magic-full": 3,
+   "mfeat-factors": 3,
+   "mnist": 1,
+   "musk2": 3,
+   "optdigits": 3,
+   "pendigits": 3,
+   "satimage": 3,
+   "texture": 3
+  },
+  "mcar30": {
+   "letter": {
+    "EM-FA": 0.7831630116199458,
+    "EM-FA-k20": 0.7831630116199458,
+    "EM-PPCA": 0.80602973023263,
+    "GaussCM": 0.7478633393949549,
+    "KNN": null,
+    "MICE": 0.8545755967025853,
+    "Mean": 1.0033748065667316,
+    "MissForest": null,
+    "NDI-0": 1.0037470184792388,
+    "NDI-F": 0.8063039932998234,
+    "NDI-F-V": 0.7502228599035826,
+    "NDI-F-k20": 0.8063039932998234,
+    "NDI-F-kall": 0.8063039932998234,
+    "NDI-S": 0.8217649182862637,
+    "SoftImpute": 0.7986279506448676
+   },
+   "magic-full": {
+    "EM-FA": 0.7630296652984503,
+    "EM-FA-k20": 0.7630296652984503,
+    "EM-PPCA": 0.8048565530091581,
+    "GaussCM": 0.743878664243221,
+    "KNN": null,
+    "MICE": 0.8031451565241737,
+    "Mean": 1.0040956477713665,
+    "MissForest": null,
+    "NDI-0": 1.094874493382083,
+    "NDI-F": 0.7914161443616335,
+    "NDI-F-V": 0.7480407637182227,
+    "NDI-F-k20": 0.7914161443616335,
+    "NDI-F-kall": 0.7914161443616335,
+    "NDI-S": 0.8006544240059347,
+    "SoftImpute": 0.7788057846873743
+   },
+   "mfeat-factors": {
+    "EM-FA": 0.4946597606450695,
+    "EM-FA-k20": 0.36454159108160694,
+    "EM-PPCA": 0.47642247666549015,
+    "GaussCM": 0.28487561607013673,
+    "KNN": 0.43833758694421676,
+    "MICE": 0.22821512415490539,
+    "Mean": 1.0014214416253084,
+    "MissForest": 0.2728750123137283,
+    "NDI-0": 0.9838103382246616,
+    "NDI-F": 0.47826745485181354,
+    "NDI-F-V": 0.2843510173448575,
+    "NDI-F-k20": 0.3520500319216679,
+    "NDI-F-kall": 0.32997755745113905,
+    "NDI-S": 0.6893009483149674,
+    "SoftImpute": 0.2470612844963244
+   },
+   "mnist": {
+    "EM-FA": 0.8770276468151164,
+    "EM-FA-k20": 0.8259242856907121,
+    "EM-PPCA": 0.8762322962430914,
+    "GaussCM": 0.5901733871033169,
+    "KNN": null,
+    "MICE": null,
+    "Mean": 1.011719280238224,
+    "MissForest": null,
+    "NDI-0": 1.0087060108554669,
+    "NDI-F": 0.8686597021283059,
+    "NDI-F-V": 0.6668027063080546,
+    "NDI-F-k20": 0.8120125920129775,
+    "NDI-F-kall": 0.635853822354602,
+    "NDI-S": 0.8742403355009685,
+    "SoftImpute": null
+   },
+   "musk2": {
+    "EM-FA": 0.5815096557759257,
+    "EM-FA-k20": 0.46663851596358047,
+    "EM-PPCA": 0.5615799958291307,
+    "GaussCM": 0.31901421998799134,
+    "KNN": null,
+    "MICE": 0.3070736313598998,
+    "Mean": 1.0012945992685973,
+    "MissForest": null,
+    "NDI-0": 0.9921594011555007,
+    "NDI-F": 0.5552693617302139,
+    "NDI-F-V": 0.3160388938356192,
+    "NDI-F-k20": 0.4382381817078625,
+    "NDI-F-kall": 0.40887501666389836,
+    "NDI-S": 0.7133752076398309,
+    "SoftImpute": 0.33679690647538124
+   },
+   "optdigits": {
+    "EM-FA": 0.7757521383836581,
+    "EM-FA-k20": 0.7267822315181786,
+    "EM-PPCA": 0.7876661042134554,
+    "GaussCM": 0.6777161843177485,
+    "KNN": null,
+    "MICE": 0.7230738637493984,
+    "Mean": 0.9892303241780301,
+    "MissForest": null,
+    "NDI-0": 0.9995167145003788,
+    "NDI-F": 0.7599825019773232,
+    "NDI-F-V": 0.680090373163603,
+    "NDI-F-k20": 0.7171318665607188,
+    "NDI-F-kall": 0.7171318665607188,
+    "NDI-S": 0.8294809951905376,
+    "SoftImpute": 0.708854833411032
+   },
+   "pendigits": {
+    "EM-FA": 0.6619482180980915,
+    "EM-FA-k20": 0.6619482180980915,
+    "EM-PPCA": 0.6818103868676187,
+    "GaussCM": 0.5713453764319897,
+    "KNN": null,
+    "MICE": 0.621070650742029,
+    "Mean": 1.0012773956910783,
+    "MissForest": null,
+    "NDI-0": 1.058213925074373,
+    "NDI-F": 0.6687885338380772,
+    "NDI-F-V": 0.5734746503667933,
+    "NDI-F-k20": 0.6687885338380772,
+    "NDI-F-kall": 0.6687885338380772,
+    "NDI-S": 0.7580131059467762,
+    "SoftImpute": 0.6533432243997492
+   },
+   "satimage": {
+    "EM-FA": 0.3529916728688143,
+    "EM-FA-k20": 0.3529916728688143,
+    "EM-PPCA": 0.3562200357975851,
+    "GaussCM": 0.2188100470260753,
+    "KNN": null,
+    "MICE": 0.22213572785268254,
+    "Mean": 1.000624174922408,
+    "MissForest": null,
+    "NDI-0": 0.7739998125698868,
+    "NDI-F": 0.35383857981374334,
+    "NDI-F-V": 0.21983328925475365,
+    "NDI-F-k20": 0.35383857981374334,
+    "NDI-F-kall": 0.35383857981374334,
+    "NDI-S": 0.4412482857614073,
+    "SoftImpute": 0.23276219919478572
+   },
+   "texture": {
+    "EM-FA": 0.2580723671230323,
+    "EM-FA-k20": 0.2580723671230323,
+    "EM-PPCA": 0.25807963316871296,
+    "GaussCM": 0.1545873031098724,
+    "KNN": null,
+    "MICE": 0.1339385931216943,
+    "Mean": 1.00155365533048,
+    "MissForest": null,
+    "NDI-0": 0.515840737003011,
+    "NDI-F": 0.25464328781646134,
+    "NDI-F-V": 0.14592396240512853,
+    "NDI-F-k20": 0.25464328781646134,
+    "NDI-F-kall": 0.25464328781646134,
+    "NDI-S": 0.478447285922573,
+    "SoftImpute": 0.15324138440893478
+   }
+  },
+  "mcar30_time": {
+   "letter": {
+    "EM-FA": 7.582233473999622,
+    "EM-FA-k20": 7.466059823998876,
+    "EM-PPCA": 3.0083940479999,
+    "GaussCM": 0.439203589000499,
+    "KNN": null,
+    "MICE": 1.541912196999874,
+    "Mean": 0.0115545910002765,
+    "MissForest": null,
+    "NDI-0": 0.0143045260001599,
+    "NDI-F": 0.0380219439994107,
+    "NDI-F-V": 0.1715465260003839,
+    "NDI-F-k20": 0.0376711429998977,
+    "NDI-F-kall": 0.0368873790012003,
+    "NDI-S": 0.0219954000003781,
+    "SoftImpute": 1.3043256109995127
+   },
+   "magic-full": {
+    "EM-FA": 2.7189897870002824,
+    "EM-FA-k20": 2.6928969439995853,
+    "EM-PPCA": 0.4602019280000604,
+    "GaussCM": 0.0637518539997472,
+    "KNN": null,
+    "MICE": 0.6715678919999846,
+    "Mean": 0.0029523900002459,
+    "MissForest": null,
+    "NDI-0": 0.0108652349999829,
+    "NDI-F": 0.0215612729998611,
+    "NDI-F-V": 0.0518701929995586,
+    "NDI-F-k20": 0.0227943400004733,
+    "NDI-F-kall": 0.0270711129996925,
+    "NDI-S": 0.0150167100000544,
+    "SoftImpute": 0.6078978430005009
+   },
+   "mfeat-factors": {
+    "EM-FA": 0.7380031113334553,
+    "EM-FA-k20": 2.4501350413338514,
+    "EM-PPCA": 0.308721261999987,
+    "GaussCM": 1.4865704110000781,
+    "KNN": 3.2992090526668107,
+    "MICE": 66.38317081199966,
+    "Mean": 0.005180195333499133,
+    "MissForest": 70.38073286233309,
+    "NDI-0": 0.018484848333476533,
+    "NDI-F": 0.05659937066714817,
+    "NDI-F-V": 1.1967153203325627,
+    "NDI-F-k20": 0.06955329300035366,
+    "NDI-F-kall": 0.0718053883338143,
+    "NDI-S": 0.05085965400000223,
+    "SoftImpute": 2.6167003030001674
+   },
+   "mnist": {
+    "EM-FA": 43.16778489100034,
+    "EM-FA-k20": 148.77771927699996,
+    "EM-PPCA": 23.391856763999385,
+    "GaussCM": 995.8504943549996,
+    "KNN": null,
+    "MICE": null,
+    "Mean": 0.7551212839998698,
+    "MissForest": null,
+    "NDI-0": 2.410167495000678,
+    "NDI-F": 8.122241007999946,
+    "NDI-F-V": 35.96126670400008,
+    "NDI-F-k20": 8.839567412000179,
+    "NDI-F-kall": 814.716995729,
+    "NDI-S": 9.996304008999688,
+    "SoftImpute": null
+   },
+   "musk2": {
+    "EM-FA": 5.174316092666838,
+    "EM-FA-k20": 8.92888875899977,
+    "EM-PPCA": 0.9339289086668335,
+    "GaussCM": 2.684951377333467,
+    "KNN": null,
+    "MICE": 86.8954364746669,
+    "Mean": 0.0137540276667399,
+    "MissForest": null,
+    "NDI-0": 0.046191385333865236,
+    "NDI-F": 0.11222311033361614,
+    "NDI-F-V": 3.2703232173341044,
+    "NDI-F-k20": 0.1503838373337202,
+    "NDI-F-kall": 0.17935185366695802,
+    "NDI-S": 0.11505421233353742,
+    "SoftImpute": 6.269653715999993
+   },
+   "optdigits": {
+    "EM-FA": 2.3850100716666325,
+    "EM-FA-k20": 9.86961733499993,
+    "EM-PPCA": 2.0981798326668772,
+    "GaussCM": 0.4949565576665312,
+    "KNN": null,
+    "MICE": 5.080774348666637,
+    "Mean": 0.004547922999942434,
+    "MissForest": null,
+    "NDI-0": 0.0140297620003669,
+    "NDI-F": 0.0393506873336567,
+    "NDI-F-V": 0.6729540146661748,
+    "NDI-F-k20": 0.05980582266723403,
+    "NDI-F-kall": 0.061117560334120434,
+    "NDI-S": 0.029852069999833433,
+    "SoftImpute": 2.6863782163333476
+   },
+   "pendigits": {
+    "EM-FA": 5.312942548000137,
+    "EM-FA-k20": 5.416010101000211,
+    "EM-PPCA": 0.3715025399997103,
+    "GaussCM": 0.2924909200000911,
+    "KNN": null,
+    "MICE": 0.9151113419993636,
+    "Mean": 0.0026695649994508,
+    "MissForest": null,
+    "NDI-0": 0.0100213269997766,
+    "NDI-F": 0.0226020179998158,
+    "NDI-F-V": 0.1109569130003365,
+    "NDI-F-k20": 0.0203161070003261,
+    "NDI-F-kall": 0.0203825259995937,
+    "NDI-S": 0.0130579870001383,
+    "SoftImpute": 0.6309087100007673
+   },
+   "satimage": {
+    "EM-FA": 0.1732989546665825,
+    "EM-FA-k20": 0.17137120033294195,
+    "EM-PPCA": 0.14286539966633424,
+    "GaussCM": 0.3649944466666663,
+    "KNN": null,
+    "MICE": 2.0582201673332747,
+    "Mean": 0.003266304999973067,
+    "MissForest": null,
+    "NDI-0": 0.010110772000189101,
+    "NDI-F": 0.0187818856666126,
+    "NDI-F-V": 0.21315869899990503,
+    "NDI-F-k20": 0.0195611359995382,
+    "NDI-F-kall": 0.019620527999601668,
+    "NDI-S": 0.0170746189999893,
+    "SoftImpute": 0.7779657529999895
+   },
+   "texture": {
+    "EM-FA": 0.25819821066670556,
+    "EM-FA-k20": 0.2633379933328493,
+    "EM-PPCA": 0.1480553196667339,
+    "GaussCM": 0.3354561993334452,
+    "KNN": null,
+    "MICE": 2.2083598580002217,
+    "Mean": 0.0030527213333091333,
+    "MissForest": null,
+    "NDI-0": 0.009918686666727133,
+    "NDI-F": 0.019333490999997566,
+    "NDI-F-V": 0.2231597613335907,
+    "NDI-F-k20": 0.023292195332639137,
+    "NDI-F-kall": 0.02187267200012377,
+    "NDI-S": 0.0178075339996818,
+    "SoftImpute": 0.5772671580001164
+   }
+  }
+ },
+ "large_datasets": [
+  {
+   "dataset": "magic-full",
+   "n": 19020,
+   "p": 10,
+   "classes": 2,
+   "source": "PMLB magic"
+  },
+  {
+   "dataset": "letter",
+   "n": 20000,
+   "p": 16,
+   "classes": 26,
+   "source": "PMLB letter"
+  },
+  {
+   "dataset": "pendigits",
+   "n": 10992,
+   "p": 16,
+   "classes": 10,
+   "source": "PMLB pendigits"
+  },
+  {
+   "dataset": "satimage",
+   "n": 6435,
+   "p": 36,
+   "classes": 6,
+   "source": "PMLB satimage"
+  },
+  {
+   "dataset": "optdigits",
+   "n": 5620,
+   "p": 62,
+   "classes": 10,
+   "source": "PMLB optdigits"
+  },
+  {
+   "dataset": "texture",
+   "n": 5500,
+   "p": 40,
+   "classes": 11,
+   "source": "PMLB texture"
+  },
+  {
+   "dataset": "musk2",
+   "n": 6598,
+   "p": 168,
+   "classes": 2,
+   "source": "PMLB clean2"
+  },
+  {
+   "dataset": "mfeat-factors",
+   "n": 2000,
+   "p": 216,
+   "classes": 10,
+   "source": "PMLB mfeat_factors"
+  },
+  {
+   "dataset": "mnist",
+   "n": 70000,
+   "p": 719,
+   "classes": 10,
+   "source": "PMLB mnist"
+  }
+ ]
+}

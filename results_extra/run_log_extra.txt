@@ -1,0 +1,1247 @@
+00:33:35 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+00:33:35 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+00:33:35 torch not available -> GAIN skipped (pip install torch to include it)
+00:33:39 timing check: NDI-F 100,000 x 50 = 1.096 s (paper's machine 1.833 s)
+00:33:39 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+00:33:40 SCALEP n=  10000 p= 50 mcar       Mean           0.01 s  rmse=1.0022
+00:33:40 SCALEP n=  10000 p= 50 mcar       NDI-S          0.12 s  rmse=0.5131
+00:33:40 SCALEP n=  10000 p= 50 mcar       NDI-F          0.11 s  rmse=0.3661
+00:33:41 SCALEP n=  10000 p= 50 mcar       GaussCM        0.79 s  rmse=0.3740
+00:33:41 SCALEP n=  10000 p= 50 mcar       EM-FA          0.29 s  rmse=0.3651
+00:33:41 SCALEP n=  10000 p= 50 mcar       EM-PPCA        0.21 s  rmse=0.3711
+00:33:43 SCALEP n=  10000 p= 50 mcar       SoftImpute     2.17 s  rmse=0.3797
+00:33:43 SCALEP n=  10000 p=100 mcar       Mean           0.01 s  rmse=1.0018
+00:33:44 SCALEP n=  10000 p=100 mcar       NDI-S          0.37 s  rmse=0.5066
+00:33:44 SCALEP n=  10000 p=100 mcar       NDI-F          0.35 s  rmse=0.3792
+00:33:46 SCALEP n=  10000 p=100 mcar       GaussCM        1.85 s  rmse=0.3930
+00:33:47 SCALEP n=  10000 p=100 mcar       EM-FA          0.62 s  rmse=0.3786
+00:33:47 SCALEP n=  10000 p=100 mcar       EM-PPCA        0.49 s  rmse=0.3818
+00:33:53 SCALEP n=  10000 p=100 mcar       SoftImpute     5.84 s  rmse=0.3862
+00:33:53 SCALEP n=  10000 p=200 mcar       Mean           0.03 s  rmse=1.0003
+00:33:54 SCALEP n=  10000 p=200 mcar       NDI-S          1.35 s  rmse=0.5036
+00:33:56 SCALEP n=  10000 p=200 mcar       NDI-F          1.29 s  rmse=0.3847
+00:34:03 SCALEP n=  10000 p=200 mcar       GaussCM        7.13 s  rmse=0.4085
+00:34:05 SCALEP n=  10000 p=200 mcar       EM-FA          1.71 s  rmse=0.3843
+00:34:06 SCALEP n=  10000 p=200 mcar       EM-PPCA        1.56 s  rmse=0.3858
+00:34:16 SCALEP n=  10000 p=200 mcar       SoftImpute     9.68 s  rmse=0.3889
+00:34:16 SCALEP n=  10000 p=500 mcar       Mean           0.06 s  rmse=1.0000
+00:34:24 SCALEP n=  10000 p=500 mcar       NDI-S          7.81 s  rmse=0.4958
+00:34:32 SCALEP n=  10000 p=500 mcar       NDI-F          7.62 s  rmse=0.3812
+00:35:43 SCALEP n=  10000 p=500 mcar       GaussCM       71.70 s  rmse=0.4234
+00:35:53 SCALEP n=  10000 p=500 mcar       EM-FA          9.02 s  rmse=0.3809
+00:36:01 SCALEP n=  10000 p=500 mcar       EM-PPCA        8.50 s  rmse=0.3815
+00:36:27 SCALEP n=  10000 p=500 mcar       SoftImpute    25.55 s  rmse=0.3851
+00:36:27 SCALEP n= 100000 p= 50 mcar       Mean           0.06 s  rmse=0.9992
+00:36:28 SCALEP n= 100000 p= 50 mcar       NDI-S          1.09 s  rmse=0.5227
+00:36:29 SCALEP n= 100000 p= 50 mcar       NDI-F          1.07 s  rmse=0.3784
+00:36:38 SCALEP n= 100000 p= 50 mcar       GaussCM        8.34 s  rmse=0.3791
+00:36:41 SCALEP n= 100000 p= 50 mcar       EM-FA          2.85 s  rmse=0.3776
+00:36:43 SCALEP n= 100000 p= 50 mcar       EM-PPCA        2.28 s  rmse=0.3842
+00:37:26 SCALEP n= 100000 p= 50 mcar       SoftImpute    43.50 s  rmse=0.3902
+00:37:27 SCALEP n= 100000 p=100 mcar       Mean           0.16 s  rmse=0.9998
+00:37:31 SCALEP n= 100000 p=100 mcar       NDI-S          4.01 s  rmse=0.4953
+00:37:35 SCALEP n= 100000 p=100 mcar       NDI-F          3.68 s  rmse=0.3647
+00:37:53 SCALEP n= 100000 p=100 mcar       GaussCM       18.17 s  rmse=0.3665
+00:38:00 SCALEP n= 100000 p=100 mcar       EM-FA          6.38 s  rmse=0.3644
+00:38:06 SCALEP n= 100000 p=100 mcar       EM-PPCA        5.70 s  rmse=0.3671
+00:40:05 SCALEP n= 100000 p=100 mcar       SoftImpute   119.33 s  rmse=0.3711
+00:40:07 SCALEP n= 100000 p=200 mcar       Mean           0.31 s  rmse=0.9998
+00:40:21 SCALEP n= 100000 p=200 mcar       NDI-S         14.14 s  rmse=0.4897
+00:40:35 SCALEP n= 100000 p=200 mcar       NDI-F         14.07 s  rmse=0.3666
+00:41:49 SCALEP n= 100000 p=200 mcar       GaussCM       73.16 s  rmse=0.3701
+00:42:07 SCALEP n= 100000 p=200 mcar       EM-FA         17.72 s  rmse=0.3664
+00:42:24 SCALEP n= 100000 p=200 mcar       EM-PPCA       16.92 s  rmse=0.3677
+00:44:56 SCALEP n= 100000 p=200 mcar       SoftImpute   152.07 s  rmse=0.3699
+00:44:59 SCALEP n= 100000 p=500 mcar       Mean           0.74 s  rmse=1.0001
+00:46:20 SCALEP n= 100000 p=500 mcar       NDI-S         80.15 s  rmse=0.4996
+00:47:39 SCALEP n= 100000 p=500 mcar       NDI-F         78.61 s  rmse=0.3855
+00:49:52 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+00:49:52 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+00:49:52 torch not available -> GAIN skipped (pip install torch to include it)
+00:49:54 timing check: NDI-F 100,000 x 50 = 0.407 s (paper's machine 1.833 s)
+00:49:54 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+00:49:54 SCALEP n=  10000 p= 50 mcar       NDI-S          0.04 s  rmse=0.5131
+00:49:54 SCALEP n=  10000 p= 50 mcar       NDI-F          0.04 s  rmse=0.3661
+00:49:55 SCALEP n=  10000 p= 50 mcar       GaussCM        0.75 s  rmse=0.3740
+00:49:55 SCALEP n=  10000 p= 50 mcar       EM-FA          0.20 s  rmse=0.3651
+00:49:55 SCALEP n=  10000 p= 50 mcar       EM-PPCA        0.14 s  rmse=0.3711
+00:49:55 SCALEP n=  10000 p=100 mcar       NDI-S          0.10 s  rmse=0.5066
+00:49:55 SCALEP n=  10000 p=100 mcar       NDI-F          0.09 s  rmse=0.3792
+00:49:57 SCALEP n=  10000 p=100 mcar       GaussCM        1.58 s  rmse=0.3930
+00:49:57 SCALEP n=  10000 p=100 mcar       EM-FA          0.36 s  rmse=0.3786
+00:49:58 SCALEP n=  10000 p=100 mcar       EM-PPCA        0.22 s  rmse=0.3818
+00:49:58 SCALEP n=  10000 p=200 mcar       NDI-S          0.23 s  rmse=0.5036
+00:49:58 SCALEP n=  10000 p=200 mcar       NDI-F          0.17 s  rmse=0.3847
+00:50:04 SCALEP n=  10000 p=200 mcar       GaussCM        5.96 s  rmse=0.4085
+00:50:05 SCALEP n=  10000 p=200 mcar       EM-FA          0.60 s  rmse=0.3843
+00:50:05 SCALEP n=  10000 p=200 mcar       EM-PPCA        0.50 s  rmse=0.3858
+00:50:06 SCALEP n=  10000 p=500 mcar       NDI-S          0.85 s  rmse=0.4958
+00:50:07 SCALEP n=  10000 p=500 mcar       NDI-F          0.62 s  rmse=0.3812
+00:51:11 SCALEP n=  10000 p=500 mcar       GaussCM       63.89 s  rmse=0.4234
+00:51:13 SCALEP n=  10000 p=500 mcar       EM-FA          1.46 s  rmse=0.3809
+00:51:14 SCALEP n=  10000 p=500 mcar       EM-PPCA        1.37 s  rmse=0.3815
+00:51:15 SCALEP n= 100000 p= 50 mcar       NDI-S          0.41 s  rmse=0.5227
+00:51:15 SCALEP n= 100000 p= 50 mcar       NDI-F          0.40 s  rmse=0.3784
+00:51:22 SCALEP n= 100000 p= 50 mcar       GaussCM        7.21 s  rmse=0.3791
+00:51:25 SCALEP n= 100000 p= 50 mcar       EM-FA          2.11 s  rmse=0.3776
+00:51:26 SCALEP n= 100000 p= 50 mcar       EM-PPCA        1.59 s  rmse=0.3842
+00:51:28 SCALEP n= 100000 p=100 mcar       NDI-S          1.00 s  rmse=0.4953
+00:51:29 SCALEP n= 100000 p=100 mcar       NDI-F          0.92 s  rmse=0.3647
+00:51:44 SCALEP n= 100000 p=100 mcar       GaussCM       15.07 s  rmse=0.3665
+00:51:48 SCALEP n= 100000 p=100 mcar       EM-FA          3.61 s  rmse=0.3644
+00:51:50 SCALEP n= 100000 p=100 mcar       EM-PPCA        2.56 s  rmse=0.3671
+00:51:54 SCALEP n= 100000 p=200 mcar       NDI-S          2.52 s  rmse=0.4897
+00:51:56 SCALEP n= 100000 p=200 mcar       NDI-F          2.04 s  rmse=0.3666
+00:52:56 SCALEP n= 100000 p=200 mcar       GaussCM       59.38 s  rmse=0.3701
+00:53:03 SCALEP n= 100000 p=200 mcar       EM-FA          6.50 s  rmse=0.3664
+00:53:08 SCALEP n= 100000 p=200 mcar       EM-PPCA        5.09 s  rmse=0.3677
+00:53:18 SCALEP n= 100000 p=500 mcar       NDI-S          8.12 s  rmse=0.4996
+00:53:25 SCALEP n= 100000 p=500 mcar       NDI-F          6.47 s  rmse=0.3855
+01:04:08 SCALEP n= 100000 p=500 mcar       GaussCM      641.86 s  rmse=0.3932
+01:04:25 SCALEP n= 100000 p=500 mcar       EM-FA         15.68 s  rmse=0.3855
+01:04:40 SCALEP n= 100000 p=500 mcar       EM-PPCA       14.75 s  rmse=0.3861
+01:04:41 SCALEP n= 100000 p=200 20patterns Mean           0.20 s  rmse=1.0000
+01:04:43 SCALEP n= 100000 p=200 20patterns NDI-S          2.21 s  rmse=0.4904
+01:04:45 SCALEP n= 100000 p=200 20patterns NDI-F          1.87 s  rmse=0.3680
+01:04:47 SCALEP n= 100000 p=200 20patterns GaussCM        1.69 s  rmse=0.3719
+01:04:54 SCALEP n= 100000 p=200 20patterns EM-FA          6.11 s  rmse=0.3679
+01:05:00 SCALEP n= 100000 p=200 20patterns EM-PPCA        5.73 s  rmse=0.3692
+01:08:17 SCALEP n= 100000 p=200 20patterns SoftImpute   196.84 s  rmse=0.3716
+01:08:34 SMALLN ionosphere         n=50 done
+01:08:52 SMALLN ionosphere         n=100 done
+01:09:09 SMALLN ionosphere         n=200 done
+01:09:37 SMALLN spambase           n=50 done
+01:10:04 SMALLN spambase           n=100 done
+01:10:36 SMALLN spambase           n=200 done
+01:11:09 SMALLN spambase           n=500 done
+01:11:27 SMALLN satimage           n=50 done
+01:11:44 SMALLN satimage           n=100 done
+01:12:03 SMALLN satimage           n=200 done
+01:12:21 SMALLN satimage           n=500 done
+01:12:48 SMALLN optdigits          n=50 done
+01:13:15 SMALLN optdigits          n=100 done
+01:13:43 SMALLN optdigits          n=200 done
+01:14:16 SMALLN optdigits          n=500 done
+01:14:37 SMALLN texture            n=50 done
+01:14:56 SMALLN texture            n=100 done
+01:15:16 SMALLN texture            n=200 done
+01:15:37 SMALLN texture            n=500 done
+01:17:07 SMALLN musk2              n=50 done
+01:18:43 SMALLN musk2              n=100 done
+01:20:36 SMALLN musk2              n=200 done
+01:22:43 SMALLN musk2              n=500 done
+01:24:42 SMALLN mfeat-factors      n=50 done
+01:26:56 SMALLN mfeat-factors      n=100 done
+01:29:32 SMALLN mfeat-factors      n=200 done
+01:33:26 SMALLN mfeat-factors      n=500 done
+01:33:26 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 Mean           0.00 s  rmse=1.0041
+01:33:26 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-0          0.01 s  rmse=1.0949
+01:33:26 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-S          0.02 s  rmse=0.8007
+01:33:26 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-F          0.02 s  rmse=0.7914
+01:33:26 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 GaussCM        0.06 s  rmse=0.7439
+01:33:29 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 EM-FA          2.72 s  rmse=0.7630
+01:33:30 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 EM-PPCA        0.46 s  rmse=0.8049
+01:33:30 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 SoftImpute     0.61 s  rmse=0.7788
+01:33:31 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 MICE           0.67 s  rmse=0.8031
+01:33:31 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 Mean           0.00 s  rmse=0.8901
+01:33:31 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-0          0.01 s  rmse=0.9968
+01:33:31 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-S          0.01 s  rmse=0.6902
+01:33:31 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-F          0.03 s  rmse=0.7064
+01:33:31 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 GaussCM        0.03 s  rmse=0.7082
+01:33:35 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 EM-FA          3.76 s  rmse=0.6325
+01:33:36 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 EM-PPCA        1.35 s  rmse=0.7008
+01:33:37 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 SoftImpute     0.56 s  rmse=0.6836
+01:33:37 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 MICE           0.67 s  rmse=0.8016
+01:33:37 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 Mean           0.00 s  rmse=1.1596
+01:33:37 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-0          0.01 s  rmse=1.2411
+01:33:37 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-S          0.02 s  rmse=1.0787
+01:33:37 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-F          0.02 s  rmse=1.0309
+01:33:38 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 GaussCM        0.06 s  rmse=1.0304
+01:33:42 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 EM-FA          4.75 s  rmse=1.0074
+01:33:43 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 EM-PPCA        0.53 s  rmse=1.0174
+01:33:43 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 SoftImpute     0.52 s  rmse=1.0258
+01:33:44 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 MICE           0.64 s  rmse=1.1247
+01:33:44 LARGE letter         n= 20000 p= 16 MCAR seed=0 Mean           0.01 s  rmse=1.0034
+01:33:44 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-0          0.01 s  rmse=1.0037
+01:33:44 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-S          0.02 s  rmse=0.8218
+01:33:44 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-F          0.04 s  rmse=0.8063
+01:33:45 LARGE letter         n= 20000 p= 16 MCAR seed=0 GaussCM        0.44 s  rmse=0.7479
+01:33:52 LARGE letter         n= 20000 p= 16 MCAR seed=0 EM-FA          7.58 s  rmse=0.7832
+01:33:55 LARGE letter         n= 20000 p= 16 MCAR seed=0 EM-PPCA        3.01 s  rmse=0.8060
+01:33:57 LARGE letter         n= 20000 p= 16 MCAR seed=0 SoftImpute     1.30 s  rmse=0.7986
+01:33:58 LARGE letter         n= 20000 p= 16 MCAR seed=0 MICE           1.54 s  rmse=0.8546
+01:33:58 LARGE letter         n= 20000 p= 16 MAR  seed=0 Mean           0.00 s  rmse=1.0110
+01:33:58 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-0          0.01 s  rmse=1.0353
+01:33:58 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-S          0.02 s  rmse=0.8624
+01:33:58 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-F          0.03 s  rmse=0.8684
+01:33:58 LARGE letter         n= 20000 p= 16 MAR  seed=0 GaussCM        0.11 s  rmse=0.8119
+01:34:04 LARGE letter         n= 20000 p= 16 MAR  seed=0 EM-FA          5.61 s  rmse=0.8215
+01:34:05 LARGE letter         n= 20000 p= 16 MAR  seed=0 EM-PPCA        0.84 s  rmse=0.8659
+01:34:06 LARGE letter         n= 20000 p= 16 MAR  seed=0 SoftImpute     1.37 s  rmse=0.8454
+01:34:08 LARGE letter         n= 20000 p= 16 MAR  seed=0 MICE           1.52 s  rmse=0.8607
+01:34:08 LARGE letter         n= 20000 p= 16 MNAR seed=0 Mean           0.00 s  rmse=1.2536
+01:34:08 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-0          0.01 s  rmse=1.2283
+01:34:08 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-S          0.02 s  rmse=1.0828
+01:34:08 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-F          0.03 s  rmse=1.0434
+01:34:08 LARGE letter         n= 20000 p= 16 MNAR seed=0 GaussCM        0.46 s  rmse=1.0424
+01:34:14 LARGE letter         n= 20000 p= 16 MNAR seed=0 EM-FA          5.26 s  rmse=0.9613
+01:34:15 LARGE letter         n= 20000 p= 16 MNAR seed=0 EM-PPCA        0.76 s  rmse=0.9942
+01:34:16 LARGE letter         n= 20000 p= 16 MNAR seed=0 SoftImpute     1.31 s  rmse=1.0770
+01:34:17 LARGE letter         n= 20000 p= 16 MNAR seed=0 MICE           1.52 s  rmse=0.9677
+01:34:17 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 Mean           0.00 s  rmse=1.0013
+01:34:17 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-0          0.01 s  rmse=1.0582
+01:34:17 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-S          0.01 s  rmse=0.7580
+01:34:17 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-F          0.02 s  rmse=0.6688
+01:34:18 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 GaussCM        0.29 s  rmse=0.5713
+01:34:23 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 EM-FA          5.31 s  rmse=0.6619
+01:34:23 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 EM-PPCA        0.37 s  rmse=0.6818
+01:34:24 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 SoftImpute     0.63 s  rmse=0.6533
+01:34:25 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 MICE           0.92 s  rmse=0.6211
+01:34:25 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 Mean           0.00 s  rmse=1.0094
+01:34:25 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-0          0.01 s  rmse=1.0770
+01:34:25 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-S          0.01 s  rmse=0.7955
+01:34:25 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-F          0.02 s  rmse=0.7367
+01:34:25 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 GaussCM        0.10 s  rmse=0.6810
+01:34:29 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 EM-FA          3.84 s  rmse=0.7328
+01:34:30 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 EM-PPCA        0.87 s  rmse=0.7358
+01:34:31 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 SoftImpute     0.62 s  rmse=0.7343
+01:34:31 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 MICE           0.91 s  rmse=0.6813
+01:34:32 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 Mean           0.00 s  rmse=1.2501
+01:34:32 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-0          0.01 s  rmse=1.3004
+01:34:32 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-S          0.01 s  rmse=1.0191
+01:34:32 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-F          0.02 s  rmse=0.9157
+01:34:32 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 GaussCM        0.26 s  rmse=0.9461
+01:34:35 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 EM-FA          2.88 s  rmse=0.7887
+01:34:35 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 EM-PPCA        0.52 s  rmse=0.8105
+01:34:36 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 SoftImpute     0.72 s  rmse=0.9775
+01:34:37 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 MICE           1.11 s  rmse=0.7132
+01:34:37 LARGE satimage       n=  6435 p= 36 MCAR seed=0 Mean           0.00 s  rmse=0.9993
+01:34:37 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-0          0.01 s  rmse=0.7713
+01:34:37 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-S          0.02 s  rmse=0.4420
+01:34:37 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-F          0.02 s  rmse=0.3538
+01:34:38 LARGE satimage       n=  6435 p= 36 MCAR seed=0 GaussCM        0.37 s  rmse=0.2192
+01:34:38 LARGE satimage       n=  6435 p= 36 MCAR seed=0 EM-FA          0.18 s  rmse=0.3528
+01:34:38 LARGE satimage       n=  6435 p= 36 MCAR seed=0 EM-PPCA        0.14 s  rmse=0.3563
+01:34:39 LARGE satimage       n=  6435 p= 36 MCAR seed=0 SoftImpute     0.81 s  rmse=0.2333
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=0 MICE           2.21 s  rmse=0.2231
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=1 Mean           0.00 s  rmse=1.0020
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-0          0.01 s  rmse=0.7738
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-S          0.02 s  rmse=0.4411
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-F          0.02 s  rmse=0.3541
+01:34:41 LARGE satimage       n=  6435 p= 36 MCAR seed=1 GaussCM        0.37 s  rmse=0.2187
+01:34:42 LARGE satimage       n=  6435 p= 36 MCAR seed=1 EM-FA          0.16 s  rmse=0.3532
+01:34:42 LARGE satimage       n=  6435 p= 36 MCAR seed=1 EM-PPCA        0.14 s  rmse=0.3561
+01:34:43 LARGE satimage       n=  6435 p= 36 MCAR seed=1 SoftImpute     0.76 s  rmse=0.2333
+01:34:44 LARGE satimage       n=  6435 p= 36 MCAR seed=1 MICE           1.82 s  rmse=0.2232
+01:34:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 Mean           0.00 s  rmse=1.0005
+01:34:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-0          0.01 s  rmse=0.7769
+01:34:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-S          0.02 s  rmse=0.4407
+01:34:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-F          0.02 s  rmse=0.3536
+01:34:45 LARGE satimage       n=  6435 p= 36 MCAR seed=2 GaussCM        0.36 s  rmse=0.2185
+01:34:45 LARGE satimage       n=  6435 p= 36 MCAR seed=2 EM-FA          0.18 s  rmse=0.3530
+01:34:45 LARGE satimage       n=  6435 p= 36 MCAR seed=2 EM-PPCA        0.15 s  rmse=0.3562
+01:34:46 LARGE satimage       n=  6435 p= 36 MCAR seed=2 SoftImpute     0.76 s  rmse=0.2317
+01:34:48 LARGE satimage       n=  6435 p= 36 MCAR seed=2 MICE           2.15 s  rmse=0.2201
+01:34:48 LARGE satimage       n=  6435 p= 36 MAR  seed=0 Mean           0.00 s  rmse=1.1136
+01:34:48 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-0          0.01 s  rmse=0.8446
+01:34:48 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-S          0.02 s  rmse=0.6234
+01:34:48 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-F          0.02 s  rmse=0.5310
+01:34:49 LARGE satimage       n=  6435 p= 36 MAR  seed=0 GaussCM        0.36 s  rmse=0.5321
+01:34:50 LARGE satimage       n=  6435 p= 36 MAR  seed=0 EM-FA          1.22 s  rmse=0.3257
+01:34:51 LARGE satimage       n=  6435 p= 36 MAR  seed=0 EM-PPCA        0.90 s  rmse=0.3251
+01:34:52 LARGE satimage       n=  6435 p= 36 MAR  seed=0 SoftImpute     1.17 s  rmse=0.3491
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=0 MICE           1.76 s  rmse=0.2121
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=1 Mean           0.00 s  rmse=1.0932
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-0          0.01 s  rmse=0.8824
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-S          0.02 s  rmse=0.6064
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-F          0.02 s  rmse=0.5053
+01:34:54 LARGE satimage       n=  6435 p= 36 MAR  seed=1 GaussCM        0.36 s  rmse=0.4804
+01:34:55 LARGE satimage       n=  6435 p= 36 MAR  seed=1 EM-FA          0.97 s  rmse=0.3276
+01:34:56 LARGE satimage       n=  6435 p= 36 MAR  seed=1 EM-PPCA        0.65 s  rmse=0.3361
+01:34:57 LARGE satimage       n=  6435 p= 36 MAR  seed=1 SoftImpute     1.17 s  rmse=0.3276
+01:34:58 LARGE satimage       n=  6435 p= 36 MAR  seed=1 MICE           1.50 s  rmse=0.2122
+01:34:59 LARGE satimage       n=  6435 p= 36 MAR  seed=2 Mean           0.00 s  rmse=1.0722
+01:34:59 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-0          0.01 s  rmse=0.8304
+01:34:59 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-S          0.02 s  rmse=0.6006
+01:34:59 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-F          0.02 s  rmse=0.5395
+01:34:59 LARGE satimage       n=  6435 p= 36 MAR  seed=2 GaussCM        0.36 s  rmse=0.5322
+01:35:00 LARGE satimage       n=  6435 p= 36 MAR  seed=2 EM-FA          1.29 s  rmse=0.3250
+01:35:01 LARGE satimage       n=  6435 p= 36 MAR  seed=2 EM-PPCA        1.01 s  rmse=0.3264
+01:35:03 LARGE satimage       n=  6435 p= 36 MAR  seed=2 SoftImpute     1.21 s  rmse=0.3560
+01:35:04 LARGE satimage       n=  6435 p= 36 MAR  seed=2 MICE           1.87 s  rmse=0.2136
+01:35:04 LARGE satimage       n=  6435 p= 36 MNAR seed=0 Mean           0.00 s  rmse=1.2239
+01:35:05 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-0          0.01 s  rmse=0.9458
+01:35:05 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-S          0.02 s  rmse=0.7242
+01:35:05 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-F          0.02 s  rmse=0.6164
+01:35:05 LARGE satimage       n=  6435 p= 36 MNAR seed=0 GaussCM        0.36 s  rmse=0.6214
+01:35:06 LARGE satimage       n=  6435 p= 36 MNAR seed=0 EM-FA          1.30 s  rmse=0.3441
+01:35:07 LARGE satimage       n=  6435 p= 36 MNAR seed=0 EM-PPCA        1.21 s  rmse=0.3480
+01:35:09 LARGE satimage       n=  6435 p= 36 MNAR seed=0 SoftImpute     1.19 s  rmse=0.3987
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=0 MICE           2.19 s  rmse=0.2279
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=1 Mean           0.00 s  rmse=1.2334
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-0          0.01 s  rmse=0.9720
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-S          0.02 s  rmse=0.7417
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-F          0.02 s  rmse=0.6422
+01:35:11 LARGE satimage       n=  6435 p= 36 MNAR seed=1 GaussCM        0.38 s  rmse=0.6516
+01:35:12 LARGE satimage       n=  6435 p= 36 MNAR seed=1 EM-FA          1.10 s  rmse=0.3455
+01:35:13 LARGE satimage       n=  6435 p= 36 MNAR seed=1 EM-PPCA        0.97 s  rmse=0.3510
+01:35:15 LARGE satimage       n=  6435 p= 36 MNAR seed=1 SoftImpute     1.25 s  rmse=0.4140
+01:35:17 LARGE satimage       n=  6435 p= 36 MNAR seed=1 MICE           2.24 s  rmse=0.2527
+01:35:17 LARGE satimage       n=  6435 p= 36 MNAR seed=2 Mean           0.00 s  rmse=1.2814
+01:35:17 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-0          0.01 s  rmse=1.0343
+01:35:17 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-S          0.02 s  rmse=0.8036
+01:35:17 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-F          0.02 s  rmse=0.7086
+01:35:18 LARGE satimage       n=  6435 p= 36 MNAR seed=2 GaussCM        0.44 s  rmse=0.7024
+01:35:18 LARGE satimage       n=  6435 p= 36 MNAR seed=2 EM-FA          0.90 s  rmse=0.3584
+01:35:19 LARGE satimage       n=  6435 p= 36 MNAR seed=2 EM-PPCA        0.63 s  rmse=0.3644
+01:35:20 LARGE satimage       n=  6435 p= 36 MNAR seed=2 SoftImpute     1.21 s  rmse=0.4382
+01:35:23 LARGE satimage       n=  6435 p= 36 MNAR seed=2 MICE           2.24 s  rmse=0.2395
+01:35:23 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 Mean           0.00 s  rmse=0.9773
+01:35:23 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-0          0.01 s  rmse=0.9879
+01:35:23 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-S          0.03 s  rmse=0.8176
+01:35:23 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-F          0.04 s  rmse=0.7484
+01:35:23 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 GaussCM        0.49 s  rmse=0.6804
+01:35:27 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 EM-FA          3.55 s  rmse=0.7993
+01:35:28 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 EM-PPCA        1.62 s  rmse=0.7675
+01:35:31 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 SoftImpute     2.69 s  rmse=0.6925
+01:35:36 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 MICE           4.67 s  rmse=0.7503
+01:35:36 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 Mean           0.00 s  rmse=1.0033
+01:35:36 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-0          0.01 s  rmse=1.0132
+01:35:36 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-S          0.03 s  rmse=0.8453
+01:35:36 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-F          0.04 s  rmse=0.7825
+01:35:37 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 GaussCM        0.53 s  rmse=0.6913
+01:35:39 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 EM-FA          2.09 s  rmse=0.7746
+01:35:41 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 EM-PPCA        2.59 s  rmse=0.8087
+01:35:44 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 SoftImpute     2.73 s  rmse=0.7287
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 MICE           4.61 s  rmse=0.7280
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 Mean           0.00 s  rmse=0.9870
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-0          0.01 s  rmse=0.9974
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-S          0.03 s  rmse=0.8256
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-F          0.04 s  rmse=0.7491
+01:35:49 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 GaussCM        0.46 s  rmse=0.6614
+01:35:51 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 EM-FA          1.51 s  rmse=0.7534
+01:35:53 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 EM-PPCA        2.08 s  rmse=0.7868
+01:35:56 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 SoftImpute     2.64 s  rmse=0.7054
+01:36:01 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 MICE           5.96 s  rmse=0.6910
+01:36:02 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 Mean           0.00 s  rmse=1.0025
+01:36:02 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-0          0.01 s  rmse=1.0177
+01:36:02 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-S          0.03 s  rmse=0.8525
+01:36:02 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-F          0.04 s  rmse=0.7840
+01:36:02 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 GaussCM        0.51 s  rmse=0.7357
+01:36:04 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 EM-FA          1.34 s  rmse=0.7871
+01:36:06 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 EM-PPCA        2.88 s  rmse=0.8664
+01:36:09 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 SoftImpute     2.82 s  rmse=0.7523
+01:36:21 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 MICE          11.46 s  rmse=0.7386
+01:36:21 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 Mean           0.00 s  rmse=1.0184
+01:36:21 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-0          0.01 s  rmse=1.0299
+01:36:21 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-S          0.03 s  rmse=0.8518
+01:36:21 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-F          0.04 s  rmse=0.7943
+01:36:22 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 GaussCM        0.53 s  rmse=0.7304
+01:36:26 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 EM-FA          3.96 s  rmse=1.3072
+01:36:27 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 EM-PPCA        1.63 s  rmse=0.9034
+01:36:30 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 SoftImpute     2.70 s  rmse=0.7484
+01:36:42 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 MICE          11.79 s  rmse=0.9556
+01:36:42 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 Mean           0.00 s  rmse=0.9978
+01:36:42 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-0          0.01 s  rmse=1.0046
+01:36:42 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-S          0.03 s  rmse=0.8426
+01:36:42 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-F          0.04 s  rmse=0.7782
+01:36:43 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 GaussCM        0.52 s  rmse=0.7203
+01:36:46 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 EM-FA          3.23 s  rmse=0.7720
+01:36:47 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 EM-PPCA        1.24 s  rmse=0.8472
+01:36:50 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 SoftImpute     2.82 s  rmse=0.7420
+01:37:01 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 MICE          11.52 s  rmse=0.9631
+01:37:01 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 Mean           0.01 s  rmse=1.2078
+01:37:02 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-0          0.02 s  rmse=1.7202
+01:37:02 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-S          0.03 s  rmse=1.0852
+01:37:02 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-F          0.04 s  rmse=1.0076
+01:37:02 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 GaussCM        0.49 s  rmse=0.9676
+01:37:04 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 EM-FA          2.13 s  rmse=0.9675
+01:37:06 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 EM-PPCA        1.65 s  rmse=0.9821
+01:37:09 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 SoftImpute     2.76 s  rmse=1.0007
+01:37:14 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 MICE           5.72 s  rmse=0.8846
+01:37:15 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 Mean           0.00 s  rmse=1.3151
+01:37:15 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-0          0.02 s  rmse=1.6460
+01:37:15 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-S          0.04 s  rmse=1.1989
+01:37:15 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-F          0.04 s  rmse=1.1242
+01:37:15 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 GaussCM        0.52 s  rmse=1.1136
+01:37:18 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 EM-FA          3.13 s  rmse=1.0676
+01:37:21 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 EM-PPCA        2.72 s  rmse=1.0993
+01:37:24 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 SoftImpute     2.87 s  rmse=1.1302
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 MICE           5.69 s  rmse=0.9915
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 Mean           0.01 s  rmse=1.2119
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-0          0.01 s  rmse=1.7517
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-S          0.03 s  rmse=1.0922
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-F          0.04 s  rmse=1.0230
+01:37:30 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 GaussCM        0.47 s  rmse=1.0038
+01:37:36 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 EM-FA          5.39 s  rmse=0.9579
+01:37:38 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 EM-PPCA        2.19 s  rmse=0.9844
+01:37:41 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 SoftImpute     2.70 s  rmse=1.0136
+01:37:45 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 MICE           4.52 s  rmse=0.8816
+01:37:45 LARGE texture        n=  5500 p= 40 MCAR seed=0 Mean           0.00 s  rmse=1.0040
+01:37:45 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-0          0.01 s  rmse=0.5178
+01:37:45 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-S          0.02 s  rmse=0.4802
+01:37:45 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-F          0.02 s  rmse=0.2548
+01:37:46 LARGE texture        n=  5500 p= 40 MCAR seed=0 GaussCM        0.35 s  rmse=0.1550
+01:37:46 LARGE texture        n=  5500 p= 40 MCAR seed=0 EM-FA          0.26 s  rmse=0.2579
+01:37:46 LARGE texture        n=  5500 p= 40 MCAR seed=0 EM-PPCA        0.17 s  rmse=0.2584
+01:37:47 LARGE texture        n=  5500 p= 40 MCAR seed=0 SoftImpute     0.59 s  rmse=0.1541
+01:37:49 LARGE texture        n=  5500 p= 40 MCAR seed=0 MICE           2.48 s  rmse=0.1353
+01:37:49 LARGE texture        n=  5500 p= 40 MCAR seed=1 Mean           0.00 s  rmse=0.9977
+01:37:49 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-0          0.01 s  rmse=0.5122
+01:37:49 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-S          0.02 s  rmse=0.4748
+01:37:49 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-F          0.02 s  rmse=0.2538
+01:37:50 LARGE texture        n=  5500 p= 40 MCAR seed=1 GaussCM        0.33 s  rmse=0.1543
+01:37:50 LARGE texture        n=  5500 p= 40 MCAR seed=1 EM-FA          0.27 s  rmse=0.2577
+01:37:50 LARGE texture        n=  5500 p= 40 MCAR seed=1 EM-PPCA        0.15 s  rmse=0.2569
+01:37:51 LARGE texture        n=  5500 p= 40 MCAR seed=1 SoftImpute     0.57 s  rmse=0.1522
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=1 MICE           2.07 s  rmse=0.1342
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 Mean           0.00 s  rmse=1.0030
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-0          0.01 s  rmse=0.5175
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-S          0.02 s  rmse=0.4803
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-F          0.02 s  rmse=0.2553
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 GaussCM        0.32 s  rmse=0.1545
+01:37:53 LARGE texture        n=  5500 p= 40 MCAR seed=2 EM-FA          0.25 s  rmse=0.2586
+01:37:54 LARGE texture        n=  5500 p= 40 MCAR seed=2 EM-PPCA        0.13 s  rmse=0.2589
+01:37:54 LARGE texture        n=  5500 p= 40 MCAR seed=2 SoftImpute     0.58 s  rmse=0.1534
+01:37:56 LARGE texture        n=  5500 p= 40 MCAR seed=2 MICE           2.07 s  rmse=0.1323
+01:37:56 LARGE texture        n=  5500 p= 40 MAR  seed=0 Mean           0.00 s  rmse=1.1396
+01:37:56 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-0          0.01 s  rmse=0.5996
+01:37:56 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-S          0.02 s  rmse=0.5683
+01:37:56 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-F          0.02 s  rmse=0.4066
+01:37:57 LARGE texture        n=  5500 p= 40 MAR  seed=0 GaussCM        0.33 s  rmse=0.3711
+01:37:58 LARGE texture        n=  5500 p= 40 MAR  seed=0 EM-FA          1.15 s  rmse=0.2744
+01:37:59 LARGE texture        n=  5500 p= 40 MAR  seed=0 EM-PPCA        0.88 s  rmse=0.2736
+01:38:00 LARGE texture        n=  5500 p= 40 MAR  seed=0 SoftImpute     1.18 s  rmse=0.2390
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=0 MICE           1.74 s  rmse=0.1191
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=1 Mean           0.01 s  rmse=1.0937
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-0          0.01 s  rmse=0.5913
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-S          0.02 s  rmse=0.5581
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-F          0.02 s  rmse=0.3854
+01:38:02 LARGE texture        n=  5500 p= 40 MAR  seed=1 GaussCM        0.39 s  rmse=0.3353
+01:38:04 LARGE texture        n=  5500 p= 40 MAR  seed=1 EM-FA          1.87 s  rmse=0.2669
+01:38:05 LARGE texture        n=  5500 p= 40 MAR  seed=1 EM-PPCA        0.71 s  rmse=0.2732
+01:38:06 LARGE texture        n=  5500 p= 40 MAR  seed=1 SoftImpute     1.27 s  rmse=0.2307
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=1 MICE           1.71 s  rmse=0.1110
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=2 Mean           0.00 s  rmse=1.1506
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-0          0.01 s  rmse=0.6352
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-S          0.02 s  rmse=0.6014
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-F          0.02 s  rmse=0.4486
+01:38:08 LARGE texture        n=  5500 p= 40 MAR  seed=2 GaussCM        0.34 s  rmse=0.4234
+01:38:09 LARGE texture        n=  5500 p= 40 MAR  seed=2 EM-FA          0.81 s  rmse=0.2881
+01:38:10 LARGE texture        n=  5500 p= 40 MAR  seed=2 EM-PPCA        0.75 s  rmse=0.2781
+01:38:11 LARGE texture        n=  5500 p= 40 MAR  seed=2 SoftImpute     1.16 s  rmse=0.2698
+01:38:13 LARGE texture        n=  5500 p= 40 MAR  seed=2 MICE           1.68 s  rmse=0.1200
+01:38:13 LARGE texture        n=  5500 p= 40 MNAR seed=0 Mean           0.00 s  rmse=1.2360
+01:38:13 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-0          0.01 s  rmse=0.7064
+01:38:13 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-S          0.02 s  rmse=0.6786
+01:38:13 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-F          0.02 s  rmse=0.5072
+01:38:13 LARGE texture        n=  5500 p= 40 MNAR seed=0 GaussCM        0.35 s  rmse=0.4839
+01:38:14 LARGE texture        n=  5500 p= 40 MNAR seed=0 EM-FA          0.98 s  rmse=0.2776
+01:38:15 LARGE texture        n=  5500 p= 40 MNAR seed=0 EM-PPCA        0.67 s  rmse=0.2760
+01:38:16 LARGE texture        n=  5500 p= 40 MNAR seed=0 SoftImpute     1.27 s  rmse=0.3096
+01:38:18 LARGE texture        n=  5500 p= 40 MNAR seed=0 MICE           2.13 s  rmse=0.1796
+01:38:18 LARGE texture        n=  5500 p= 40 MNAR seed=1 Mean           0.00 s  rmse=1.2572
+01:38:18 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-0          0.01 s  rmse=0.7318
+01:38:18 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-S          0.02 s  rmse=0.7077
+01:38:18 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-F          0.02 s  rmse=0.4804
+01:38:19 LARGE texture        n=  5500 p= 40 MNAR seed=1 GaussCM        0.33 s  rmse=0.4792
+01:38:26 LARGE texture        n=  5500 p= 40 MNAR seed=1 EM-FA          6.70 s  rmse=0.2865
+01:38:27 LARGE texture        n=  5500 p= 40 MNAR seed=1 EM-PPCA        1.52 s  rmse=0.2947
+01:38:28 LARGE texture        n=  5500 p= 40 MNAR seed=1 SoftImpute     1.21 s  rmse=0.4050
+01:38:30 LARGE texture        n=  5500 p= 40 MNAR seed=1 MICE           2.07 s  rmse=0.3167
+01:38:30 LARGE texture        n=  5500 p= 40 MNAR seed=2 Mean           0.00 s  rmse=1.2185
+01:38:30 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-0          0.01 s  rmse=0.6874
+01:38:30 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-S          0.02 s  rmse=0.6571
+01:38:31 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-F          0.02 s  rmse=0.4833
+01:38:31 LARGE texture        n=  5500 p= 40 MNAR seed=2 GaussCM        0.31 s  rmse=0.4404
+01:38:33 LARGE texture        n=  5500 p= 40 MNAR seed=2 EM-FA          1.66 s  rmse=0.2938
+01:38:33 LARGE texture        n=  5500 p= 40 MNAR seed=2 EM-PPCA        0.77 s  rmse=0.2852
+01:38:35 LARGE texture        n=  5500 p= 40 MNAR seed=2 SoftImpute     1.21 s  rmse=0.2737
+01:38:37 LARGE texture        n=  5500 p= 40 MNAR seed=2 MICE           2.07 s  rmse=0.1452
+01:38:37 LARGE musk2          n=  6598 p=168 MCAR seed=0 Mean           0.01 s  rmse=1.0000
+01:38:37 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-0          0.05 s  rmse=0.9907
+01:38:37 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-S          0.12 s  rmse=0.7125
+01:38:37 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-F          0.11 s  rmse=0.5538
+01:38:40 LARGE musk2          n=  6598 p=168 MCAR seed=0 GaussCM        2.72 s  rmse=0.3179
+01:38:44 LARGE musk2          n=  6598 p=168 MCAR seed=0 EM-FA          4.41 s  rmse=0.5801
+01:38:45 LARGE musk2          n=  6598 p=168 MCAR seed=0 EM-PPCA        0.98 s  rmse=0.5604
+01:38:52 LARGE musk2          n=  6598 p=168 MCAR seed=0 SoftImpute     6.32 s  rmse=0.3358
+01:40:36 LARGE musk2          n=  6598 p=168 MCAR seed=0 MICE         104.27 s  rmse=0.3077
+01:40:36 LARGE musk2          n=  6598 p=168 MCAR seed=1 Mean           0.01 s  rmse=1.0013
+01:40:36 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-0          0.05 s  rmse=0.9924
+01:40:36 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-S          0.12 s  rmse=0.7136
+01:40:36 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-F          0.11 s  rmse=0.5551
+01:40:39 LARGE musk2          n=  6598 p=168 MCAR seed=1 GaussCM        2.69 s  rmse=0.3196
+01:40:45 LARGE musk2          n=  6598 p=168 MCAR seed=1 EM-FA          5.51 s  rmse=0.5814
+01:40:46 LARGE musk2          n=  6598 p=168 MCAR seed=1 EM-PPCA        0.96 s  rmse=0.5620
+01:40:52 LARGE musk2          n=  6598 p=168 MCAR seed=1 SoftImpute     6.20 s  rmse=0.3367
+01:42:02 LARGE musk2          n=  6598 p=168 MCAR seed=1 MICE          70.12 s  rmse=0.3053
+01:42:02 LARGE musk2          n=  6598 p=168 MCAR seed=2 Mean           0.01 s  rmse=1.0025
+01:42:02 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-0          0.04 s  rmse=0.9934
+01:42:02 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-S          0.11 s  rmse=0.7139
+01:42:03 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-F          0.11 s  rmse=0.5568
+01:42:05 LARGE musk2          n=  6598 p=168 MCAR seed=2 GaussCM        2.64 s  rmse=0.3195
+01:42:11 LARGE musk2          n=  6598 p=168 MCAR seed=2 EM-FA          5.61 s  rmse=0.5831
+01:42:12 LARGE musk2          n=  6598 p=168 MCAR seed=2 EM-PPCA        0.87 s  rmse=0.5624
+01:42:18 LARGE musk2          n=  6598 p=168 MCAR seed=2 SoftImpute     6.29 s  rmse=0.3379
+01:43:44 LARGE musk2          n=  6598 p=168 MCAR seed=2 MICE          86.30 s  rmse=0.3082
+01:43:45 LARGE musk2          n=  6598 p=168 MAR  seed=0 Mean           0.01 s  rmse=1.0257
+01:43:45 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-0          0.05 s  rmse=1.0166
+01:43:45 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-S          0.11 s  rmse=0.7487
+01:43:45 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-F          0.11 s  rmse=0.6063
+01:43:48 LARGE musk2          n=  6598 p=168 MAR  seed=0 GaussCM        2.78 s  rmse=0.4629
+01:43:51 LARGE musk2          n=  6598 p=168 MAR  seed=0 EM-FA          3.11 s  rmse=0.6088
+01:43:53 LARGE musk2          n=  6598 p=168 MAR  seed=0 EM-PPCA        1.83 s  rmse=0.5837
+01:44:01 LARGE musk2          n=  6598 p=168 MAR  seed=0 SoftImpute     7.83 s  rmse=0.3736
+01:46:22 LARGE musk2          n=  6598 p=168 MAR  seed=0 MICE         140.93 s  rmse=0.3195
+01:46:22 LARGE musk2          n=  6598 p=168 MAR  seed=1 Mean           0.01 s  rmse=1.0358
+01:46:22 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-0          0.04 s  rmse=1.0226
+01:46:22 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-S          0.12 s  rmse=0.7466
+01:46:22 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-F          0.12 s  rmse=0.6010
+01:46:25 LARGE musk2          n=  6598 p=168 MAR  seed=1 GaussCM        2.66 s  rmse=0.4554
+01:46:29 LARGE musk2          n=  6598 p=168 MAR  seed=1 EM-FA          3.44 s  rmse=0.5995
+01:46:30 LARGE musk2          n=  6598 p=168 MAR  seed=1 EM-PPCA        1.35 s  rmse=0.5722
+01:46:38 LARGE musk2          n=  6598 p=168 MAR  seed=1 SoftImpute     7.67 s  rmse=0.3680
+01:47:49 LARGE musk2          n=  6598 p=168 MAR  seed=1 MICE          71.56 s  rmse=0.2998
+01:47:50 LARGE musk2          n=  6598 p=168 MAR  seed=2 Mean           0.01 s  rmse=1.0260
+01:47:50 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-0          0.05 s  rmse=1.0148
+01:47:50 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-S          0.13 s  rmse=0.7352
+01:47:50 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-F          0.12 s  rmse=0.5957
+01:47:53 LARGE musk2          n=  6598 p=168 MAR  seed=2 GaussCM        2.72 s  rmse=0.4519
+01:47:58 LARGE musk2          n=  6598 p=168 MAR  seed=2 EM-FA          5.30 s  rmse=0.5822
+01:48:00 LARGE musk2          n=  6598 p=168 MAR  seed=2 EM-PPCA        1.58 s  rmse=0.5681
+01:48:07 LARGE musk2          n=  6598 p=168 MAR  seed=2 SoftImpute     7.82 s  rmse=0.3509
+01:49:37 LARGE musk2          n=  6598 p=168 MAR  seed=2 MICE          89.86 s  rmse=0.2859
+01:49:38 LARGE musk2          n=  6598 p=168 MNAR seed=0 Mean           0.02 s  rmse=1.2428
+01:49:38 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-0          0.05 s  rmse=1.2282
+01:49:38 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-S          0.13 s  rmse=0.9720
+01:49:38 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-F          0.13 s  rmse=0.8293
+01:49:41 LARGE musk2          n=  6598 p=168 MNAR seed=0 GaussCM        2.97 s  rmse=0.7852
+01:49:46 LARGE musk2          n=  6598 p=168 MNAR seed=0 EM-FA          5.29 s  rmse=0.7278
+01:49:49 LARGE musk2          n=  6598 p=168 MNAR seed=0 EM-PPCA        2.46 s  rmse=0.7110
+01:50:00 LARGE musk2          n=  6598 p=168 MNAR seed=0 SoftImpute    10.92 s  rmse=0.5581
+01:52:29 LARGE musk2          n=  6598 p=168 MNAR seed=0 MICE         148.66 s  rmse=0.4676
+01:52:29 LARGE musk2          n=  6598 p=168 MNAR seed=1 Mean           0.02 s  rmse=1.2157
+01:52:29 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-0          0.05 s  rmse=1.2039
+01:52:29 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-S          0.14 s  rmse=0.9405
+01:52:29 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-F          0.13 s  rmse=0.7839
+01:52:32 LARGE musk2          n=  6598 p=168 MNAR seed=1 GaussCM        2.84 s  rmse=0.7214
+01:52:37 LARGE musk2          n=  6598 p=168 MNAR seed=1 EM-FA          5.02 s  rmse=0.6916
+01:52:40 LARGE musk2          n=  6598 p=168 MNAR seed=1 EM-PPCA        2.24 s  rmse=0.6740
+01:52:50 LARGE musk2          n=  6598 p=168 MNAR seed=1 SoftImpute    10.01 s  rmse=0.5024
+01:54:04 LARGE musk2          n=  6598 p=168 MNAR seed=1 MICE          74.05 s  rmse=0.4118
+01:54:04 LARGE musk2          n=  6598 p=168 MNAR seed=2 Mean           0.01 s  rmse=1.2548
+01:54:04 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-0          0.04 s  rmse=1.2421
+01:54:04 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-S          0.12 s  rmse=0.9858
+01:54:05 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-F          0.15 s  rmse=0.8423
+01:54:08 LARGE musk2          n=  6598 p=168 MNAR seed=2 GaussCM        2.88 s  rmse=0.7906
+01:54:13 LARGE musk2          n=  6598 p=168 MNAR seed=2 EM-FA          5.16 s  rmse=0.7466
+01:54:14 LARGE musk2          n=  6598 p=168 MNAR seed=2 EM-PPCA        1.67 s  rmse=0.7293
+01:54:26 LARGE musk2          n=  6598 p=168 MNAR seed=2 SoftImpute    11.78 s  rmse=0.5784
+01:55:56 LARGE musk2          n=  6598 p=168 MNAR seed=2 MICE          90.15 s  rmse=0.4881
+01:55:57 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 Mean           0.01 s  rmse=1.0008
+01:55:57 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-0          0.02 s  rmse=0.9831
+01:55:57 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-S          0.05 s  rmse=0.6881
+01:55:57 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-F          0.06 s  rmse=0.4767
+01:55:58 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 GaussCM        1.60 s  rmse=0.2848
+01:55:59 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 EM-FA          0.77 s  rmse=0.4925
+01:55:59 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 EM-PPCA        0.34 s  rmse=0.4755
+01:56:02 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 SoftImpute     2.85 s  rmse=0.2461
+01:56:06 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 KNN            3.88 s  rmse=0.4362
+01:57:21 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 MICE          74.31 s  rmse=0.2295
+01:58:32 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 MissForest    70.99 s  rmse=0.2735
+01:58:32 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 Mean           0.01 s  rmse=1.0007
+01:58:32 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-0          0.02 s  rmse=0.9840
+01:58:32 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-S          0.05 s  rmse=0.6902
+01:58:32 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-F          0.05 s  rmse=0.4794
+01:58:33 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 GaussCM        1.44 s  rmse=0.2852
+01:58:34 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 EM-FA          0.72 s  rmse=0.4960
+01:58:34 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 EM-PPCA        0.30 s  rmse=0.4775
+01:58:37 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 SoftImpute     2.54 s  rmse=0.2481
+01:58:40 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 KNN            2.93 s  rmse=0.4401
+01:59:42 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 MICE          62.64 s  rmse=0.2284
+02:00:53 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 MissForest    70.42 s  rmse=0.2717
+02:00:53 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 Mean           0.01 s  rmse=1.0028
+02:00:53 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-0          0.02 s  rmse=0.9843
+02:00:53 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-S          0.05 s  rmse=0.6895
+02:00:53 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-F          0.06 s  rmse=0.4787
+02:00:54 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 GaussCM        1.43 s  rmse=0.2846
+02:00:55 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 EM-FA          0.72 s  rmse=0.4954
+02:00:56 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 EM-PPCA        0.29 s  rmse=0.4763
+02:00:58 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 SoftImpute     2.45 s  rmse=0.2470
+02:01:01 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 KNN            3.08 s  rmse=0.4387
+02:02:03 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 MICE          62.20 s  rmse=0.2267
+02:03:13 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 MissForest    69.72 s  rmse=0.2734
+02:03:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 Mean           0.01 s  rmse=1.0251
+02:03:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-0          0.02 s  rmse=1.0031
+02:03:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-S          0.06 s  rmse=0.7199
+02:03:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-F          0.05 s  rmse=0.5271
+02:03:15 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 GaussCM        1.47 s  rmse=0.4282
+02:03:16 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 EM-FA          1.01 s  rmse=0.4983
+02:03:17 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 EM-PPCA        0.74 s  rmse=0.4839
+02:03:20 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 SoftImpute     2.97 s  rmse=0.2699
+02:03:23 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 KNN            2.86 s  rmse=0.4539
+02:04:09 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 MICE          46.41 s  rmse=0.2175
+02:05:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 MissForest    64.56 s  rmse=0.2910
+02:05:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 Mean           0.00 s  rmse=1.0243
+02:05:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-0          0.02 s  rmse=1.0006
+02:05:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-S          0.05 s  rmse=0.7229
+02:05:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-F          0.05 s  rmse=0.5363
+02:05:15 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 GaussCM        1.47 s  rmse=0.4212
+02:05:17 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 EM-FA          1.53 s  rmse=0.5211
+02:05:18 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 EM-PPCA        0.70 s  rmse=0.4958
+02:05:21 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 SoftImpute     3.06 s  rmse=0.2728
+02:05:23 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 KNN            2.79 s  rmse=0.4674
+02:06:08 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 MICE          44.89 s  rmse=0.2208
+02:07:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 MissForest    64.76 s  rmse=0.2948
+02:07:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 Mean           0.01 s  rmse=1.0324
+02:07:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-0          0.02 s  rmse=1.0125
+02:07:13 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-S          0.05 s  rmse=0.7263
+02:07:14 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-F          0.07 s  rmse=0.5377
+02:07:15 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 GaussCM        1.57 s  rmse=0.4386
+02:07:16 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 EM-FA          1.08 s  rmse=0.5100
+02:07:17 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 EM-PPCA        0.67 s  rmse=0.4889
+02:07:20 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 SoftImpute     3.22 s  rmse=0.2771
+02:07:23 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 KNN            2.78 s  rmse=0.4603
+02:08:11 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 MICE          48.52 s  rmse=0.2258
+02:09:18 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 MissForest    66.46 s  rmse=0.2945
+02:09:18 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 Mean           0.01 s  rmse=1.2491
+02:09:18 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-0          0.02 s  rmse=1.2273
+02:09:18 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-S          0.05 s  rmse=0.9504
+02:09:18 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-F          0.05 s  rmse=0.7193
+02:09:20 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 GaussCM        1.44 s  rmse=0.7267
+02:09:22 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 EM-FA          1.75 s  rmse=0.5772
+02:09:22 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 EM-PPCA        0.89 s  rmse=0.5412
+02:09:27 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 SoftImpute     4.23 s  rmse=0.3323
+02:09:30 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 KNN            3.19 s  rmse=0.5201
+02:10:41 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 MICE          71.25 s  rmse=0.2476
+02:11:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 MissForest    71.49 s  rmse=0.3523
+02:11:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 Mean           0.01 s  rmse=1.2354
+02:11:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-0          0.02 s  rmse=1.2131
+02:11:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-S          0.05 s  rmse=0.9412
+02:11:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-F          0.05 s  rmse=0.7045
+02:11:55 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 GaussCM        1.50 s  rmse=0.7114
+02:11:56 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 EM-FA          1.86 s  rmse=0.5736
+02:11:58 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 EM-PPCA        1.04 s  rmse=0.5382
+02:12:02 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 SoftImpute     4.30 s  rmse=0.3280
+02:12:05 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 KNN            3.34 s  rmse=0.5160
+02:12:59 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 MICE          53.71 s  rmse=0.2471
+02:14:09 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 MissForest    69.54 s  rmse=0.3494
+02:14:09 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 Mean           0.01 s  rmse=1.2216
+02:14:09 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-0          0.02 s  rmse=1.1987
+02:14:09 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-S          0.05 s  rmse=0.9290
+02:14:09 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-F          0.05 s  rmse=0.7017
+02:14:10 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 GaussCM        1.45 s  rmse=0.7039
+02:14:12 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 EM-FA          2.13 s  rmse=0.5682
+02:14:13 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 EM-PPCA        0.93 s  rmse=0.5363
+02:14:17 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 SoftImpute     4.01 s  rmse=0.3296
+02:14:21 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 KNN            3.44 s  rmse=0.5113
+02:15:14 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 MICE          52.91 s  rmse=0.2498
+02:16:21 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 MissForest    66.83 s  rmse=0.3463
+02:16:29 LARGE mnist          n= 70000 p=719 MCAR seed=0 Mean           0.76 s  rmse=1.0117
+02:16:32 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-0          2.41 s  rmse=1.0087
+02:16:44 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-S         10.00 s  rmse=0.8742
+02:16:53 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-F          8.12 s  rmse=0.8687
+02:33:30 LARGE mnist          n= 70000 p=719 MCAR seed=0 GaussCM      995.85 s  rmse=0.5902
+02:34:15 LARGE mnist          n= 70000 p=719 MCAR seed=0 EM-FA         43.17 s  rmse=0.8770
+02:34:39 LARGE mnist          n= 70000 p=719 MCAR seed=0 EM-PPCA       23.39 s  rmse=0.8762
+02:34:40 K wine done
+02:34:40 K ecoli done
+02:34:41 K ionosphere done
+02:34:41 K yeast done
+02:34:42 K banknote done
+02:34:43 K wine-quality-red done
+02:34:46 K spambase done
+02:34:47 K MagicTelescope done
+02:34:47 EM wine               MCAR 0.10 seed=0 done
+02:34:47 EM wine               MCAR 0.10 seed=1 done
+02:34:47 EM wine               MCAR 0.10 seed=2 done
+02:34:48 EM wine               MCAR 0.30 seed=0 done
+02:34:48 EM wine               MCAR 0.30 seed=1 done
+02:34:48 EM wine               MCAR 0.30 seed=2 done
+02:34:48 EM wine               MCAR 0.50 seed=0 done
+02:34:49 EM wine               MCAR 0.50 seed=1 done
+02:34:49 EM wine               MCAR 0.50 seed=2 done
+02:34:49 EM wine               MAR  0.30 seed=0 done
+02:34:49 EM wine               MAR  0.30 seed=1 done
+02:34:50 EM wine               MAR  0.30 seed=2 done
+02:34:50 EM wine               MNAR 0.30 seed=0 done
+02:34:50 EM wine               MNAR 0.30 seed=1 done
+02:34:50 EM wine               MNAR 0.30 seed=2 done
+02:34:50 EM ecoli              MCAR 0.10 seed=0 done
+02:34:51 EM ecoli              MCAR 0.10 seed=1 done
+02:34:51 EM ecoli              MCAR 0.10 seed=2 done
+02:34:51 EM ecoli              MCAR 0.30 seed=0 done
+02:34:51 EM ecoli              MCAR 0.30 seed=1 done
+02:34:52 EM ecoli              MCAR 0.30 seed=2 done
+02:34:52 EM ecoli              MCAR 0.50 seed=0 done
+02:34:52 EM ecoli              MCAR 0.50 seed=1 done
+02:34:53 EM ecoli              MCAR 0.50 seed=2 done
+02:34:53 EM ecoli              MAR  0.30 seed=0 done
+02:34:53 EM ecoli              MAR  0.30 seed=1 done
+02:34:53 EM ecoli              MAR  0.30 seed=2 done
+02:34:54 EM ecoli              MNAR 0.30 seed=0 done
+02:34:54 EM ecoli              MNAR 0.30 seed=1 done
+02:34:54 EM ecoli              MNAR 0.30 seed=2 done
+02:34:55 EM ionosphere         MCAR 0.10 seed=0 done
+02:34:55 EM ionosphere         MCAR 0.10 seed=1 done
+02:34:56 EM ionosphere         MCAR 0.10 seed=2 done
+02:34:57 EM ionosphere         MCAR 0.30 seed=0 done
+02:34:58 EM ionosphere         MCAR 0.30 seed=1 done
+02:35:00 EM ionosphere         MCAR 0.30 seed=2 done
+02:35:03 EM ionosphere         MCAR 0.50 seed=0 done
+02:35:07 EM ionosphere         MCAR 0.50 seed=1 done
+02:35:09 EM ionosphere         MCAR 0.50 seed=2 done
+02:35:12 EM ionosphere         MAR  0.30 seed=0 done
+02:35:14 EM ionosphere         MAR  0.30 seed=1 done
+02:35:15 EM ionosphere         MAR  0.30 seed=2 done
+02:35:16 EM ionosphere         MNAR 0.30 seed=0 done
+02:35:17 EM ionosphere         MNAR 0.30 seed=1 done
+02:35:18 EM ionosphere         MNAR 0.30 seed=2 done
+02:35:18 EM yeast              MCAR 0.10 seed=0 done
+02:35:19 EM yeast              MCAR 0.10 seed=1 done
+02:35:19 EM yeast              MCAR 0.10 seed=2 done
+02:35:20 EM yeast              MCAR 0.30 seed=0 done
+02:35:20 EM yeast              MCAR 0.30 seed=1 done
+02:35:21 EM yeast              MCAR 0.30 seed=2 done
+02:35:22 EM yeast              MCAR 0.50 seed=0 done
+02:35:22 EM yeast              MCAR 0.50 seed=1 done
+02:35:23 EM yeast              MCAR 0.50 seed=2 done
+02:35:23 EM yeast              MAR  0.30 seed=0 done
+02:35:24 EM yeast              MAR  0.30 seed=1 done
+02:35:24 EM yeast              MAR  0.30 seed=2 done
+02:35:25 EM yeast              MNAR 0.30 seed=0 done
+02:35:26 EM yeast              MNAR 0.30 seed=1 done
+02:35:26 EM yeast              MNAR 0.30 seed=2 done
+02:35:26 EM banknote           MCAR 0.10 seed=0 done
+02:35:27 EM banknote           MCAR 0.10 seed=1 done
+02:35:27 EM banknote           MCAR 0.10 seed=2 done
+02:35:27 EM banknote           MCAR 0.30 seed=0 done
+02:35:28 EM banknote           MCAR 0.30 seed=1 done
+02:35:28 EM banknote           MCAR 0.30 seed=2 done
+02:35:29 EM banknote           MCAR 0.50 seed=0 done
+02:35:29 EM banknote           MCAR 0.50 seed=1 done
+02:35:29 EM banknote           MCAR 0.50 seed=2 done
+02:35:30 EM banknote           MAR  0.30 seed=0 done
+02:35:30 EM banknote           MAR  0.30 seed=1 done
+02:35:30 EM banknote           MAR  0.30 seed=2 done
+02:35:31 EM banknote           MNAR 0.30 seed=0 done
+02:35:31 EM banknote           MNAR 0.30 seed=1 done
+02:35:31 EM banknote           MNAR 0.30 seed=2 done
+02:35:35 EM wine-quality-red   MCAR 0.10 seed=0 done
+02:35:38 EM wine-quality-red   MCAR 0.10 seed=1 done
+02:35:41 EM wine-quality-red   MCAR 0.10 seed=2 done
+02:35:44 EM wine-quality-red   MCAR 0.30 seed=0 done
+02:35:49 EM wine-quality-red   MCAR 0.30 seed=1 done
+02:35:51 EM wine-quality-red   MCAR 0.30 seed=2 done
+02:35:54 EM wine-quality-red   MCAR 0.50 seed=0 done
+02:35:57 EM wine-quality-red   MCAR 0.50 seed=1 done
+02:35:58 EM wine-quality-red   MCAR 0.50 seed=2 done
+02:36:00 EM wine-quality-red   MAR  0.30 seed=0 done
+02:36:02 EM wine-quality-red   MAR  0.30 seed=1 done
+02:36:07 EM wine-quality-red   MAR  0.30 seed=2 done
+02:36:09 EM wine-quality-red   MNAR 0.30 seed=0 done
+02:36:11 EM wine-quality-red   MNAR 0.30 seed=1 done
+02:36:13 EM wine-quality-red   MNAR 0.30 seed=2 done
+02:36:20 EM spambase           MCAR 0.10 seed=0 done
+02:36:28 EM spambase           MCAR 0.10 seed=1 done
+02:36:37 EM spambase           MCAR 0.10 seed=2 done
+02:36:45 EM spambase           MCAR 0.30 seed=0 done
+02:36:51 EM spambase           MCAR 0.30 seed=1 done
+02:37:01 EM spambase           MCAR 0.30 seed=2 done
+02:37:09 EM spambase           MCAR 0.50 seed=0 done
+02:37:20 EM spambase           MCAR 0.50 seed=1 done
+02:37:29 EM spambase           MCAR 0.50 seed=2 done
+02:37:38 EM spambase           MAR  0.30 seed=0 done
+02:37:52 EM spambase           MAR  0.30 seed=1 done
+02:38:01 EM spambase           MAR  0.30 seed=2 done
+02:38:07 EM spambase           MNAR 0.30 seed=0 done
+02:38:16 EM spambase           MNAR 0.30 seed=1 done
+02:38:24 EM spambase           MNAR 0.30 seed=2 done
+02:38:25 EM MagicTelescope     MCAR 0.10 seed=0 done
+02:38:26 EM MagicTelescope     MCAR 0.10 seed=1 done
+02:38:27 EM MagicTelescope     MCAR 0.10 seed=2 done
+02:38:28 EM MagicTelescope     MCAR 0.30 seed=0 done
+02:38:29 EM MagicTelescope     MCAR 0.30 seed=1 done
+02:38:30 EM MagicTelescope     MCAR 0.30 seed=2 done
+02:38:32 EM MagicTelescope     MCAR 0.50 seed=0 done
+02:38:33 EM MagicTelescope     MCAR 0.50 seed=1 done
+02:38:35 EM MagicTelescope     MCAR 0.50 seed=2 done
+02:38:36 EM MagicTelescope     MAR  0.30 seed=0 done
+02:38:37 EM MagicTelescope     MAR  0.30 seed=1 done
+02:38:39 EM MagicTelescope     MAR  0.30 seed=2 done
+02:38:40 EM MagicTelescope     MNAR 0.30 seed=0 done
+02:38:41 EM MagicTelescope     MNAR 0.30 seed=1 done
+02:38:42 EM MagicTelescope     MNAR 0.30 seed=2 done
+02:38:44 RATE wine               MCAR 0.70 seed=0 done
+02:38:47 RATE wine               MCAR 0.70 seed=1 done
+02:38:49 RATE wine               MCAR 0.70 seed=2 done
+02:38:52 RATE wine               MCAR 0.80 seed=0 done
+02:38:54 RATE wine               MCAR 0.80 seed=1 done
+02:38:58 RATE wine               MCAR 0.80 seed=2 done
+02:38:59 RATE ecoli              MCAR 0.70 seed=0 done
+02:39:00 RATE ecoli              MCAR 0.70 seed=1 done
+02:39:01 RATE ecoli              MCAR 0.70 seed=2 done
+02:39:03 RATE ecoli              MCAR 0.80 seed=0 done
+02:39:04 RATE ecoli              MCAR 0.80 seed=1 done
+02:39:05 RATE ecoli              MCAR 0.80 seed=2 done
+02:39:14 RATE ionosphere         MCAR 0.70 seed=0 done
+02:39:23 RATE ionosphere         MCAR 0.70 seed=1 done
+02:39:31 RATE ionosphere         MCAR 0.70 seed=2 done
+02:39:41 RATE ionosphere         MCAR 0.80 seed=0 done
+02:39:51 RATE ionosphere         MCAR 0.80 seed=1 done
+02:40:00 RATE ionosphere         MCAR 0.80 seed=2 done
+02:40:02 RATE yeast              MCAR 0.70 seed=0 done
+02:40:04 RATE yeast              MCAR 0.70 seed=1 done
+02:40:06 RATE yeast              MCAR 0.70 seed=2 done
+02:40:09 RATE yeast              MCAR 0.80 seed=0 done
+02:40:11 RATE yeast              MCAR 0.80 seed=1 done
+02:40:13 RATE yeast              MCAR 0.80 seed=2 done
+02:40:14 RATE banknote           MCAR 0.70 seed=0 done
+02:40:15 RATE banknote           MCAR 0.70 seed=1 done
+02:40:15 RATE banknote           MCAR 0.70 seed=2 done
+02:40:16 RATE banknote           MCAR 0.80 seed=0 done
+02:40:17 RATE banknote           MCAR 0.80 seed=1 done
+02:40:18 RATE banknote           MCAR 0.80 seed=2 done
+02:40:21 RATE wine-quality-red   MCAR 0.70 seed=0 done
+02:40:24 RATE wine-quality-red   MCAR 0.70 seed=1 done
+02:40:27 RATE wine-quality-red   MCAR 0.70 seed=2 done
+02:40:29 RATE wine-quality-red   MCAR 0.80 seed=0 done
+02:40:32 RATE wine-quality-red   MCAR 0.80 seed=1 done
+02:40:35 RATE wine-quality-red   MCAR 0.80 seed=2 done
+02:41:00 RATE spambase           MCAR 0.70 seed=0 done
+02:41:30 RATE spambase           MCAR 0.70 seed=1 done
+02:41:51 RATE spambase           MCAR 0.70 seed=2 done
+02:42:16 RATE spambase           MCAR 0.80 seed=0 done
+02:42:42 RATE spambase           MCAR 0.80 seed=1 done
+02:43:15 RATE spambase           MCAR 0.80 seed=2 done
+02:43:18 RATE MagicTelescope     MCAR 0.70 seed=0 done
+02:43:20 RATE MagicTelescope     MCAR 0.70 seed=1 done
+02:43:23 RATE MagicTelescope     MCAR 0.70 seed=2 done
+02:43:26 RATE MagicTelescope     MCAR 0.80 seed=0 done
+02:43:28 RATE MagicTelescope     MCAR 0.80 seed=1 done
+02:43:30 RATE MagicTelescope     MCAR 0.80 seed=2 done
+02:43:30 === extra experiments finished ===
+02:44:50 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+02:44:50 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+02:44:50 torch not available -> GAIN skipped (pip install torch to include it)
+02:44:50 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+02:44:50 K wine done
+02:44:50 K ecoli done
+02:44:51 K ionosphere done
+02:44:51 K yeast done
+02:44:51 K banknote done
+02:44:51 K wine-quality-red done
+02:44:55 K spambase done
+02:44:55 K MagicTelescope done
+02:44:55 RATE wine               MCAR 0.70 seed=0 done
+02:44:55 RATE wine               MCAR 0.70 seed=1 done
+02:44:55 RATE wine               MCAR 0.70 seed=2 done
+02:44:55 RATE wine               MCAR 0.80 seed=0 done
+02:44:55 RATE wine               MCAR 0.80 seed=1 done
+02:44:55 RATE wine               MCAR 0.80 seed=2 done
+02:44:55 RATE ecoli              MCAR 0.70 seed=0 done
+02:44:55 RATE ecoli              MCAR 0.70 seed=1 done
+02:44:55 RATE ecoli              MCAR 0.70 seed=2 done
+02:44:55 RATE ecoli              MCAR 0.80 seed=0 done
+02:44:55 RATE ecoli              MCAR 0.80 seed=1 done
+02:44:55 RATE ecoli              MCAR 0.80 seed=2 done
+02:44:55 RATE ionosphere         MCAR 0.70 seed=0 done
+02:44:55 RATE ionosphere         MCAR 0.70 seed=1 done
+02:44:55 RATE ionosphere         MCAR 0.70 seed=2 done
+02:44:55 RATE ionosphere         MCAR 0.80 seed=0 done
+02:44:55 RATE ionosphere         MCAR 0.80 seed=1 done
+02:44:55 RATE ionosphere         MCAR 0.80 seed=2 done
+02:44:55 RATE yeast              MCAR 0.70 seed=0 done
+02:44:55 RATE yeast              MCAR 0.70 seed=1 done
+02:44:55 RATE yeast              MCAR 0.70 seed=2 done
+02:44:55 RATE yeast              MCAR 0.80 seed=0 done
+02:44:55 RATE yeast              MCAR 0.80 seed=1 done
+02:44:55 RATE yeast              MCAR 0.80 seed=2 done
+02:44:55 RATE banknote           MCAR 0.70 seed=0 done
+02:44:55 RATE banknote           MCAR 0.70 seed=1 done
+02:44:55 RATE banknote           MCAR 0.70 seed=2 done
+02:44:55 RATE banknote           MCAR 0.80 seed=0 done
+02:44:55 RATE banknote           MCAR 0.80 seed=1 done
+02:44:55 RATE banknote           MCAR 0.80 seed=2 done
+02:44:55 RATE wine-quality-red   MCAR 0.70 seed=0 done
+02:44:55 RATE wine-quality-red   MCAR 0.70 seed=1 done
+02:44:55 RATE wine-quality-red   MCAR 0.70 seed=2 done
+02:44:55 RATE wine-quality-red   MCAR 0.80 seed=0 done
+02:44:55 RATE wine-quality-red   MCAR 0.80 seed=1 done
+02:44:55 RATE wine-quality-red   MCAR 0.80 seed=2 done
+02:44:55 RATE spambase           MCAR 0.70 seed=0 done
+02:44:56 RATE spambase           MCAR 0.70 seed=1 done
+02:44:56 RATE spambase           MCAR 0.70 seed=2 done
+02:44:56 RATE spambase           MCAR 0.80 seed=0 done
+02:44:56 RATE spambase           MCAR 0.80 seed=1 done
+02:44:56 RATE spambase           MCAR 0.80 seed=2 done
+02:44:56 RATE MagicTelescope     MCAR 0.70 seed=0 done
+02:44:56 RATE MagicTelescope     MCAR 0.70 seed=1 done
+02:44:56 RATE MagicTelescope     MCAR 0.70 seed=2 done
+02:44:56 RATE MagicTelescope     MCAR 0.80 seed=0 done
+02:44:56 RATE MagicTelescope     MCAR 0.80 seed=1 done
+02:44:56 RATE MagicTelescope     MCAR 0.80 seed=2 done
+02:44:57 SMALLN ionosphere         n=50 done
+02:44:57 SMALLN ionosphere         n=100 done
+02:44:57 SMALLN ionosphere         n=200 done
+02:44:57 SMALLN spambase           n=50 done
+02:44:57 SMALLN spambase           n=100 done
+02:44:57 SMALLN spambase           n=200 done
+02:44:57 SMALLN spambase           n=500 done
+02:44:57 SMALLN satimage           n=50 done
+02:44:57 SMALLN satimage           n=100 done
+02:44:57 SMALLN satimage           n=200 done
+02:44:57 SMALLN satimage           n=500 done
+02:44:57 SMALLN optdigits          n=50 done
+02:44:57 SMALLN optdigits          n=100 done
+02:44:57 SMALLN optdigits          n=200 done
+02:44:58 SMALLN optdigits          n=500 done
+02:44:58 SMALLN texture            n=50 done
+02:44:58 SMALLN texture            n=100 done
+02:44:58 SMALLN texture            n=200 done
+02:44:58 SMALLN texture            n=500 done
+02:44:58 SMALLN musk2              n=50 done
+02:44:58 SMALLN musk2              n=100 done
+02:44:58 SMALLN musk2              n=200 done
+02:44:59 SMALLN musk2              n=500 done
+02:44:59 SMALLN mfeat-factors      n=50 done
+02:44:59 SMALLN mfeat-factors      n=100 done
+02:45:00 SMALLN mfeat-factors      n=200 done
+02:45:00 SMALLN mfeat-factors      n=500 done
+02:45:01 SCALEP n=  10000 p= 50 mcar       NDI-F-V        0.55 s  rmse=0.3661
+02:45:04 SCALEP n=  10000 p=100 mcar       NDI-F-V        2.99 s  rmse=0.3792
+02:45:11 SCALEP n=  10000 p=200 mcar       NDI-F-V        6.68 s  rmse=0.3847
+02:45:21 SCALEP n=  10000 p=500 mcar       NDI-F-V        9.80 s  rmse=0.3812
+02:45:27 SCALEP n= 100000 p= 50 mcar       NDI-F-V        5.55 s  rmse=0.3784
+02:45:57 SCALEP n= 100000 p=100 mcar       NDI-F-V       29.81 s  rmse=0.3647
+02:47:08 SCALEP n= 100000 p=200 mcar       NDI-F-V       70.22 s  rmse=0.3666
+02:48:16 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+02:48:16 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+02:48:16 torch not available -> GAIN skipped (pip install torch to include it)
+02:48:16 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+02:48:16 K wine done
+02:48:16 K ecoli done
+02:48:16 K ionosphere done
+02:48:16 K yeast done
+02:48:17 K banknote done
+02:48:17 K wine-quality-red done
+02:48:17 K spambase done
+02:48:17 K MagicTelescope done
+02:48:17 RATE wine               MCAR 0.70 seed=0 done
+02:48:17 RATE wine               MCAR 0.70 seed=1 done
+02:48:17 RATE wine               MCAR 0.70 seed=2 done
+02:48:17 RATE wine               MCAR 0.80 seed=0 done
+02:48:17 RATE wine               MCAR 0.80 seed=1 done
+02:48:17 RATE wine               MCAR 0.80 seed=2 done
+02:48:17 RATE ecoli              MCAR 0.70 seed=0 done
+02:48:17 RATE ecoli              MCAR 0.70 seed=1 done
+02:48:17 RATE ecoli              MCAR 0.70 seed=2 done
+02:48:17 RATE ecoli              MCAR 0.80 seed=0 done
+02:48:17 RATE ecoli              MCAR 0.80 seed=1 done
+02:48:17 RATE ecoli              MCAR 0.80 seed=2 done
+02:48:17 RATE ionosphere         MCAR 0.70 seed=0 done
+02:48:17 RATE ionosphere         MCAR 0.70 seed=1 done
+02:48:17 RATE ionosphere         MCAR 0.70 seed=2 done
+02:48:17 RATE ionosphere         MCAR 0.80 seed=0 done
+02:48:17 RATE ionosphere         MCAR 0.80 seed=1 done
+02:48:17 RATE ionosphere         MCAR 0.80 seed=2 done
+02:48:17 RATE yeast              MCAR 0.70 seed=0 done
+02:48:17 RATE yeast              MCAR 0.70 seed=1 done
+02:48:17 RATE yeast              MCAR 0.70 seed=2 done
+02:48:17 RATE yeast              MCAR 0.80 seed=0 done
+02:48:17 RATE yeast              MCAR 0.80 seed=1 done
+02:48:17 RATE yeast              MCAR 0.80 seed=2 done
+02:48:17 RATE banknote           MCAR 0.70 seed=0 done
+02:48:17 RATE banknote           MCAR 0.70 seed=1 done
+02:48:17 RATE banknote           MCAR 0.70 seed=2 done
+02:48:17 RATE banknote           MCAR 0.80 seed=0 done
+02:48:17 RATE banknote           MCAR 0.80 seed=1 done
+02:48:17 RATE banknote           MCAR 0.80 seed=2 done
+02:48:17 RATE wine-quality-red   MCAR 0.70 seed=0 done
+02:48:17 RATE wine-quality-red   MCAR 0.70 seed=1 done
+02:48:17 RATE wine-quality-red   MCAR 0.70 seed=2 done
+02:48:17 RATE wine-quality-red   MCAR 0.80 seed=0 done
+02:48:17 RATE wine-quality-red   MCAR 0.80 seed=1 done
+02:48:17 RATE wine-quality-red   MCAR 0.80 seed=2 done
+02:48:17 RATE spambase           MCAR 0.70 seed=0 done
+02:48:17 RATE spambase           MCAR 0.70 seed=1 done
+02:48:17 RATE spambase           MCAR 0.70 seed=2 done
+02:48:17 RATE spambase           MCAR 0.80 seed=0 done
+02:48:17 RATE spambase           MCAR 0.80 seed=1 done
+02:48:17 RATE spambase           MCAR 0.80 seed=2 done
+02:48:17 RATE MagicTelescope     MCAR 0.70 seed=0 done
+02:48:17 RATE MagicTelescope     MCAR 0.70 seed=1 done
+02:48:17 RATE MagicTelescope     MCAR 0.70 seed=2 done
+02:48:17 RATE MagicTelescope     MCAR 0.80 seed=0 done
+02:48:17 RATE MagicTelescope     MCAR 0.80 seed=1 done
+02:48:17 RATE MagicTelescope     MCAR 0.80 seed=2 done
+02:48:17 SMALLN ionosphere         n=50 done
+02:48:17 SMALLN ionosphere         n=100 done
+02:48:17 SMALLN ionosphere         n=200 done
+02:48:17 SMALLN spambase           n=50 done
+02:48:17 SMALLN spambase           n=100 done
+02:48:17 SMALLN spambase           n=200 done
+02:48:17 SMALLN spambase           n=500 done
+02:48:17 SMALLN satimage           n=50 done
+02:48:17 SMALLN satimage           n=100 done
+02:48:17 SMALLN satimage           n=200 done
+02:48:17 SMALLN satimage           n=500 done
+02:48:17 SMALLN optdigits          n=50 done
+02:48:17 SMALLN optdigits          n=100 done
+02:48:17 SMALLN optdigits          n=200 done
+02:48:17 SMALLN optdigits          n=500 done
+02:48:17 SMALLN texture            n=50 done
+02:48:17 SMALLN texture            n=100 done
+02:48:17 SMALLN texture            n=200 done
+02:48:17 SMALLN texture            n=500 done
+02:48:17 SMALLN musk2              n=50 done
+02:48:17 SMALLN musk2              n=100 done
+02:48:17 SMALLN musk2              n=200 done
+02:48:17 SMALLN musk2              n=500 done
+02:48:17 SMALLN mfeat-factors      n=50 done
+02:48:17 SMALLN mfeat-factors      n=100 done
+02:48:17 SMALLN mfeat-factors      n=200 done
+02:48:17 SMALLN mfeat-factors      n=500 done
+02:48:18 SCALEP n=  10000 p= 50 mcar       NDI-F-V        0.27 s  rmse=0.3661
+02:48:19 SCALEP n=  10000 p=100 mcar       NDI-F-V        1.28 s  rmse=0.3792
+02:48:22 SCALEP n=  10000 p=200 mcar       NDI-F-V        2.65 s  rmse=0.3847
+02:48:27 SCALEP n=  10000 p=500 mcar       NDI-F-V        4.58 s  rmse=0.3812
+02:48:28 SCALEP n= 100000 p= 50 mcar       NDI-F-V        0.74 s  rmse=0.3784
+02:48:30 SCALEP n= 100000 p=100 mcar       NDI-F-V        2.24 s  rmse=0.3647
+02:48:37 SCALEP n= 100000 p=200 mcar       NDI-F-V        5.30 s  rmse=0.3666
+02:48:53 SCALEP n= 100000 p=500 mcar       NDI-F-V       13.94 s  rmse=0.3855
+02:48:59 SCALEP n= 100000 p=200 20patterns NDI-F-V        5.50 s  rmse=0.3680
+02:48:59 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-F-k20      0.02 s  rmse=0.7914
+02:48:59 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-F-kall     0.03 s  rmse=0.7914
+02:49:02 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 EM-FA-k20      2.69 s  rmse=0.7630
+02:49:02 LARGE magic-full     n= 19020 p= 10 MCAR seed=0 NDI-F-V        0.05 s  rmse=0.7480
+02:49:02 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-F-k20      0.02 s  rmse=0.7064
+02:49:02 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-F-kall     0.02 s  rmse=0.7064
+02:49:06 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 EM-FA-k20      3.59 s  rmse=0.6325
+02:49:06 LARGE magic-full     n= 19020 p= 10 MAR  seed=0 NDI-F-V        0.04 s  rmse=0.6956
+02:49:06 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-F-k20      0.02 s  rmse=1.0309
+02:49:06 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-F-kall     0.02 s  rmse=1.0309
+02:49:11 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 EM-FA-k20      4.68 s  rmse=1.0074
+02:49:11 LARGE magic-full     n= 19020 p= 10 MNAR seed=0 NDI-F-V        0.08 s  rmse=1.0617
+02:49:11 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-F-k20      0.04 s  rmse=0.8063
+02:49:11 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-F-kall     0.04 s  rmse=0.8063
+02:49:18 LARGE letter         n= 20000 p= 16 MCAR seed=0 EM-FA-k20      7.47 s  rmse=0.7832
+02:49:19 LARGE letter         n= 20000 p= 16 MCAR seed=0 NDI-F-V        0.17 s  rmse=0.7502
+02:49:19 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-F-k20      0.03 s  rmse=0.8684
+02:49:19 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-F-kall     0.03 s  rmse=0.8684
+02:49:24 LARGE letter         n= 20000 p= 16 MAR  seed=0 EM-FA-k20      5.53 s  rmse=0.8215
+02:49:25 LARGE letter         n= 20000 p= 16 MAR  seed=0 NDI-F-V        0.16 s  rmse=0.8112
+02:49:25 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-F-k20      0.04 s  rmse=1.0434
+02:49:25 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-F-kall     0.04 s  rmse=1.0434
+02:49:30 LARGE letter         n= 20000 p= 16 MNAR seed=0 EM-FA-k20      5.48 s  rmse=0.9613
+02:49:30 LARGE letter         n= 20000 p= 16 MNAR seed=0 NDI-F-V        0.10 s  rmse=1.0434
+02:49:30 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-F-k20      0.02 s  rmse=0.6688
+02:49:30 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-F-kall     0.02 s  rmse=0.6688
+02:49:36 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 EM-FA-k20      5.42 s  rmse=0.6619
+02:49:36 LARGE pendigits      n= 10992 p= 16 MCAR seed=0 NDI-F-V        0.11 s  rmse=0.5735
+02:49:36 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-F-k20      0.02 s  rmse=0.7367
+02:49:36 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-F-kall     0.02 s  rmse=0.7367
+02:49:40 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 EM-FA-k20      3.80 s  rmse=0.7328
+02:49:40 LARGE pendigits      n= 10992 p= 16 MAR  seed=0 NDI-F-V        0.11 s  rmse=0.6759
+02:49:40 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-F-k20      0.02 s  rmse=0.9157
+02:49:40 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-F-kall     0.02 s  rmse=0.9157
+02:49:43 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 EM-FA-k20      2.86 s  rmse=0.7887
+02:49:43 LARGE pendigits      n= 10992 p= 16 MNAR seed=0 NDI-F-V        0.12 s  rmse=0.9527
+02:49:43 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-F-k20      0.02 s  rmse=0.3538
+02:49:43 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-F-kall     0.02 s  rmse=0.3538
+02:49:43 LARGE satimage       n=  6435 p= 36 MCAR seed=0 EM-FA-k20      0.17 s  rmse=0.3528
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=0 NDI-F-V        0.21 s  rmse=0.2221
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-F-k20      0.02 s  rmse=0.3541
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-F-kall     0.02 s  rmse=0.3541
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=1 EM-FA-k20      0.17 s  rmse=0.3532
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=1 NDI-F-V        0.21 s  rmse=0.2182
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-F-k20      0.02 s  rmse=0.3536
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-F-kall     0.02 s  rmse=0.3536
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 EM-FA-k20      0.17 s  rmse=0.3530
+02:49:44 LARGE satimage       n=  6435 p= 36 MCAR seed=2 NDI-F-V        0.21 s  rmse=0.2193
+02:49:45 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-F-k20      0.02 s  rmse=0.5310
+02:49:45 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-F-kall     0.02 s  rmse=0.5310
+02:49:46 LARGE satimage       n=  6435 p= 36 MAR  seed=0 EM-FA-k20      1.28 s  rmse=0.3257
+02:49:46 LARGE satimage       n=  6435 p= 36 MAR  seed=0 NDI-F-V        0.20 s  rmse=0.5044
+02:49:46 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-F-k20      0.02 s  rmse=0.5053
+02:49:46 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-F-kall     0.02 s  rmse=0.5053
+02:49:47 LARGE satimage       n=  6435 p= 36 MAR  seed=1 EM-FA-k20      0.95 s  rmse=0.3276
+02:49:47 LARGE satimage       n=  6435 p= 36 MAR  seed=1 NDI-F-V        0.20 s  rmse=0.4729
+02:49:47 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-F-k20      0.02 s  rmse=0.5395
+02:49:47 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-F-kall     0.02 s  rmse=0.5395
+02:49:49 LARGE satimage       n=  6435 p= 36 MAR  seed=2 EM-FA-k20      1.31 s  rmse=0.3250
+02:49:49 LARGE satimage       n=  6435 p= 36 MAR  seed=2 NDI-F-V        0.20 s  rmse=0.5227
+02:49:49 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-F-k20      0.02 s  rmse=0.6164
+02:49:49 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-F-kall     0.02 s  rmse=0.6164
+02:49:50 LARGE satimage       n=  6435 p= 36 MNAR seed=0 EM-FA-k20      1.33 s  rmse=0.3441
+02:49:51 LARGE satimage       n=  6435 p= 36 MNAR seed=0 NDI-F-V        0.20 s  rmse=0.5921
+02:49:51 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-F-k20      0.02 s  rmse=0.6422
+02:49:51 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-F-kall     0.02 s  rmse=0.6422
+02:49:52 LARGE satimage       n=  6435 p= 36 MNAR seed=1 EM-FA-k20      1.11 s  rmse=0.3455
+02:49:52 LARGE satimage       n=  6435 p= 36 MNAR seed=1 NDI-F-V        0.20 s  rmse=0.6231
+02:49:52 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-F-k20      0.02 s  rmse=0.7086
+02:49:52 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-F-kall     0.02 s  rmse=0.7086
+02:49:53 LARGE satimage       n=  6435 p= 36 MNAR seed=2 EM-FA-k20      0.68 s  rmse=0.3584
+02:49:53 LARGE satimage       n=  6435 p= 36 MNAR seed=2 NDI-F-V        0.20 s  rmse=0.6693
+02:49:53 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-F-k20      0.06 s  rmse=0.7205
+02:49:53 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-F-kall     0.06 s  rmse=0.7205
+02:50:04 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 EM-FA-k20     10.41 s  rmse=0.7408
+02:50:04 LARGE optdigits      n=  5620 p= 62 MCAR seed=0 NDI-F-V        0.69 s  rmse=0.6803
+02:50:04 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-F-k20      0.06 s  rmse=0.7326
+02:50:05 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-F-kall     0.06 s  rmse=0.7326
+02:50:15 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 EM-FA-k20     10.42 s  rmse=0.7443
+02:50:16 LARGE optdigits      n=  5620 p= 62 MCAR seed=1 NDI-F-V        0.67 s  rmse=0.6962
+02:50:16 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-F-k20      0.06 s  rmse=0.6984
+02:50:16 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-F-kall     0.06 s  rmse=0.6984
+02:50:25 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 EM-FA-k20      8.78 s  rmse=0.6953
+02:50:25 LARGE optdigits      n=  5620 p= 62 MCAR seed=2 NDI-F-V        0.65 s  rmse=0.6638
+02:50:25 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-F-k20      0.08 s  rmse=0.7492
+02:50:26 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-F-kall     0.06 s  rmse=0.7492
+02:50:47 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 EM-FA-k20     21.82 s  rmse=0.8644
+02:50:48 LARGE optdigits      n=  5620 p= 62 MAR  seed=0 NDI-F-V        0.67 s  rmse=0.7320
+02:50:48 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-F-k20      0.07 s  rmse=0.7373
+02:50:48 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-F-kall     0.09 s  rmse=0.7373
+02:51:25 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 EM-FA-k20     36.78 s  rmse=1.1521
+02:51:26 LARGE optdigits      n=  5620 p= 62 MAR  seed=1 NDI-F-V        0.70 s  rmse=0.7245
+02:51:26 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-F-k20      0.09 s  rmse=0.7414
+02:51:26 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-F-kall     0.07 s  rmse=0.7414
+02:51:45 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 EM-FA-k20     19.30 s  rmse=0.8477
+02:51:46 LARGE optdigits      n=  5620 p= 62 MAR  seed=2 NDI-F-V        0.74 s  rmse=0.7147
+02:51:46 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-F-k20      0.06 s  rmse=0.9746
+02:51:46 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-F-kall     0.06 s  rmse=0.9746
+02:51:55 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 EM-FA-k20      8.18 s  rmse=0.9072
+02:51:55 LARGE optdigits      n=  5620 p= 62 MNAR seed=0 NDI-F-V        0.48 s  rmse=0.9757
+02:51:55 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-F-k20      0.07 s  rmse=1.0986
+02:51:55 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-F-kall     0.08 s  rmse=1.0986
+02:52:11 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 EM-FA-k20     15.68 s  rmse=1.0714
+02:52:12 LARGE optdigits      n=  5620 p= 62 MNAR seed=1 NDI-F-V        0.47 s  rmse=1.1006
+02:52:12 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-F-k20      0.06 s  rmse=0.9886
+02:52:12 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-F-kall     0.06 s  rmse=0.9886
+02:52:40 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 EM-FA-k20     28.30 s  rmse=0.9044
+02:52:41 LARGE optdigits      n=  5620 p= 62 MNAR seed=2 NDI-F-V        0.48 s  rmse=0.9886
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-F-k20      0.02 s  rmse=0.2548
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-F-kall     0.02 s  rmse=0.2548
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=0 EM-FA-k20      0.26 s  rmse=0.2579
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=0 NDI-F-V        0.22 s  rmse=0.1464
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-F-k20      0.02 s  rmse=0.2538
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-F-kall     0.02 s  rmse=0.2538
+02:52:41 LARGE texture        n=  5500 p= 40 MCAR seed=1 EM-FA-k20      0.24 s  rmse=0.2577
+02:52:42 LARGE texture        n=  5500 p= 40 MCAR seed=1 NDI-F-V        0.22 s  rmse=0.1457
+02:52:42 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-F-k20      0.02 s  rmse=0.2553
+02:52:42 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-F-kall     0.03 s  rmse=0.2553
+02:52:42 LARGE texture        n=  5500 p= 40 MCAR seed=2 EM-FA-k20      0.29 s  rmse=0.2586
+02:52:42 LARGE texture        n=  5500 p= 40 MCAR seed=2 NDI-F-V        0.22 s  rmse=0.1457
+02:52:42 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-F-k20      0.02 s  rmse=0.4066
+02:52:42 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-F-kall     0.02 s  rmse=0.4066
+02:52:44 LARGE texture        n=  5500 p= 40 MAR  seed=0 EM-FA-k20      1.17 s  rmse=0.2744
+02:52:44 LARGE texture        n=  5500 p= 40 MAR  seed=0 NDI-F-V        0.22 s  rmse=0.3774
+02:52:44 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-F-k20      0.02 s  rmse=0.3854
+02:52:44 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-F-kall     0.02 s  rmse=0.3854
+02:52:46 LARGE texture        n=  5500 p= 40 MAR  seed=1 EM-FA-k20      1.70 s  rmse=0.2669
+02:52:46 LARGE texture        n=  5500 p= 40 MAR  seed=1 NDI-F-V        0.23 s  rmse=0.3399
+02:52:46 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-F-k20      0.02 s  rmse=0.4486
+02:52:46 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-F-kall     0.02 s  rmse=0.4486
+02:52:47 LARGE texture        n=  5500 p= 40 MAR  seed=2 EM-FA-k20      0.77 s  rmse=0.2881
+02:52:47 LARGE texture        n=  5500 p= 40 MAR  seed=2 NDI-F-V        0.21 s  rmse=0.4303
+02:52:47 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-F-k20      0.02 s  rmse=0.5072
+02:52:47 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-F-kall     0.02 s  rmse=0.5072
+02:52:48 LARGE texture        n=  5500 p= 40 MNAR seed=0 EM-FA-k20      0.84 s  rmse=0.2776
+02:52:48 LARGE texture        n=  5500 p= 40 MNAR seed=0 NDI-F-V        0.22 s  rmse=0.4780
+02:52:48 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-F-k20      0.02 s  rmse=0.4804
+02:52:48 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-F-kall     0.02 s  rmse=0.4804
+02:52:55 LARGE texture        n=  5500 p= 40 MNAR seed=1 EM-FA-k20      6.21 s  rmse=0.2865
+02:52:55 LARGE texture        n=  5500 p= 40 MNAR seed=1 NDI-F-V        0.21 s  rmse=0.4811
+02:52:55 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-F-k20      0.02 s  rmse=0.4833
+02:52:55 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-F-kall     0.02 s  rmse=0.4833
+02:52:56 LARGE texture        n=  5500 p= 40 MNAR seed=2 EM-FA-k20      1.54 s  rmse=0.2938
+02:52:57 LARGE texture        n=  5500 p= 40 MNAR seed=2 NDI-F-V        0.21 s  rmse=0.4443
+02:52:57 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-F-k20      0.15 s  rmse=0.4368
+02:52:57 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-F-kall     0.18 s  rmse=0.4081
+02:53:06 LARGE musk2          n=  6598 p=168 MCAR seed=0 EM-FA-k20      9.03 s  rmse=0.4656
+02:53:09 LARGE musk2          n=  6598 p=168 MCAR seed=0 NDI-F-V        3.01 s  rmse=0.3144
+02:53:09 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-F-k20      0.14 s  rmse=0.4388
+02:53:10 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-F-kall     0.17 s  rmse=0.4092
+02:53:18 LARGE musk2          n=  6598 p=168 MCAR seed=1 EM-FA-k20      8.75 s  rmse=0.4661
+02:53:22 LARGE musk2          n=  6598 p=168 MCAR seed=1 NDI-F-V        3.43 s  rmse=0.3169
+02:53:22 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-F-k20      0.15 s  rmse=0.4391
+02:53:22 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-F-kall     0.19 s  rmse=0.4094
+02:53:31 LARGE musk2          n=  6598 p=168 MCAR seed=2 EM-FA-k20      9.01 s  rmse=0.4682
+02:53:35 LARGE musk2          n=  6598 p=168 MCAR seed=2 NDI-F-V        3.37 s  rmse=0.3168
+02:53:35 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-F-k20      0.15 s  rmse=0.5097
+02:53:35 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-F-kall     0.18 s  rmse=0.4825
+02:53:53 LARGE musk2          n=  6598 p=168 MAR  seed=0 EM-FA-k20     17.56 s  rmse=0.4910
+02:53:56 LARGE musk2          n=  6598 p=168 MAR  seed=0 NDI-F-V        3.39 s  rmse=0.4664
+02:53:57 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-F-k20      0.17 s  rmse=0.5017
+02:53:57 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-F-kall     0.19 s  rmse=0.4732
+02:54:07 LARGE musk2          n=  6598 p=168 MAR  seed=1 EM-FA-k20     10.04 s  rmse=0.4746
+02:54:10 LARGE musk2          n=  6598 p=168 MAR  seed=1 NDI-F-V        3.03 s  rmse=0.4547
+02:54:11 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-F-k20      0.16 s  rmse=0.4970
+02:54:11 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-F-kall     0.19 s  rmse=0.4696
+02:54:29 LARGE musk2          n=  6598 p=168 MAR  seed=2 EM-FA-k20     17.84 s  rmse=0.4677
+02:54:32 LARGE musk2          n=  6598 p=168 MAR  seed=2 NDI-F-V        3.03 s  rmse=0.4505
+02:54:32 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-F-k20      0.15 s  rmse=0.7517
+02:54:33 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-F-kall     0.19 s  rmse=0.7317
+02:54:54 LARGE musk2          n=  6598 p=168 MNAR seed=0 EM-FA-k20     21.42 s  rmse=0.6189
+02:54:57 LARGE musk2          n=  6598 p=168 MNAR seed=0 NDI-F-V        2.52 s  rmse=0.7271
+02:54:57 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-F-k20      0.18 s  rmse=0.6950
+02:54:57 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-F-kall     0.21 s  rmse=0.6810
+02:55:15 LARGE musk2          n=  6598 p=168 MNAR seed=1 EM-FA-k20     17.83 s  rmse=0.5652
+02:55:18 LARGE musk2          n=  6598 p=168 MNAR seed=1 NDI-F-V        2.27 s  rmse=0.6734
+02:55:18 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-F-k20      0.16 s  rmse=0.7694
+02:55:18 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-F-kall     0.19 s  rmse=0.7493
+02:55:35 LARGE musk2          n=  6598 p=168 MNAR seed=2 EM-FA-k20     17.14 s  rmse=0.6431
+02:55:38 LARGE musk2          n=  6598 p=168 MNAR seed=2 NDI-F-V        2.28 s  rmse=0.7477
+02:55:38 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-F-k20      0.06 s  rmse=0.3514
+02:55:38 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-F-kall     0.07 s  rmse=0.3293
+02:55:40 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 EM-FA-k20      2.39 s  rmse=0.3625
+02:55:42 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=0 NDI-F-V        1.17 s  rmse=0.2857
+02:55:42 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-F-k20      0.07 s  rmse=0.3524
+02:55:42 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-F-kall     0.08 s  rmse=0.3306
+02:55:44 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 EM-FA-k20      2.54 s  rmse=0.3664
+02:55:46 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=1 NDI-F-V        1.19 s  rmse=0.2839
+02:55:46 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-F-k20      0.08 s  rmse=0.3523
+02:55:46 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-F-kall     0.07 s  rmse=0.3300
+02:55:48 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 EM-FA-k20      2.42 s  rmse=0.3648
+02:55:49 LARGE mfeat-factors  n=  2000 p=216 MCAR seed=2 NDI-F-V        1.23 s  rmse=0.2834
+02:55:50 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-F-k20      0.07 s  rmse=0.4370
+02:55:50 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-F-kall     0.07 s  rmse=0.4195
+02:55:54 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 EM-FA-k20      4.50 s  rmse=0.3707
+02:55:55 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=0 NDI-F-V        1.04 s  rmse=0.4099
+02:55:56 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-F-k20      0.06 s  rmse=0.4396
+02:55:56 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-F-kall     0.07 s  rmse=0.4179
+02:56:07 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 EM-FA-k20     11.24 s  rmse=0.3849
+02:56:08 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=1 NDI-F-V        1.19 s  rmse=0.4081
+02:56:08 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-F-k20      0.06 s  rmse=0.4451
+02:56:08 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-F-kall     0.08 s  rmse=0.4251
+02:56:16 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 EM-FA-k20      7.43 s  rmse=0.3836
+02:56:17 LARGE mfeat-factors  n=  2000 p=216 MAR  seed=2 NDI-F-V        1.20 s  rmse=0.4268
+02:56:17 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-F-k20      0.07 s  rmse=0.6365
+02:56:17 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-F-kall     0.08 s  rmse=0.6191
+02:56:31 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 EM-FA-k20     13.88 s  rmse=0.4200
+02:56:32 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=0 NDI-F-V        1.11 s  rmse=0.6160
+02:56:33 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-F-k20      0.06 s  rmse=0.6215
+02:56:33 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-F-kall     0.08 s  rmse=0.6068
+02:56:43 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 EM-FA-k20      9.90 s  rmse=0.4178
+02:56:44 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=1 NDI-F-V        1.15 s  rmse=0.6038
+02:56:44 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-F-k20      0.07 s  rmse=0.6178
+02:56:44 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-F-kall     0.08 s  rmse=0.6001
+02:56:53 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 EM-FA-k20      9.08 s  rmse=0.4084
+02:56:54 LARGE mfeat-factors  n=  2000 p=216 MNAR seed=2 NDI-F-V        1.16 s  rmse=0.5989
+02:57:11 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-F-k20      8.84 s  rmse=0.8120
+10:30:48 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+10:30:48 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+10:30:48 torch not available -> GAIN skipped (pip install torch to include it)
+10:30:48 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+09:58:39 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+09:58:39 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+09:58:39 torch not available -> GAIN skipped (pip install torch to include it)
+09:58:39 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+10:02:20 hyperimpute not installed -> MIWAE, Sinkhorn and HyperImpute skipped (pip install hyperimpute)
+10:02:20 ReMasker code not found in 'remasker' -> ReMasker skipped (git clone https://github.com/tydusky/remasker.git)
+10:02:20 torch not available -> GAIN skipped (pip install torch to include it)
+10:02:20 paper datasets available: 8/15 (iris, glass, wdbc, diabetes, vehicle, qsar-biodeg, segment missing)
+10:16:04 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-F-kall   814.72 s  rmse=0.6359
+10:18:34 LARGE mnist          n= 70000 p=719 MCAR seed=0 EM-FA-k20    148.78 s  rmse=0.8259
+10:19:11 LARGE mnist          n= 70000 p=719 MCAR seed=0 NDI-F-V       35.96 s  rmse=0.6668
+10:19:11 === extra experiments finished ===

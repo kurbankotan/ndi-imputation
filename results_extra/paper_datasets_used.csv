@@ -1,0 +1,9 @@
+dataset,n,p,source
+wine,178,13,PMLB wine_recognition
+ecoli,327,7,PMLB ecoli
+ionosphere,351,33,PMLB ionosphere
+yeast,1479,8,PMLB yeast
+banknote,1372,4,UCI copy (jbrownlee/Datasets)
+wine-quality-red,1599,11,PMLB wine_quality_red
+spambase,2000,57,PMLB spambase
+MagicTelescope,2000,10,PMLB magic

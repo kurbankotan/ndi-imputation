@@ -13,8 +13,12 @@ and pandas (scipy only for CopulaWrap).
     from ndi import NDI
     NDI("shrink")   # NDI-S      NDI("signed")  # NDI-C      NDI("mean")  # NDI-0 (the original rule)
 
+    from ndi import NDIFCV
+    NDIFCV()        # NDI-F-V: k chosen by internal validation (v4.1; ~10x the cost of NDI-F, still one pass, no iteration)
+
     from ndi import EMFA
     EMFA("fa")      # EM-FA: maximum-likelihood fit of the NDI-F model by EM, started from NDI-F (more accurate, ~100x slower)
+    EMFA("fa", max_iter=3, tol=0.0)   # three EM iterations from the NDI-F start: ~80 % of EM's gain at ~4x the cost of NDI-F
 
 Reference: Kırışoğlu, S. & Kotan, K. Normal Deviate Imputation (NDI-F): A One-Pass Alternative to EM for
 Factor-Model Imputation of Numerical Tabular Data (under review).
@@ -22,8 +26,33 @@ Factor-Model Imputation of Numerical Tabular Data (under review).
 import numpy as np
 import pandas as pd
 
-__all__ = ["NDI", "NDIF", "EMFA", "GaussCM", "CopulaWrap"]
+__all__ = ["NDI", "NDIF", "NDIFCV", "EMFA", "GaussCM", "CopulaWrap", "pairwise_corr"]
 
+
+
+def pairwise_corr(X, chunk=20_000):
+    """Pairwise-complete Pearson correlation matrix computed with four matrix products (identical to
+    pandas.DataFrame.corr() up to floating-point rounding, and much faster for large p: the pandas routine
+    loops over the column pairs in Cython).  Version 4.1; the main benchmark was timed with the pandas call."""
+    X = np.asarray(X, float)
+    n, p = X.shape
+    N = np.zeros((p, p)); Sx = np.zeros((p, p)); Sxx = np.zeros((p, p)); Sxy = np.zeros((p, p))
+    for s in range(0, n, chunk):                      # chunked to bound memory
+        Xc = X[s:s + chunk]
+        O = (~np.isnan(Xc)).astype(float)
+        X0 = np.where(O > 0, Xc, 0.0)
+        N += O.T @ O                                  # co-observed counts
+        Sx += X0.T @ O                                # Sx[j, k] = sum of x_j over the rows where j and k are observed
+        Sxx += (X0 * X0).T @ O
+        Sxy += X0.T @ X0
+    with np.errstate(invalid="ignore", divide="ignore"):
+        mx = Sx / N; my = mx.T
+        cov = Sxy / N - mx * my
+        vx = Sxx / N - mx ** 2; vy = vx.T
+        R = cov / np.sqrt(vx * vy)
+    R[~np.isfinite(R)] = 0.0
+    np.fill_diagonal(R, 1.0)
+    return np.clip(R, -1.0, 1.0)
 
 class NDI:
     """Normal Deviate Imputation (NDI-0) and its two correlation-aware variants (NDI-C, NDI-S).
@@ -53,8 +82,7 @@ class NDI:
         self.sigma_ = np.nanstd(X, axis=0)
         self.sigma_[self.sigma_ == 0] = 1.0
         if self.variant != "mean":
-            R = pd.DataFrame(X).corr().to_numpy()          # pairwise-complete Pearson r
-            R = np.nan_to_num(R, nan=0.0)
+            R = pairwise_corr(X)                           # pairwise-complete Pearson r
             np.fill_diagonal(R, 0.0)
             self.R_ = R
         return self
@@ -97,7 +125,7 @@ class GaussCM:
         self.mu_ = np.nanmean(X, axis=0)
         self.sigma_ = np.nanstd(X, axis=0)
         self.sigma_[self.sigma_ == 0] = 1.0
-        R = np.nan_to_num(pd.DataFrame(X).corr().to_numpy(), nan=0.0)
+        R = pairwise_corr(X)
         np.fill_diagonal(R, 1.0)
         w, V = np.linalg.eigh(R)
         self.R_ = (V * np.clip(w, self.ridge, None)) @ V.T
@@ -151,7 +179,7 @@ class NDIF:
         self.sigma_ = np.nanstd(X, axis=0)
         self.sigma_[self.sigma_ == 0] = 1.0
         self.lo_, self.hi_ = np.nanmin(X, axis=0), np.nanmax(X, axis=0)
-        R = np.nan_to_num(pd.DataFrame(X).corr().to_numpy(), nan=0.0)
+        R = pairwise_corr(X)
         np.fill_diagonal(R, 1.0)
         w, V = np.linalg.eigh(R)
         w = np.clip(w, self.ridge, None)
@@ -172,11 +200,12 @@ class NDIF:
         Lw = L / np.sqrt(psi)[:, None]                                   # lambda_j / sqrt(psi_j)
         B = (Z0 / psi) @ L                                               # n x k : sum_j O_ij z_ij lambda_j / psi_j
         Zhat = np.empty_like(Z0)
-        for s in range(0, X.shape[0], self.chunk):                       # chunked to bound memory
-            Oc = O[s:s + self.chunk].astype(float)
+        chunk = max(256, min(self.chunk, int(2e7 // (k * k))))              # bound the n_c x k x k workspace (~160 MB)
+        for s in range(0, X.shape[0], chunk):                            # chunked to bound memory
+            Oc = O[s:s + chunk].astype(float)
             G = np.einsum("ij,jk,jl->ikl", Oc, Lw, Lw, optimize=True) + np.eye(k)   # n_c x k x k
-            F = np.linalg.solve(G, B[s:s + self.chunk][..., None])[..., 0]          # posterior factor means
-            Zhat[s:s + self.chunk] = F @ L.T
+            F = np.linalg.solve(G, B[s:s + chunk][..., None])[..., 0]               # posterior factor means
+            Zhat[s:s + chunk] = F @ L.T
         out = np.where(O, X, self.mu_ + Zhat * self.sigma_)
         if self.clip:
             out = np.where(O, out, np.clip(out, self.lo_, self.hi_))
@@ -184,6 +213,62 @@ class NDIF:
 
     def fit_transform(self, X, y=None):
         return self.fit(X).transform(X)
+
+
+class NDIFCV(NDIF):
+    """NDI-F-V: NDI-F with the number of factors chosen by internal validation (version 4.1).
+
+    A validation set is formed by hiding `val_share` of the observed cells of at most `val_rows` (seeded) rows;
+    the pairwise-complete correlation matrix of the remaining cells is factored once, every candidate k imputes
+    the hidden cells with the first k principal factors (same eigenvectors, psi recomputed), and the k with the
+    lowest validation z-RMSE is refitted on all observed cells.  Deterministic given `seed`; two correlation
+    passes and one closed-form imputation of the validation rows per candidate; no iteration, no model fitting.
+    Candidates: 1, 2, 3, 5, 7, 10, 15, 20, 30, 50, 75, 100 (those below p and below n/5).  About ten times the
+    cost of NDI-F on datasets of a few thousand rows, about twice at n = 100,000 (the validation is capped at
+    5,000 rows)."""
+    CANDIDATES = (1, 2, 3, 5, 7, 10, 15, 20, 30, 50, 75, 100)
+
+    def __init__(self, val_share=0.10, val_rows=5000, seed=0, candidates=CANDIDATES, ridge=0.05, clip=True, chunk=8192):
+        super().__init__(k="kaiser", max_k=10, ridge=ridge, clip=clip, chunk=chunk)
+        self.val_share, self.val_rows, self.seed, self.candidates = val_share, val_rows, seed, candidates
+
+    def _factors(self, X):
+        R = pairwise_corr(X)
+        w, V = np.linalg.eigh(R)
+        w = np.clip(w, self.ridge, None)
+        order = np.argsort(w)[::-1]
+        return w[order], V[:, order]
+
+    def _set_k(self, w, V, k):
+        self.k_ = k
+        self.L_ = V[:, :k] * np.sqrt(w[:k])
+        self.psi_ = np.clip(1.0 - (self.L_ ** 2).sum(axis=1), self.ridge, None)
+
+    def fit(self, X, y=None):
+        X = np.asarray(X, float)
+        n, p = X.shape
+        self.mu_ = np.nanmean(X, axis=0); self.sigma_ = np.nanstd(X, axis=0); self.sigma_[self.sigma_ == 0] = 1.0
+        self.lo_, self.hi_ = np.nanmin(X, axis=0), np.nanmax(X, axis=0)
+        obs = ~np.isnan(X)
+        rng = np.random.default_rng(self.seed)
+        rows = np.sort(rng.choice(n, self.val_rows, replace=False)) if n > self.val_rows else np.arange(n)
+        hide_sub = obs[rows] & (rng.random((len(rows), p)) < self.val_share)     # hidden cells, within the validation rows
+        Xtr = X.copy(); Xtr[rows[np.where(hide_sub)[0]], np.where(hide_sub)[1]] = np.nan
+        cands = [k for k in self.candidates if k <= p - 1 and k <= max(1, n // 5)] or [1]
+        w, V = self._factors(Xtr)
+        Xv, truth = Xtr[rows], X[rows][hide_sub]
+        sd = self.sigma_[np.where(hide_sub)[1]]
+        self.val_rmse_ = {}
+        clip, self.clip = self.clip, False
+        for k in cands:
+            self._set_k(w, V, k)
+            Xi = self.transform(Xv)
+            self.val_rmse_[k] = float(np.sqrt(np.mean(((Xi[hide_sub] - truth) / sd) ** 2)))
+        self.clip = clip
+        self.k_cv_ = min(self.val_rmse_, key=self.val_rmse_.get)
+        w, V = self._factors(X)                                   # final fit on all observed cells
+        self._set_k(w, V, self.k_cv_)
+        return self
 
 
 class CopulaWrap:
@@ -256,16 +341,17 @@ class EMFA:
         ll = 0.0
         A = np.zeros((p, (k + 1) * (k + 1))) if stats else None
         B = np.zeros((p, k + 1)) if stats else None
-        for s in range(0, n, self.chunk):
-            o = O[s:s + self.chunk]
+        chunk = max(256, min(self.chunk, int(2e7 // ((k + 1) * (k + 1)))))   # bound the per-chunk k x k workspaces
+        for s in range(0, n, chunk):
+            o = O[s:s + chunk]
             of = o.astype(float)
-            z = Z0[s:s + self.chunk]
+            z = Z0[s:s + chunk]
             r = np.where(o, z - m0, 0.0)                                   # centred observed cells
             M = ((of * ipsi) @ LL).reshape(-1, k, k) + np.eye(k)            # I + L_O' Psi_O^-1 L_O
             b = (r * ipsi) @ L                                              # L_O' Psi_O^-1 r_O
             G = np.linalg.inv(M)                                            # posterior covariance of f
             f = np.einsum("nkl,nl->nk", G, b)                               # posterior mean of f
-            F[s:s + self.chunk] = f
+            F[s:s + chunk] = f
             ll -= 0.5 * float(np.sum(of.sum(1) * np.log(2 * np.pi) + np.linalg.slogdet(M)[1]
                                      + of @ lpsi + (r * r) @ ipsi - np.einsum("nk,nk->n", b, f)))
             if stats:

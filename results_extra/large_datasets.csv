@@ -1,0 +1,10 @@
+dataset,n,p,classes,source
+magic-full,19020,10,2,PMLB magic
+letter,20000,16,26,PMLB letter
+pendigits,10992,16,10,PMLB pendigits
+satimage,6435,36,6,PMLB satimage
+optdigits,5620,62,10,PMLB optdigits
+texture,5500,40,11,PMLB texture
+musk2,6598,168,2,PMLB clean2
+mfeat-factors,2000,216,10,PMLB mfeat_factors
+mnist,70000,719,10,PMLB mnist

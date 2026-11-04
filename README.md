@@ -17,8 +17,10 @@ This is the conditional mean of the classical factor-analysis model; NDI-F estim
 single pass instead of by EM. There is no training loop, no iteration, no randomness and no tuned hyperparameter.
 The cost is O(n p k²) after one O(n p²) correlation pass, and new rows can be imputed with the stored μ, σ, Λ and Ψ.
 `NDI("mean")`, `NDI("signed")` and `NDI("shrink")` give the simpler estimators NDI-0 (the original
-normal-deviate rule), NDI-C and NDI-S, and `EMFA("fa")` fits the same factor model by maximum likelihood with EM,
-starting from NDI-F (more accurate, about a hundred times slower).
+normal-deviate rule), NDI-C and NDI-S; `NDIFCV()` is NDI-F-V, in which k is chosen by internal validation instead of the
+Kaiser rule (version 4.1; about ten times the cost of NDI-F, still one pass); and `EMFA("fa")` fits the same factor model by
+maximum likelihood with EM, starting from NDI-F (more accurate, about a hundred times slower; `EMFA("fa", max_iter=3, tol=0.0)`
+stops after three iterations, which recover about 80 % of EM's gain at four times the cost of NDI-F).
 
 ## Quick start
 
@@ -61,7 +63,8 @@ All numbers below are read from `results/tables.json`.
 | `NDI_benchmark_colab.ipynb` | Runs the pipeline on Google Colab (T4 GPU). |
 | `make_tables.py`, `make_figures.py` | Build `tables.json` and the figures of the paper from a results folder. |
 | `results/` | Raw and summary results of the run reported in the paper. |
-| `figures/` | Figures 1–6 of the paper at 300 dpi. |
+| `figures/` | Figures 1–9 of the paper (600 dpi). |
+| `extra/`, `results_extra/` | Version 4.1: the additional experiments of Section 4.7 of the paper (scripts, data loaders, raw results, `extra_tables.json`); see below. |
 | `kidney_disease.csv`, `heart.csv`, `Data_Cortex_Nuclear.csv` | UCI Chronic Kidney Disease, Heart Disease and Mice Protein Expression files, read by the pipeline. |
 | `requirements.txt` | Python packages. |
 
@@ -103,7 +106,7 @@ Notes:
 - EM-FA and EM-PPCA were added to the shipped results by a second run of the same, resumable script
   (`PYTHONHASHSEED=3 DEEP_SEEDS=0 OUT_DIR=results python ndi_benchmark.py`, CPU only, about 20 minutes), which computes only
   the (dataset, setting, seed, method) combinations missing from `results/`. Its machine was
-  {T['second_run_machine_ratio']:.1f} times slower than that of the main run on the reference computation in `timing_check.txt`.
+  1.2 times slower than that of the main run on the reference computation in `timing_check.txt`.
 - Write a new run to its own folder (`OUT_DIR=results_rerun`). The pipeline is resumable and skips every combination
   already present in the output folder, so a run into `results/` would only rebuild the summaries of the shipped results.
 - The paper's run used 2 CPU cores and a Tesla T4 GPU, Python 3.13.15, numpy 2.1.3, pandas 2.2.3,
@@ -122,6 +125,71 @@ Notes:
   yeast values are reproduced with xgboost 3.4.1 (Python >= 3.12, pinned in `requirements.txt`) but not with 3.2.0.
   With both settings and Python 3.13, our re-runs reproduced the HyperImpute values of wine, ecoli, yeast, CKD, Heart
   and Mice exactly and those of ionosphere to within 0.005.
+
+## Version 4.1: additional experiments (`extra/`, `results_extra/`)
+
+Six further experiments, reported in Section 4.7 and Sections 5.2, 5.3, 5.7, 5.8 and 5.10 of the paper, and one new
+variant, NDI-F-V (`NDIFCV` in `ndi.py`: the number of factors chosen by hiding 10 % of the observed cells of at most
+5,000 rows and testing 12 candidate values on them; deterministic, no iteration). All numbers below are read from
+`results_extra/extra_tables.json`.
+
+- **EM stopped early.** EM-FA started from NDI-F and stopped after m iterations (8 benchmark datasets,
+  40 dataset × setting blocks): one iteration gives 56 % of the converged gain
+  (median block) at 2.5 times the time of NDI-F, three give 80 % at
+  4.2 times, ten give 95 % at 10 times; convergence
+  (median 110 iterations, 132 times) adds nothing further. Three starts converge to the same fit.
+- **Number of factors.** No fixed k is best for every dataset; the validated k of NDI-F-V (pooled z-RMSE 0.887 against
+  0.901 for the Kaiser rule) is better than NDI-F in 27 of 40 blocks (Wilcoxon p = 0.002) at
+  9.6 times its cost. The eigenvalue floor matters little.
+- **70 and 80 % MCAR.** The iterative methods (KNN, MICE, MissForest, EM) fall back to the mean level; the closed-form
+  estimators NDI-S, NDI-F-V and GaussCM remain the most accurate.
+- **Small samples** (seven datasets with p ≥ 33 sub-sampled to 50–500 rows): SoftImpute is the most accurate, then
+  MissForest and NDI-F-V; NDI-F beats GaussCM at n ≤ 200; EM-FA is unstable at n = 50 (worse than the mean on
+  3 of seven datasets).
+- **Scaling with p** (synthetic three-factor data, 30 % MCAR): NDI-F imputes 100,000 × 500 in 6.5 s,
+  NDI-F-V in 13.9 s, EM-FA in 15.7 s and GaussCM in 642 s
+  (its per-pattern solves; 1.7 s with 20 patterns at p = 200), at equal accuracy.
+- **Nine larger PMLB datasets** (2,000–70,000 rows, 10–719 columns; MCAR, MAR, MNAR 30 %, seed 0): under MCAR GaussCM is more
+  accurate than NDI-F with k ≤ 10 on every dataset, because the Kaiser cap limits NDI-F on wide data; NDI-F-V closes the
+  gap (14 wins, 11 losses against GaussCM over 25 blocks) at a fraction of its cost
+  (mnist, 70,000 × 719: NDI-F 8 s, NDI-F-V 36 s, EM-FA 43 s, GaussCM 996 s).
+  Under MAR and MNAR on strongly correlated data, MICE and EM, which re-estimate the column statistics, are far more
+  accurate than every one-pass estimator.
+
+Implementation change in 4.1: the pairwise-complete correlation matrix is computed with four matrix products
+(`pairwise_corr`) instead of `pandas.DataFrame.corr()`; the result is identical up to rounding, and NDI-F at
+100,000 × 500 drops from 61 s to 6.5 s. The shipped `results/` (main design) were produced with the pandas call;
+the chunk size of the batched solves is now bounded so that wide matrices (mnist) fit in memory.
+
+Running the additional experiments:
+
+```bash
+python extra/get_data.py                 # PMLB copies and the banknote file -> extra/data/ (about 20 MB)
+python extra/verify_datasets.py          # which local copies reproduce the paper's tables exactly
+EXP=EM,K,RATE,SMALLN,SCALEP,LARGE OUT_DIR=results_extra_rerun python extra/ndi_extra.py
+python extra/make_extra_tables.py results_extra_rerun && python extra/make_extra_figures.py results_extra_rerun figures_rerun
+```
+
+The experiments that use the benchmark datasets (EM, K, RATE) take the datasets from OpenML as the main benchmark does;
+without network access, or to run exactly what the shipped results used, export the OpenML tables to
+`extra/openml_csv/<name>.csv` (instructions in `extra/data_local.py`) or rely on the PMLB copies, which reproduce the
+paper's tables exactly for wine, ecoli, ionosphere, yeast, wine-quality-red, spambase and MagicTelescope
+(`results_extra/paper_datasets_used.csv` lists the datasets of the shipped run). `extra/main_design_ndifv.py` adds NDI-F-V
+to the main design (same masks and seeds as `results/rmse_long.csv`). Everything is resumable.
+
+Files in `results_extra/`: `em_iterations_long.csv`, `k_sensitivity_long.csv`, `high_rate_long.csv`, `small_n_long.csv`,
+`scaling_p_long.csv`, `large_long.csv` (one row per run), `large_datasets.csv`, `paper_datasets_used.csv`,
+`extra_tables.json` (all numbers used in Section 4.7 and the related results sections), `env_extra.json`,
+`run_log_extra.txt`, `timing_check_extra.txt` and `timing_paths.json` (speed of the machine of this run relative to the
+main run, with both correlation routines).
+
+## Million-row experiments (`large/`, planned follow-up)
+
+`large/ndi_large.py` and the Colab notebook `large/NDI_large_scale_colab.ipynb` run NDI-F, NDI-F-V, EM-FA (stopped early and to
+convergence), GaussCM, SoftImpute, MICE and the GPU imputers on seven large public tables (MiniBooNE, YearPredictionMSD,
+covertype, KDD Cup 99, SUSY, HEPMASS, HIGGS; 130,000 to 11,000,000 rows), including a streaming scenario in which the
+statistics of NDI-F are updated block by block (the sufficient statistics of the pairwise correlation are additive). See
+`large/README.md`. No results are shipped yet.
 
 ## License
 

@@ -1,0 +1,8 @@
+{
+ "paper_code_this_machine_s": 0.8106478920001337,
+ "paper_machine_s": 1.833,
+ "paper_code_ratio_vs_main": 0.44225198690678325,
+ "pandas_corr_ndif_100k500_s": 60.5553020750001,
+ "fast_corr_ndif_100k500_s": 5.162202870999863,
+ "fast_corr_ndif_100k50_s": 0.2741002110001318
+}
