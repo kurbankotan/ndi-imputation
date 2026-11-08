@@ -13,7 +13,8 @@ Experiments (EXP=ACC,DEEP,ONLINE,DOWN; default ACC,ONLINE):
             Methods: Mean, NDI-S, NDI-F, NDI-F-V, EM-FA after 1 and 3 iterations, EM-FA and EM-PPCA to convergence,
             GaussCM, SoftImpute, MICE, MissForest, KNN — each up to the size given in MAX_N below.
     DEEP    the GPU methods (GAIN, MIWAE, Sinkhorn, ReMasker) and HyperImpute on the n = DEEP_N (50,000) samples with
-            the seed-0 masks of ACC, so that they are compared with the cheap methods on identical cells.
+            the seed-0 masks of ACC, so that they are compared with the cheap methods on identical cells.  Each GPU run is
+            a fresh process; budgets GAIN_ITERS, MIWAE_EPOCHS, SINKHORN_ITERS, REMASKER_EPOCHS label the result rows.
     ONLINE  streaming: the statistics are estimated on the first block of rows and the following blocks are imputed
             (a) with frozen statistics, (b) with statistics updated after every block (the four sufficient-statistic
             matrices of the pairwise correlation are additive), (c) by refitting on all rows seen so far, and (d) with
@@ -48,12 +49,14 @@ ONLINE_BLOCK = int(os.environ.get("ONLINE_BLOCK", "100000"))
 if QUICK:
     N_GRID = [2_000, 5_000, "full"]; MECH_MAX_N = 5_000; SEED_SPLIT = 2_000; DEEP_N = 2_000; ONLINE_BLOCK = 2_000; BLOCK = 3_000
 
-# the largest number of rows each method is run on (env MAX_N_<METHOD> overrides, e.g. MAX_N_EM-FA=11000000)
+LARGE_VERSION = "2026-11-07b"              # checked by the Colab notebook (cell 2) to make sure the newest code is installed
+# the largest number of rows each method is run on; env MAX_N_<METHOD> overrides, with "-" and "@" written as "_"
+# (bash cannot set names with a hyphen), e.g. MAX_N_EM_FA=11000000 MAX_N_GaussCM=11000000
 MAX_N = {"Mean": None, "NDI-S": None, "NDI-F": None, "NDI-F-V": None, "EM-FA@1": None, "EM-FA@3": None,
          "EM-FA": 2_000_000, "EM-PPCA": 2_000_000, "GaussCM": 1_000_000, "SoftImpute": 1_000_000, "MICE": 20_000,
          "MissForest": 5_000, "KNN": 5_000}
 for m in list(MAX_N):
-    v = os.environ.get("MAX_N_" + m.replace("@", "_"))
+    v = os.environ.get("MAX_N_" + m.replace("@", "_").replace("-", "_")) or os.environ.get("MAX_N_" + m.replace("@", "_"))
     if v: MAX_N[m] = int(float(v))
 MAX_CELLS = {"SoftImpute": 2.5e7}
 ROWSEP = {"NDI-F": lambda s: NDIF(), "NDI-F-V": lambda s: NDIFCV(seed=s), "NDI-S": lambda s: NDI("shrink"),
@@ -62,7 +65,73 @@ ROWSEP = {"NDI-F": lambda s: NDIF(), "NDI-F-V": lambda s: NDIFCV(seed=s), "NDI-S
 FULL = {"Mean": nb.m_mean, "GaussCM": lambda X, s: GaussCM().fit_transform(X), "SoftImpute": nb.m_softimpute,
         "MICE": nb.m_mice, "MissForest": nb.m_missforest, "KNN": nb.m_knn}
 ACC_METHODS = ["Mean", "NDI-S", "NDI-F", "NDI-F-V", "EM-FA@1", "EM-FA@3", "EM-FA", "EM-PPCA", "GaussCM", "SoftImpute", "MICE", "MissForest", "KNN"]
+# ---- GPU / AutoML imputers on the DEEP_N-row samples.  Training budgets (env):
+#   GAIN_ITERS      default scales the paper's 2,000 iterations on 2,000 rows to the same visits per row (50,000 at n = 50,000)
+#   MIWAE_EPOCHS    200 epochs of batch 256 = 39,000 gradient steps at n = 50,000 (the paper: 500 epochs = 4,000 steps on 2,000 rows)
+#   SINKHORN_ITERS  2,000 updates of two 512-row batches = about 40 visits per row (the paper's 256 per row would need 12,500,
+#                   about 2 h per block on a T4)
+#   REMASKER_EPOCHS 100 epochs (78,000 steps of batch 64)
+# Every result row is labelled with its budget (GAIN@50000, MIWAE@500, Sinkhorn@2000, ReMasker@100), so that runs with different
+# budgets can be kept side by side.
+GAIN_ITERS = int(os.environ.get("GAIN_ITERS", str(max(2000, 2000 * DEEP_N // 2000))))
+MIWAE_EPOCHS = int(os.environ.get("MIWAE_EPOCHS", "200"))
+SINKHORN_ITERS = int(os.environ.get("SINKHORN_ITERS", "2000"))
+REMASKER_EPOCHS = int(os.environ.get("REMASKER_EPOCHS", "100"))
+if QUICK: GAIN_ITERS, MIWAE_EPOCHS, SINKHORN_ITERS, REMASKER_EPOCHS = 200, 5, 20, 2
+DEEP_BUDGET = {"GAIN": GAIN_ITERS, "MIWAE": MIWAE_EPOCHS, "Sinkhorn": SINKHORN_ITERS, "ReMasker": REMASKER_EPOCHS}
 DEEP_METHODS = [m for m in os.environ.get("DEEP_METHODS", "GAIN,MIWAE,Sinkhorn,ReMasker,HyperImpute").split(",") if m in nb.METHODS]
+DEEP_SUBPROCESS = os.environ.get("DEEP_SUBPROCESS", "1") == "1"      # each GPU run in a fresh process: no GPU memory left behind
+LEGACY_BUDGETS = dict(x.split(":") for x in os.environ.get("LEGACY_BUDGETS", "GAIN:2000,MIWAE:200,Sinkhorn:200,ReMasker:100").split(","))
+deep_label = lambda m: f"{m}@{DEEP_BUDGET[m]}" if m in DEEP_BUDGET else m
+
+
+def _set_budgets():
+    nb.GAIN_ITERS = GAIN_ITERS; nb.REMASKER_EPOCHS = REMASKER_EPOCHS
+
+
+def _deep_fn(m):
+    """the benchmark's imputer with this run's budget (MIWAE and Sinkhorn share nb.DEEP_EPOCHS, so it is set per call)"""
+    def fn(X, seed):
+        _set_budgets()
+        nb.DEEP_EPOCHS = {"MIWAE": MIWAE_EPOCHS, "Sinkhorn": SINKHORN_ITERS}.get(m, nb.DEEP_EPOCHS)
+        return nb.METHODS[m](X, seed)
+    return fn
+
+
+def _child(m, X_in, seed, q):
+    """runs one GPU imputer in a fresh process (spawn): the CUDA context and every tensor die with the process"""
+    try:
+        q.put((np.asarray(_deep_fn(m)(X_in, seed), float), ""))
+    except Exception as e:
+        q.put((None, f"{type(e).__name__}: {str(e)[:120]}"))
+
+
+def run_subprocess(m, X_in, seed):
+    import multiprocessing as mp, queue
+    ctx = mp.get_context("spawn"); q = ctx.Queue()
+    p = ctx.Process(target=_child, args=(m, X_in, seed, q)); p.start()
+    while True:                                   # a child killed by the system (e.g. out of RAM) must not hang the run
+        try:
+            X_imp, err = q.get(timeout=30); break
+        except queue.Empty:
+            if not p.is_alive():
+                X_imp, err = None, f"child process died (exit code {p.exitcode})"; break
+    p.join()
+    if X_imp is None: raise RuntimeError(err)
+    return X_imp
+
+
+def drop_errors(csv, keys):
+    """rows with an error are moved to <csv>_errors.csv so that they are recomputed; legacy unlabelled deep rows are relabelled"""
+    if not os.path.exists(csv): return
+    d = pd.read_csv(csv)
+    if "method" in d and csv == CSV["DEEP"]:
+        d["method"] = [f"{m}@{LEGACY_BUDGETS[m]}" if m in LEGACY_BUDGETS else m for m in d.method]
+    bad = d.error.notna() & (d.error.astype(str).str.strip() != "") if "error" in d else pd.Series(False, index=d.index)
+    if bad.any():
+        d[bad].to_csv(csv.replace(".csv", "_errors.csv"), mode="a", header=not os.path.exists(csv.replace(".csv", "_errors.csv")), index=False)
+        log(f"{os.path.basename(csv)}: {int(bad.sum())} row(s) with errors moved to the _errors file and will be recomputed")
+    d[~bad].to_csv(csv, index=False)
 CSV = {k: os.path.join(OUT, f) for k, f in dict(ACC="acc_long.csv", DEEP="deep_long.csv", ONLINE="online_long.csv", DOWN="downstream_long.csv").items()}
 
 
@@ -134,6 +203,7 @@ def col_stats(X):
 
 
 def run_acc(name, X_full):
+    if os.environ.get("RETRY_ERRORS", "1") == "1": drop_errors(CSV["ACC"], ["dataset", "n", "mechanism", "rate", "seed", "method"])
     done = done_keys(CSV["ACC"], ["dataset", "n", "mechanism", "rate", "seed", "method"])
     for n in N_GRID:
         if n != "full" and n >= len(X_full): continue
@@ -160,21 +230,23 @@ def run_acc(name, X_full):
 
 def run_deep(name, X_full):
     if not DEEP_METHODS: log("DEEP: no GPU method available (torch / hyperimpute / remasker missing)"); return
+    drop_errors(CSV["DEEP"], ["dataset", "n", "mechanism", "rate", "seed", "method"])
     done = done_keys(CSV["DEEP"], ["dataset", "n", "mechanism", "rate", "seed", "method"])
     n = DEEP_N if DEEP_N < len(X_full) else "full"
     X_true, n_rows = sample_rows(X_full, n, 0); X_true = np.asarray(X_true, float)
     sd, lo, hi = col_stats(X_true)
     for mech, rate in MECHS_SMALL:
-        todo = [m for m in DEEP_METHODS if (name, str(n_rows), mech, rkey(rate), "0", m) not in done]
+        todo = [m for m in DEEP_METHODS if (name, str(n_rows), mech, rkey(rate), "0", deep_label(m)) not in done]
         if not todo: continue
         X_in, mask = masked(X_true, name, mech, rate, 0)
         lo_in, hi_in = np.nanmin(X_in, 0), np.nanmax(X_in, 0)
         for m in todo:
             sc = Scorer(X_true, mask, sd, lo_in, hi_in)
-            res, dt, err, _ = run_full(nb.METHODS[m], X_in, 0, sc)
-            append_row(CSV["DEEP"], dict(dataset=name, n=n_rows, p=X_true.shape[1], mechanism=mech, rate=rate, seed=0, method=m,
+            fn = (lambda X, s, m=m: run_subprocess(m, X, s)) if (DEEP_SUBPROCESS and m != "HyperImpute") else _deep_fn(m)
+            res, dt, err, _ = run_full(fn, X_in, 0, sc)
+            append_row(CSV["DEEP"], dict(dataset=name, n=n_rows, p=X_true.shape[1], mechanism=mech, rate=rate, seed=0, method=deep_label(m),
                                          rmse=res["rmse"], mae=res["mae"], oob=res["oob"], nan_left=res["nan_left"], time_s=dt, error=err))
-            log(f"DEEP {name:<18s} n={n_rows:>9,d} {mech:4s} {m:<12s} rmse={res['rmse']:.4f} {dt:9.1f} s {err}")
+            log(f"DEEP {name:<18s} n={n_rows:>9,d} {mech:4s} {deep_label(m):<16s} rmse={res['rmse']:.4f} {dt:9.1f} s {err}")
 
 
 class OnlineNDIF(NDIF):
@@ -270,10 +342,20 @@ def run_down(name, X_full, y_full):
             log(f"DOWN {name:<18s} {mech:4s} {m:<10s} acc={acc:.4f}")
 
 
+def purge_synthetic():
+    """rows of the synthetic smoke test that landed in a real results folder (OUT_DIR inherited by QUICK=1) are removed"""
+    for f in list(CSV.values()) + [os.path.join(OUT, "datasets_large.csv")]:
+        if os.path.exists(f):
+            d = pd.read_csv(f)
+            if "dataset" in d and (d.dataset == "synthetic").any():
+                d[d.dataset != "synthetic"].to_csv(f, index=False); log(f"{os.path.basename(f)}: {int((d.dataset == 'synthetic').sum())} synthetic smoke-test row(s) removed")
+
+
 def main():
+    if not QUICK: purge_synthetic()
     json.dump(dict(python=platform.python_version(), platform=platform.platform(), cpu_count=os.cpu_count(), numpy=np.__version__,
                    pandas=pd.__version__, sklearn=__import__("sklearn").__version__, experiments=EXP, datasets=DATASETS, n_grid=[str(x) for x in N_GRID],
-                   max_n={k: v for k, v in MAX_N.items()}, deep_n=DEEP_N, gpu=ld.gpu_name(), time=time.strftime("%Y-%m-%d %H:%M:%S")),
+                   version=LARGE_VERSION, max_n={k: v for k, v in MAX_N.items()}, deep_n=DEEP_N, deep_budgets=DEEP_BUDGET, deep_subprocess=DEEP_SUBPROCESS, gpu=ld.gpu_name(), time=time.strftime("%Y-%m-%d %H:%M:%S")),
               open(os.path.join(OUT, "env_large.json"), "w"), indent=1)
     for name in DATASETS:
         X, y = ld.load(name)

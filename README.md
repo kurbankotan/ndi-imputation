@@ -63,8 +63,9 @@ All numbers below are read from `results/tables.json`.
 | `NDI_benchmark_colab.ipynb` | Runs the pipeline on Google Colab (T4 GPU). |
 | `make_tables.py`, `make_figures.py` | Build `tables.json` and the figures of the paper from a results folder. |
 | `results/` | Raw and summary results of the run reported in the paper. |
-| `figures/` | Figures 1–9 of the paper (600 dpi). |
-| `extra/`, `results_extra/` | Version 4.1: the additional experiments of Section 4.7 of the paper (scripts, data loaders, raw results, `extra_tables.json`); see below. |
+| `figures/` | Figures 1–10 of the paper (600 dpi). |
+| `extra/`, `results_extra/` | Version 4.1: the additional experiments (i)–(vi) of Section 4.7 of the paper (scripts, data loaders, raw results, `extra_tables.json`); see below. |
+| `large/`, `results_large/` | Version 4.1: the million-row and streaming experiments (vii)–(viii) (scripts, Colab notebook, results, `large_paper.json`); see below. |
 | `kidney_disease.csv`, `heart.csv`, `Data_Cortex_Nuclear.csv` | UCI Chronic Kidney Disease, Heart Disease and Mice Protein Expression files, read by the pipeline. |
 | `requirements.txt` | Python packages. |
 
@@ -183,13 +184,28 @@ Files in `results_extra/`: `em_iterations_long.csv`, `k_sensitivity_long.csv`, `
 `run_log_extra.txt`, `timing_check_extra.txt` and `timing_paths.json` (speed of the machine of this run relative to the
 main run, with both correlation routines).
 
-## Million-row experiments (`large/`, planned follow-up)
+## Million-row experiments (`large/`, `results_large/`)
 
-`large/ndi_large.py` and the Colab notebook `large/NDI_large_scale_colab.ipynb` run NDI-F, NDI-F-V, EM-FA (stopped early and to
-convergence), GaussCM, SoftImpute, MICE and the GPU imputers on seven large public tables (MiniBooNE, YearPredictionMSD,
-covertype, KDD Cup 99, SUSY, HEPMASS, HIGGS; 130,000 to 11,000,000 rows), including a streaming scenario in which the
-statistics of NDI-F are updated block by block (the sufficient statistics of the pairwise correlation are additive). See
-`large/README.md`. No results are shipped yet.
+Experiments (vii)–(viii) of Section 4.7 of the paper (Section 5.11, Tables 18–19, A6–A7, Fig. 10): seven public tables with
+129,593 to 11,000,000 rows (MiniBooNE, YearPredictionMSD, Covertype, KDD Cup 1999, SUSY, HEPMASS, HIGGS), run on Google Colab
+(8 vCPUs, Tesla T4) with `large/NDI_large_scale_colab.ipynb`. All numbers below are read from `results_large/large_paper.json`.
+
+- **Cost.** On the full HIGGS table (11 M × 28, 30 % MCAR) NDI-F took 93 s, NDI-F-V 97 s,
+  EM-FA after three iterations 626 s and the Gaussian conditional mean 719 s; EM-FA to convergence needed
+  18–50 minutes already at 10⁶ rows.
+- **Accuracy.** With millions of rows the full correlation matrix is estimated precisely, and the Gaussian conditional mean
+  (MCAR, MAR) and EM-FA (MNAR) were more accurate than NDI-F (average ranks over 84 blocks: EM-FA 2.33, GaussCM
+  2.80, EM-FA@3 3.02, NDI-F-V 4.14, NDI-F 5.75); NDI-F-V beat NDI-F in 65 of 84 blocks.
+- **Learning-based imputers (50,000-row samples).** ReMasker was the most accurate method (rank 2.14 of 12) at
+  1,566 s per block on the GPU; GAIN and MIWAE were unstable at this size; Sinkhorn imputation stayed behind NDI-F.
+- **Streaming.** The statistics of NDI-F are sums over rows and can be updated exactly block by block (identical to a refit,
+  0.08 s per 100,000-row update). On a non-stationary stream (KDD Cup 99) frozen statistics failed
+  (1.618, worse than frozen mean substitution, 0.994); updated ones reached 0.485.
+
+Files: `results_large/acc_long.csv`, `deep_long.csv` (+ `deep_long_errors.csv`: the first-pass MIWAE runs that ran out of GPU
+memory), `online_long.csv`, `downstream_long.csv` (one row per run), the summaries and logs of the Colab runs, and
+`large_paper.json` (all numbers of the paper's Section 5.11, written by `python large/make_large_paper.py results_large`).
+See `large/README.md` to re-run.
 
 ## License
 

@@ -76,7 +76,7 @@ def _openml_ids():
 def load_paper_dataset(name):
     csv = os.path.join(OPENML_DIR, f"{name}.csv")
     if os.path.exists(csv):                                   # 1. exact OpenML export
-        df = pd.read_csv(csv)
+        df = pd.read_csv(csv, float_precision="round_trip")          # exact float64 round trip
         return finish(name, df.drop(columns=["__target__"]), df["__target__"], "OpenML (fetch_openml export)")
     if os.environ.get("NO_OPENML", "0") != "1":              # 2. OpenML through the benchmark's own loader
         try:

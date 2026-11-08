@@ -18,6 +18,7 @@ MK = {"NDI-F": "o", "NDI-F-V": "D", "NDI-S": "h", "Mean": "^", "MissForest": "D"
 acc = os.path.join(OUT, "acc_long.csv")
 if os.path.exists(acc):
     d = pd.read_csv(acc); d["setting"] = d.mechanism + "-" + (d.rate * 100).round().astype(int).astype(str)
+    if (d.dataset != "synthetic").any(): d = d[d.dataset != "synthetic"]            # smoke-test rows, if any
     g = d.groupby(["dataset", "p", "n", "setting", "method"], as_index=False).agg(rmse=("rmse", "mean"), rmse_sd=("rmse", "std"), time_s=("time_s", "mean"),
                                                                                   seeds=("seed", "nunique"), k=("k", "mean"), em_iterations=("em_iterations", "mean"), error=("error", "first"))
     g.to_csv(os.path.join(OUT, "summary_acc.csv"), index=False)
@@ -45,12 +46,15 @@ if os.path.exists(acc):
                 if len(x): ax.plot(x.n, x[col], "-", color=C.get(m, "#888"), marker=MK.get(m, "o"), ms=4, lw=1.3, label=m)
             ax.set_xscale("log"); ax.set_title(f"{name} (p = {int(gg.p.iloc[0]) if len(gg) else '?'})", fontsize=8.5); ax.set_xlabel("rows n")
             if kind == "time": ax.set_yscale("log")
+            else: ax.set_ylim(top=min(ax.get_ylim()[1], 1.35))                 # diverged imputations (MICE on KDD) would flatten the panel
         axes[0].set_ylabel(ylab); axes[-1].legend(fontsize=6.5, ncol=2)
         fig.tight_layout(); fig.savefig(os.path.join(FIG, fn)); plt.close(fig)
 
 deep = os.path.join(OUT, "deep_long.csv")
 if os.path.exists(deep) and os.path.exists(acc):
     dd = pd.read_csv(deep); dd["setting"] = dd.mechanism + "-" + (dd.rate * 100).round().astype(int).astype(str)
+    dd = dd[dd.rmse.notna()]
+    if (dd.dataset != "synthetic").any(): dd = dd[dd.dataset != "synthetic"]
     cheap = d[(d.seed == 0) & d.n.isin(dd.n.unique())]
     both = pd.concat([cheap, dd], ignore_index=True)
     S = both.pivot_table(index=["dataset", "n", "setting"], columns="method", values="rmse"); ST = both.pivot_table(index=["dataset", "n", "setting"], columns="method", values="time_s")
@@ -61,6 +65,7 @@ if os.path.exists(deep) and os.path.exists(acc):
 onl = os.path.join(OUT, "online_long.csv")
 if os.path.exists(onl):
     o = pd.read_csv(onl)
+    if (o.dataset != "synthetic").any(): o = o[o.dataset != "synthetic"]
     s = o.groupby(["dataset", "variant"], as_index=False).agg(rmse=("rmse", "mean"), time_per_block_s=("time_s", "mean"), blocks=("block", "nunique"))
     s.to_csv(os.path.join(OUT, "summary_online.csv"), index=False)
     T["online"] = {ds: {r.variant: dict(rmse=f32(r.rmse), time_per_block_s=f32(r.time_per_block_s), blocks=int(r.blocks)) for r in gg.itertuples()} for ds, gg in s.groupby("dataset")}
@@ -79,6 +84,7 @@ if os.path.exists(onl):
 down = os.path.join(OUT, "downstream_long.csv")
 if os.path.exists(down):
     w = pd.read_csv(down); w["setting"] = w.mechanism + "-" + (w.rate * 100).round().astype(int).astype(str)
+    if (w.dataset != "synthetic").any(): w = w[w.dataset != "synthetic"]
     D = w.pivot_table(index=["dataset", "setting"], columns="method", values="accuracy"); D.round(4).to_csv(os.path.join(OUT, "summary_downstream.csv"))
     T["downstream"] = {"|".join(map(str, idx)): {m: f32(v) for m, v in row.items()} for idx, row in D.iterrows()}
 
